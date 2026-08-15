@@ -1,8 +1,9 @@
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import BookingSection from "@/components/BookingSection";
+import FaqSection from "@/components/FaqSection";
+import SocialLinks from "@/components/SocialLinks";
 
 const Contact = () => {
     return (
@@ -11,7 +12,7 @@ const Contact = () => {
                 index="06"
                 title="CONTACTO"
                 subtitle="HABLEMOS DE TU PROYECTO"
-                description="Estamos listos para hacer realidad tu idea. Contáctanos para consultas, cotizaciones o para agendar tu cita."
+                description="Consulta online, domicilio o guest. Cuéntame la idea y la ciudad: armamos la sesión donde coincidamos."
             />
 
             <section className="py-12 md:py-24 bg-black relative overflow-hidden">
@@ -28,9 +29,9 @@ const Contact = () => {
                                         <MapPin className="w-6 h-6 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="font-cinzel text-white text-lg mb-1">Ubicación</h3>
-                                        <p>Calle Principal 123, Zona Centro</p>
-                                        <p>Ciudad, País</p>
+                                        <h3 className="font-cinzel text-white text-lg mb-1">Cómo trabajo</h3>
+                                        <p>Estudio itinerante</p>
+                                        <p>Domicilio · Guest spots · Consulta online</p>
                                     </div>
                                 </div>
 
@@ -61,55 +62,34 @@ const Contact = () => {
                                         <Clock className="w-6 h-6 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="font-cinzel text-white text-lg mb-1">Horarios</h3>
-                                        <p>Lunes - Sábado: 11:00 AM - 8:00 PM</p>
-                                        <p>Domingo: Cita previa</p>
+                                        <h3 className="font-cinzel text-white text-lg mb-1">Agenda</h3>
+                                        <p>Consulta previa por mensaje</p>
+                                        <p>Fechas según ruta y domicilio</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="pt-8 text-center flex gap-4 justify-center md:justify-start">
-                                <Button variant="outline" size="icon" className="rounded-full w-12 h-12 border-primary/20 hover:bg-primary/10 hover:text-primary">
-                                    <Instagram className="w-5 h-5" />
-                                </Button>
-                                <Button variant="outline" size="icon" className="rounded-full w-12 h-12 border-primary/20 hover:bg-primary/10 hover:text-primary">
-                                    <Facebook className="w-5 h-5" />
-                                </Button>
+                            <div className="pt-8 flex justify-center md:justify-start">
+                                <SocialLinks iconClassName="h-5 w-5" />
                             </div>
                         </div>
 
-                        {/* Map Placeholder */}
-                        <div className="h-[400px] w-full bg-secondary/30 rounded-lg border border-border overflow-hidden relative group">
-                            <div className="absolute inset-0 flex items-center justify-center bg-black/50 group-hover:bg-black/30 transition-colors">
-                                <p className="font-cinzel text-muted-foreground">Mapa de Ubicación</p>
+                        <div className="relative h-[400px] w-full overflow-hidden border border-border bg-secondary/30">
+                            <div className="absolute inset-0 bg-gradient-to-br from-secondary to-background opacity-70" />
+                            <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+                                <p className="mb-3 font-cinzel text-[11px] tracking-[0.35em] text-angelux-steel">SIN LOCAL FIJO</p>
+                                <p className="max-w-sm font-metal text-3xl text-primary">La ruta se arma por ciudad</p>
+                                <p className="mt-4 max-w-xs font-montserrat text-sm text-muted-foreground">
+                                    México · Colombia · España · Argentina · Perú · EE.UU. · Portugal · Chile
+                                </p>
                             </div>
-                            {/* You can embed a real Google Maps iframe here later */}
-                            <div className="w-full h-full bg-gradient-to-br from-secondary to-background opacity-50" />
                         </div>
 
                     </div>
-
-                    {/* FAQ Section */}
-                    <div className="mt-24 max-w-3xl mx-auto">
-                        <h2 className="font-metal text-3xl md:text-4xl text-center text-primary mb-12">PREGUNTAS FRECUENTES</h2>
-                        <div className="space-y-6">
-                            {[
-                                { q: "¿Cómo agendo una cita?", a: "Puedes usar nuestro formulario en línea, escribirnos por Instagram o WhatsApp. Requerimos un depósito para reservar tu fecha." },
-                                { q: "¿Cuánto cuesta un tatuaje?", a: "El precio depende del tamaño, detalle y ubicación. El mínimo de estudio es $X. Para piezas grandes cobramos por sesión." },
-                                { q: "¿Duelen los tatuajes?", a: "La tolerancia varía por persona y zona, pero usamos técnicas para minimizar el trauma en la piel y hacer la experiencia llevadera." },
-                                { q: "¿Cómo me preparo para la sesión?", a: "Ven descansado, bien comido, e hidratado. Evita alcohol 24h antes y trae ropa cómoda." }
-                            ].map((faq, i) => (
-                                <div key={i} className="border-b border-border/50 pb-6 group">
-                                    <h3 className="font-cinzel text-lg text-white mb-2 group-hover:text-primary transition-colors cursor-pointer">{faq.q}</h3>
-                                    <p className="text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
                 </div>
             </section>
 
+            <FaqSection compact />
             <BookingSection />
         </PageLayout>
     );

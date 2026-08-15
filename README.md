@@ -1,22 +1,18 @@
 # Angelux Ink
 
-Sitio web de **Angelux Ink**, estudio de tatuaje especializado en blanco y negro: blackwork, black & grey y realismo.
+Sitio de **Angelux Ink**, tatuador itinerante: sesiones a domicilio, guest spots y proyectos en otras ciudades.
 
-Plantilla lista para personalizar ubicación, contacto y portafolio.
+El blackwork y el contraste son un fuerte del archivo, no un límite de estilo.
+
+Al compartir el enlace, la vista previa usa el nombre **Angelux Ink**, el logo y una descripción corta (Open Graph / Twitter Card).
 
 ## Diseño
 
-Lenguaje visual de atelier cinematográfico: geometría de plantilla de tatuaje, tipografía editorial, tinta negra y azul profundo.
+Galería como centro del sitio. Lenguaje visual oscuro, azul profundo y geometría de plantilla.
 
 ## Stack
 
-- Vite
-- TypeScript
-- React
-- shadcn/ui
-- Tailwind CSS
-- React Router
-- Framer Motion
+- Vite · TypeScript · React · Tailwind · Framer Motion
 
 ## Primeros pasos
 
@@ -25,9 +21,4 @@ npm install
 npm run dev
 ```
 
-- `npm run build` — build de producción
-- `npm run preview` — previsualizar el build
-- `npm run lint` — ESLint
-- `npm run test` — tests
-
-El servidor de desarrollo corre en `http://localhost:5173`.
+El servidor corre en `http://localhost:8080`.

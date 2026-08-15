@@ -5,17 +5,17 @@ const pillars = [
   {
     n: "01",
     title: "Contraste",
-    text: "Negro sólido contra piel. Cada pieza se construye con peso visual, no con relleno.",
+    text: "El blackwork y la sombra pesan. No es el único camino, pero es donde el trazo se siente más suyo.",
   },
   {
     n: "02",
-    title: "Sombra",
-    text: "Black & grey con transiciones limpias. El volumen nace de la luz, no del color.",
+    title: "Movimiento",
+    text: "Domicilios, guest spots, otras ciudades. El estudio viaja; la exigencia no se diluye.",
   },
   {
     n: "03",
     title: "Precisión",
-    text: "Línea fina o blackwork denso: el trazo se sostiene. Nada accidental.",
+    text: "Consulta, diseño y sesión con calma. Cada pieza se construye para quien la va a llevar.",
   },
 ];
 
@@ -38,8 +38,8 @@ const ManifestoSection = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <p className="mb-4 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">ATELIER · BLANCO Y NEGRO</p>
-            <h2 className="font-metal text-4xl text-primary md:text-6xl">La tinta no pide permiso</h2>
+            <p className="mb-4 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">OFICIO · SIN DIRECCIÓN FIJA</p>
+            <h2 className="font-metal text-3xl text-primary sm:text-4xl md:text-6xl">La tinta no pide permiso</h2>
           </motion.div>
           <motion.p
             className="max-w-md font-montserrat text-sm leading-relaxed text-muted-foreground md:col-span-5 md:justify-self-end"
@@ -47,7 +47,7 @@ const ManifestoSection = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            Angelux Ink es un estudio de una sola disciplina: tatuaje en escala de grises. Menos ruido, más carácter.
+            Angelux Ink trabaja donde coincidamos. Menos ruido de local, más carácter en la pieza.
           </motion.p>
         </div>
 

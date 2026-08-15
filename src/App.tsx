@@ -2,14 +2,15 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
-import Products from "./pages/Products";
-import Facilities from "./pages/Facilities";
+import Ruta from "./pages/Ruta";
 import Contact from "./pages/Contact";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -19,14 +20,16 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/servicios" element={<Services />} />
           <Route path="/galeria" element={<Gallery />} />
-          <Route path="/productos" element={<Products />} />
-          <Route path="/instalaciones" element={<Facilities />} />
+          <Route path="/servicios" element={<Services />} />
+          <Route path="/ruta" element={<Ruta />} />
+          <Route path="/sobre-mi" element={<About />} />
           <Route path="/contacto" element={<Contact />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/productos" element={<Navigate to="/" replace />} />
+          <Route path="/instalaciones" element={<Navigate to="/ruta" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

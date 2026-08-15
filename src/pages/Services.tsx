@@ -7,10 +7,10 @@ const Services = () => {
     return (
         <PageLayout>
             <PageHero
-                index="02"
+                index="03"
                 title="SERVICIOS"
-                subtitle="ARTE EN TU PIEL"
-                description="Especialistas en blanco y negro: blackwork, black & grey, realismo y fineline. Cada pieza se diseña a medida."
+                subtitle="OFICIO EN MOVIMIENTO"
+                description="Tatuaje a medida, sesiones a domicilio y guest spots. El blackwork es un fuerte; el resto lo decide tu proyecto."
             />
             <div className="py-12 md:py-20 space-y-20 md:space-y-32">
                 <ServicesSection />
@@ -24,10 +24,10 @@ const Services = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                         {[
-                            { step: "01", title: "CONSULTA", desc: "Discutimos tu idea, ubicación y estilo para asegurar que el diseño encaje perfectamente contigo." },
-                            { step: "02", title: "DISEÑO", desc: "Creamos una pieza única y personalizada basada en tus referencias y nuestra visión artística." },
-                            { step: "03", title: "SESIÓN", desc: "Aplicación del tatuaje en un ambiente estéril, cómodo y profesional con el máximo cuidado." },
-                            { step: "04", title: "CUIDADO", desc: "Te guiamos en el proceso de curación para garantizar que tu tatuaje sane y luzca perfecto." }
+                            { step: "01", title: "CONSULTA", desc: "Hablamos de la idea, la ciudad y si la sesión es a domicilio o en un guest de la ruta." },
+                            { step: "02", title: "DISEÑO", desc: "Boceto a distancia. Ajustamos hasta que el trazo encaje con tu cuerpo y tu historia." },
+                            { step: "03", title: "SESIÓN", desc: "Llego con kit y protocolo, o nos vemos donde esté la ruta. Misma higiene, sin local fijo." },
+                            { step: "04", title: "CUIDADO", desc: "Seguimiento de la curación por mensaje, aunque ya esté en otra ciudad." }
                         ].map((item, i) => (
                             <div key={i} className="relative p-6 border border-border/50 bg-secondary/20 rounded-lg hover:border-primary/30 transition-all group">
                                 <span className="text-6xl font-metal text-primary/10 absolute top-2 right-4 group-hover:text-primary/20 transition-colors">{item.step}</span>

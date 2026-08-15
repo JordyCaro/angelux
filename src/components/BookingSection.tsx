@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Calendar, User, Mail, MessageSquare, Brush, CircleDot, Send } from "lucide-react";
+import { Calendar, User, Mail, MessageSquare, Brush, Home, Plane, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,7 +9,8 @@ import { useToast } from "@/hooks/use-toast";
 
 const serviceTypes = [
   { id: "tattoo", label: "Tatuaje", icon: Brush },
-  { id: "piercing", label: "Perforación", icon: CircleDot },
+  { id: "home", label: "Domicilio", icon: Home },
+  { id: "guest", label: "Guest / ruta", icon: Plane },
 ];
 
 const BookingSection = () => {
@@ -84,16 +85,16 @@ const BookingSection = () => {
                   initial={{ opacity: 0, x: -30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="md:col-span-2 p-8 bg-secondary/30 flex flex-col justify-center"
+                  className="md:col-span-2 flex flex-col justify-center bg-secondary/30 p-5 md:p-8"
                 >
                   <h3 className="font-metal text-2xl mb-6">¿Por qué elegirnos?</h3>
                   
                   <ul className="space-y-4">
                     {[
-                      "Especialistas en blanco y negro",
-                      "Blackwork, black & grey y realismo",
-                      "Tintas negras de alta densidad",
-                      "Esterilización de grado hospitalario",
+                      "Blackwork y contraste como fuerte",
+                      "Sesiones a domicilio",
+                      "Guest spots e internacionales",
+                      "Higiene de grado clínico en movimiento",
                       "Diseños 100% personalizados",
                     ].map((item, index) => (
                       <motion.li
@@ -122,15 +123,15 @@ const BookingSection = () => {
                   initial={{ opacity: 0, x: 30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="md:col-span-3 p-8"
+                  className="md:col-span-3 p-5 md:p-8"
                 >
                   {/* Service Selection */}
-                  <div className="flex gap-4 mb-8">
+                  <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
                       {serviceTypes.map((service) => (
                         <motion.button
                           key={service.id}
                           onClick={() => setSelectedService(service.id)}
-                          className={`flex-1 flex items-center justify-center gap-3 py-4 rounded-lg border transition-all duration-300 ${
+                          className={`flex w-full items-center justify-center gap-3 rounded-lg border py-4 transition-all duration-300 ${
                             selectedService === service.id
                               ? "border-primary bg-primary/10 text-primary"
                               : "border-border hover:border-muted-foreground"
@@ -196,7 +197,7 @@ const BookingSection = () => {
                     <div className="relative">
                       <MessageSquare className="absolute left-4 top-4 w-4 h-4 text-muted-foreground" />
                       <Textarea
-                        placeholder="Describe tu idea en blanco y negro: blackwork, black & grey, realismo..."
+                        placeholder="Cuéntame la idea, la ciudad y si prefieres domicilio o guest..."
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="pl-12 min-h-[120px] bg-secondary/50 border-border focus:border-accent font-cinzel resize-none"

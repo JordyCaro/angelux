@@ -1,12 +1,12 @@
 const items = [
+  "DOMICILIO",
+  "GUEST SPOT",
+  "RUTA",
   "BLACKWORK",
-  "BLACK & GREY",
   "REALISMO",
   "FINELINE",
   "GEOMETRÍA",
-  "SOMBRA",
   "CONTRASTE",
-  "TINTA NEGRA",
 ];
 
 const InkMarquee = () => {

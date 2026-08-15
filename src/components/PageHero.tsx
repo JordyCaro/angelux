@@ -12,7 +12,7 @@ interface PageHeroProps {
 
 const PageHero = ({ title, subtitle, description, index = "—", children }: PageHeroProps) => {
   return (
-    <section className="relative flex min-h-[58vh] items-end overflow-hidden ink-texture pb-16 pt-28">
+    <section className="relative flex min-h-[48vh] items-end overflow-hidden ink-texture pb-12 pt-24 sm:min-h-[58vh] sm:pb-16 sm:pt-28">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
       <motion.div
         className="absolute inset-0 opacity-30"
@@ -39,7 +39,7 @@ const PageHero = ({ title, subtitle, description, index = "—", children }: Pag
           {index} / ANGELUX INK
         </motion.p>
         <motion.h1
-          className="font-metal text-5xl tracking-wide text-primary md:text-7xl"
+          className="font-metal text-4xl tracking-wide text-primary sm:text-5xl md:text-7xl"
           initial={{ y: 24, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.15 }}

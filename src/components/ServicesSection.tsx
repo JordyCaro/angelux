@@ -5,35 +5,35 @@ import { Link } from "react-router-dom";
 const services = [
   {
     n: "01",
-    title: "Tatuajes",
-    subtitle: "Blanco y negro",
+    title: "Tatuaje",
+    subtitle: "A medida",
     description:
-      "Blackwork, black & grey y realismo. Cada diseño se construye para tu cuerpo: contraste, sombra y línea que aguanta el tiempo.",
-    features: ["Blackwork", "Black & Grey", "Realismo", "Fineline"],
+      "Blackwork, realismo, geometría y fineline. El contraste es un fuerte; el diseño se abre a lo que pida tu idea.",
+    features: ["Blackwork", "Realismo", "Geometría", "Fineline"],
   },
   {
     n: "02",
-    title: "Perforaciones",
-    subtitle: "Body piercing",
+    title: "Domicilio",
+    subtitle: "Sesión privada",
     description:
-      "Protocolos de higiene estrictos. Piezas y colocación con criterio, no por moda.",
-    features: ["Facial", "Corporal", "Industrial", "Dermal"],
+      "El kit llega a tu espacio. Higiene, calma y una sesión sin sala de espera.",
+    features: ["Privado", "Portátil", "Protocolo", "Aftercare"],
   },
   {
     n: "03",
-    title: "Productos",
-    subtitle: "Aftercare y estudio",
+    title: "Guest / ruta",
+    subtitle: "Otras ciudades",
     description:
-      "Cuidado post sesión y material seleccionado para que la pieza sane como se tatuó.",
-    features: ["Tintas", "Aftercare", "Protección", "Hidratación"],
+      "Viajes y residencias. Si hay fechas cerca de ti, las publicamos y reservamos con tiempo.",
+    features: ["Guest spot", "Internacional", "Agenda", "Consulta online"],
   },
   {
     n: "04",
     title: "Aftercare",
-    subtitle: "Curación",
+    subtitle: "A distancia",
     description:
-      "Seguimiento de la cicatrización. La sesión no termina cuando bajas de la camilla.",
-    features: ["Cremas", "Jabones", "Guía", "Revisión"],
+      "Seguimiento de la cicatrización aunque la sesión haya sido en otra ciudad o en tu casa.",
+    features: ["Guía", "Revisión", "WhatsApp", "Cuidado"],
   },
 ];
 
@@ -57,7 +57,7 @@ const ServicesSection = () => {
             <h2 className="font-metal text-4xl text-primary md:text-6xl">Servicios</h2>
           </div>
           <p className="max-w-sm font-cinzel text-xs tracking-[0.28em] text-muted-foreground">
-            UNA DISCIPLINA. VARIAS TÉCNICAS.
+            DOMICILIO · GUEST · PIEZA A MEDIDA
           </p>
         </motion.div>
 
@@ -99,7 +99,7 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        <div className="mt-10 flex justify-end">
+        <div className="mt-10 flex justify-center md:justify-end">
           <Link to="/servicios" className="font-cinzel text-xs tracking-[0.28em] text-angelux-steel hover:text-primary">
             VER PROCESO →
           </Link>
