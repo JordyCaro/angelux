@@ -7,9 +7,10 @@ const Services = () => {
     return (
         <PageLayout>
             <PageHero
+                index="02"
                 title="SERVICIOS"
                 subtitle="ARTE EN TU PIEL"
-                description="Explora nuestra gama de estilos y servicios de tatuaje, desde realismo hasta diseños personalizados únicos."
+                description="Especialistas en blanco y negro: blackwork, black & grey, realismo y fineline. Cada pieza se diseña a medida."
             />
             <div className="py-12 md:py-20 space-y-20 md:space-y-32">
                 <ServicesSection />

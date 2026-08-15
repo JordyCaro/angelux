@@ -142,11 +142,12 @@ const ProductsSection = () => {
           transition={{ duration: 0.8 }}
         >
           <div>
+            <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">TIENDA</p>
             <h2 className="font-metal text-4xl md:text-6xl lg:text-7xl mb-4 text-primary">
-              Nuestra Tienda
+              Material
             </h2>
             <p className="font-cinzel text-sm tracking-[0.3em] text-muted-foreground uppercase">
-              Productos profesionales para tatuadores
+              Aftercare y herramientas de estudio
             </p>
           </div>
 

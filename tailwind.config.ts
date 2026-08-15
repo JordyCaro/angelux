@@ -57,11 +57,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // SDARCK TATTOO brand colors
-        sdarck: {
-          black: "hsl(var(--sdarck-black))",
-          green: "hsl(var(--sdarck-green))",
-          cream: "hsl(var(--sdarck-cream))",
+        // Angelux Ink brand colors
+        angelux: {
+          black: "hsl(var(--angelux-black))",
+          blue: "hsl(var(--angelux-blue))",
+          navy: "hsl(var(--angelux-navy))",
+          steel: "hsl(var(--angelux-steel))",
+          cream: "hsl(var(--angelux-cream))",
         },
       },
       borderRadius: {
@@ -86,10 +88,15 @@ export default {
             height: "0",
           },
         },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        marquee: "marquee 32s linear infinite",
       },
     },
   },

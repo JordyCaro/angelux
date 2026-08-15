@@ -52,11 +52,12 @@ const FacilitiesSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
+          <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">ATELIER</p>
           <h2 className="font-metal text-4xl md:text-6xl lg:text-7xl mb-4 text-primary">
-            Nuestras Instalaciones
+            El estudio
           </h2>
           <p className="font-cinzel text-sm tracking-[0.3em] text-muted-foreground uppercase">
-            Un espacio diseñado para el arte
+            Luz, silencio y tinta negra
           </p>
         </motion.div>
 

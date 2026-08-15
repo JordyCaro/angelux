@@ -1,33 +1,39 @@
 import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { X, ZoomIn } from "lucide-react";
+import { X } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const galleryImages = {
   blackwork: [
-    { id: 1, title: "Skull Mandala", artist: "Alex Ink" },
-    { id: 2, title: "Dark Forest", artist: "Maria Shadow" },
-    { id: 3, title: "Serpent", artist: "Alex Ink" },
-    { id: 4, title: "Raven", artist: "Carlos Black" },
-    { id: 5, title: "Geometric Wolf", artist: "Maria Shadow" },
-    { id: 6, title: "Sacred Geometry", artist: "Carlos Black" },
+    { id: 1, title: "Mandala en tinta", artist: "Angelux Ink", span: "lg:col-span-2 lg:row-span-2" },
+    { id: 2, title: "Bosque oscuro", artist: "Angelux Ink", span: "" },
+    { id: 3, title: "Serpiente", artist: "Angelux Ink", span: "" },
+    { id: 4, title: "Cuervo", artist: "Angelux Ink", span: "lg:col-span-2" },
+    { id: 5, title: "Lobo geométrico", artist: "Angelux Ink", span: "" },
+    { id: 6, title: "Geometría sagrada", artist: "Angelux Ink", span: "" },
   ],
-  dotwork: [
-    { id: 7, title: "Mandala Full Sleeve", artist: "Maria Shadow" },
-    { id: 8, title: "Dot Skull", artist: "Alex Ink" },
-    { id: 9, title: "Cosmic Eye", artist: "Carlos Black" },
-    { id: 10, title: "Geometric Pattern", artist: "Maria Shadow" },
+  grey: [
+    { id: 7, title: "Retrato en sombra", artist: "Angelux Ink", span: "lg:col-span-2" },
+    { id: 8, title: "Manga black & grey", artist: "Angelux Ink", span: "" },
+    { id: 9, title: "Ojo cósmico", artist: "Angelux Ink", span: "" },
+    { id: 10, title: "Realismo floral", artist: "Angelux Ink", span: "lg:col-span-2" },
   ],
   piercing: [
-    { id: 11, title: "Industrial Setup", artist: "Luna Pierce" },
-    { id: 12, title: "Septum Gold", artist: "Luna Pierce" },
-    { id: 13, title: "Helix Collection", artist: "Luna Pierce" },
-    { id: 14, title: "Medusa Diamond", artist: "Luna Pierce" },
+    { id: 11, title: "Industrial", artist: "Angelux Ink", span: "" },
+    { id: 12, title: "Septum", artist: "Angelux Ink", span: "" },
+    { id: 13, title: "Helix", artist: "Angelux Ink", span: "" },
+    { id: 14, title: "Medusa", artist: "Angelux Ink", span: "" },
   ],
 };
 
-const GalleryImage = ({ image, index, onClick }: { 
-  image: typeof galleryImages.blackwork[0]; 
+type GalleryItem = (typeof galleryImages.blackwork)[0];
+
+const GalleryImage = ({
+  image,
+  index,
+  onClick,
+}: {
+  image: GalleryItem;
   index: number;
   onClick: () => void;
 }) => {
@@ -35,73 +41,72 @@ const GalleryImage = ({ image, index, onClick }: {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <motion.div
+    <motion.button
+      type="button"
       ref={ref}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative aspect-square overflow-hidden rounded-lg cursor-pointer"
+      initial={{ opacity: 0, y: 28 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.55, delay: index * 0.07 }}
+      className={`group relative min-h-[220px] overflow-hidden text-left ${image.span || ""} ${
+        image.span.includes("row-span") ? "min-h-[460px]" : ""
+      }`}
       onClick={onClick}
     >
-      {/* Placeholder image with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-secondary via-muted to-secondary" />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <span className="font-gothic text-4xl text-muted-foreground/30">{image.id}</span>
-      </div>
-      
-      {/* Hover overlay */}
-      <motion.div 
-        className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-      >
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <ZoomIn className="w-8 h-8 text-foreground mb-3" />
-          <h4 className="font-metal text-lg text-foreground">{image.title}</h4>
-          <p className="font-cinzel text-xs text-muted-foreground tracking-wider">by {image.artist}</p>
-        </div>
-      </motion.div>
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `linear-gradient(145deg, hsl(220 30% ${12 + (image.id % 5) * 3}%) 0%, hsl(215 40% 8%) 50%, hsl(222 47% 5%) 100%)`,
+        }}
+      />
+      <div className="absolute inset-0 opacity-30 mix-blend-overlay ink-texture" />
+      <div className="absolute inset-3 border border-white/5 transition-colors duration-500 group-hover:border-angelux-steel/50" />
 
-      {/* Border effect on hover */}
-      <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/50 transition-colors duration-300 rounded-lg" />
-    </motion.div>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="font-metal text-6xl text-white/10">{String(image.id).padStart(2, "0")}</span>
+      </div>
+
+      <div className="absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-background via-background/70 to-transparent p-5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+        <p className="font-cinzel text-[10px] tracking-[0.28em] text-angelux-steel">ARCHIVO</p>
+        <h4 className="mt-1 font-metal text-xl text-foreground">{image.title}</h4>
+      </div>
+    </motion.button>
   );
 };
 
 const GallerySection = () => {
-  const [selectedImage, setSelectedImage] = useState<typeof galleryImages.blackwork[0] | null>(null);
+  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
   const titleRef = useRef(null);
   const isInView = useInView(titleRef, { once: true });
 
   return (
-    <section id="gallery" className="py-24 relative overflow-hidden bg-card/30">
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Section Title */}
+    <section id="gallery" className="relative overflow-hidden border-y border-border bg-card/20 py-24">
+      <div className="container relative z-10 mx-auto px-4">
         <motion.div
           ref={titleRef}
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
+          className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end"
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
         >
-          <h2 className="font-metal text-4xl md:text-6xl lg:text-7xl mb-4 text-primary">
-            Nuestra Galería
-          </h2>
-          <p className="font-cinzel text-sm tracking-[0.3em] text-muted-foreground uppercase">
-            Obras que hablan por sí solas
+          <div>
+            <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">ARCHIVO</p>
+            <h2 className="font-metal text-4xl text-primary md:text-6xl">Galería</h2>
+          </div>
+          <p className="max-w-xs font-montserrat text-sm text-muted-foreground">
+            Piezas en tinta negra. El color no entra en esta sala.
           </p>
         </motion.div>
 
-        {/* Gallery Tabs */}
         <Tabs defaultValue="blackwork" className="w-full">
-          <TabsList className="flex justify-center gap-2 bg-transparent mb-12 flex-wrap">
+          <TabsList className="mb-10 h-auto w-full justify-start gap-0 rounded-none border-b border-border bg-transparent p-0">
             {[
               { value: "blackwork", label: "Blackwork" },
-              { value: "dotwork", label: "Dotwork" },
+              { value: "grey", label: "Black & Grey" },
               { value: "piercing", label: "Piercings" },
             ].map((tab) => (
               <TabsTrigger
                 key={tab.value}
                 value={tab.value}
-                className="font-cinzel tracking-wider text-sm px-6 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-full border border-border data-[state=active]:border-primary transition-all duration-300"
+                className="rounded-none border-b-2 border-transparent bg-transparent px-5 py-3 font-cinzel text-xs tracking-[0.22em] text-muted-foreground shadow-none data-[state=active]:border-angelux-steel data-[state=active]:bg-transparent data-[state=active]:text-primary"
               >
                 {tab.label}
               </TabsTrigger>
@@ -110,12 +115,7 @@ const GallerySection = () => {
 
           {Object.entries(galleryImages).map(([key, images]) => (
             <TabsContent key={key} value={key}>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
-              >
+              <div className="grid grid-cols-2 gap-2 lg:grid-cols-4 lg:grid-rows-2">
                 {images.map((image, index) => (
                   <GalleryImage
                     key={image.id}
@@ -124,43 +124,44 @@ const GallerySection = () => {
                     onClick={() => setSelectedImage(image)}
                   />
                 ))}
-              </motion.div>
+              </div>
             </TabsContent>
           ))}
         </Tabs>
       </div>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-background/95 backdrop-blur-lg flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 p-4 backdrop-blur-lg"
             onClick={() => setSelectedImage(null)}
           >
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              className="relative max-w-4xl w-full aspect-square bg-card rounded-lg overflow-hidden"
+              exit={{ scale: 0.92, opacity: 0 }}
+              className="relative aspect-square w-full max-w-3xl overflow-hidden border border-angelux-steel/30"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary via-muted to-secondary flex items-center justify-center">
-                <span className="font-gothic text-8xl text-muted-foreground/30">{selectedImage.id}</span>
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary via-muted to-background" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="font-metal text-8xl text-muted-foreground/20">
+                  {String(selectedImage.id).padStart(2, "0")}
+                </span>
               </div>
-              
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background to-transparent">
+              <div className="absolute inset-x-0 bottom-0 p-6">
                 <h3 className="font-metal text-2xl">{selectedImage.title}</h3>
-                <p className="font-cinzel text-muted-foreground">by {selectedImage.artist}</p>
+                <p className="font-cinzel text-xs tracking-[0.2em] text-muted-foreground">{selectedImage.artist}</p>
               </div>
-
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 p-2 bg-background/50 rounded-full hover:bg-background transition-colors"
+                className="absolute right-4 top-4 border border-border p-2 hover:border-primary"
+                aria-label="Cerrar"
               >
-                <X className="w-6 h-6" />
+                <X className="h-5 w-5" />
               </button>
             </motion.div>
           </motion.div>

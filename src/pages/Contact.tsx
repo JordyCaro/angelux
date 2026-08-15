@@ -8,6 +8,7 @@ const Contact = () => {
     return (
         <PageLayout>
             <PageHero
+                index="06"
                 title="CONTACTO"
                 subtitle="HABLEMOS DE TU PROYECTO"
                 description="Estamos listos para hacer realidad tu idea. Contáctanos para consultas, cotizaciones o para agendar tu cita."
@@ -50,8 +51,8 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h3 className="font-cinzel text-white text-lg mb-1">Email</h3>
-                                        <p>contacto@sdarcktattoo.com</p>
-                                        <p>citas@sdarcktattoo.com</p>
+                                        <p>contacto@angeluxink.com</p>
+                                        <p>citas@angeluxink.com</p>
                                     </div>
                                 </div>
 

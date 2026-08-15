@@ -6,73 +6,75 @@
 
 @layer base {
   :root {
-    /* SDARCK TATTOO Brand Colors */
-    --background: 0 0% 0%;
-    --foreground: 90 3% 95%;
+    /* Angelux Ink — negro, tinta y azul profundo */
+    --background: 222 47% 3%;
+    --foreground: 210 20% 96%;
 
-    --card: 156 54% 10%;
-    --card-foreground: 90 3% 95%;
+    --card: 220 40% 7%;
+    --card-foreground: 210 20% 96%;
 
-    --popover: 0 0% 2%;
-    --popover-foreground: 90 3% 95%;
+    --popover: 222 47% 4%;
+    --popover-foreground: 210 20% 96%;
 
-    --primary: 90 3% 95%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 210 20% 96%;
+    --primary-foreground: 222 47% 4%;
 
-    --secondary: 156 54% 8%;
-    --secondary-foreground: 90 3% 95%;
+    --secondary: 220 45% 8%;
+    --secondary-foreground: 210 20% 96%;
 
-    --muted: 156 30% 12%;
-    --muted-foreground: 90 3% 65%;
+    --muted: 220 30% 12%;
+    --muted-foreground: 215 15% 65%;
 
-    /* Verde oscuro de marca #0A2B1F */
-    --accent: 156 54% 10%;
-    --accent-foreground: 90 3% 95%;
+    /* Azul oscuro de marca */
+    --accent: 215 55% 14%;
+    --accent-foreground: 210 20% 96%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 156 30% 15%;
-    --input: 156 30% 12%;
-    --ring: 156 54% 20%;
+    --border: 220 30% 16%;
+    --input: 220 30% 12%;
+    --ring: 215 60% 32%;
 
-    --radius: 0.5rem;
+    --radius: 0.125rem;
 
     /* Custom brand tokens */
-    --sdarck-black: 0 0% 0%;
-    --sdarck-green: 156 54% 10%;
-    --sdarck-cream: 60 6% 95%;
-    --ink-drip: 156 30% 6%;
+    --angelux-black: 0 0% 0%;
+    --angelux-blue: 215 55% 14%;
+    --angelux-navy: 220 50% 8%;
+    --angelux-steel: 215 45% 28%;
+    --angelux-cream: 60 6% 95%;
+    --ink-drip: 220 40% 5%;
   }
 
   .dark {
-    --background: 0 0% 0%;
-    --foreground: 90 3% 95%;
+    --background: 222 47% 3%;
+    --foreground: 210 20% 96%;
 
-    --card: 156 54% 10%;
-    --card-foreground: 90 3% 95%;
+    --card: 220 40% 7%;
+    --card-foreground: 210 20% 96%;
 
-    --popover: 0 0% 2%;
-    --popover-foreground: 90 3% 95%;
+    --popover: 222 47% 4%;
+    --popover-foreground: 210 20% 96%;
 
-    --primary: 90 3% 95%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 210 20% 96%;
+    --primary-foreground: 222 47% 4%;
 
-    --secondary: 156 54% 8%;
-    --secondary-foreground: 90 3% 95%;
+    --secondary: 220 45% 8%;
+    --secondary-foreground: 210 20% 96%;
 
-    --muted: 156 30% 12%;
-    --muted-foreground: 90 3% 65%;
+    --muted: 220 30% 12%;
+    --muted-foreground: 215 15% 65%;
 
-    --accent: 156 54% 10%;
-    --accent-foreground: 90 3% 95%;
+    --accent: 215 55% 14%;
+    --accent-foreground: 210 20% 96%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 156 30% 15%;
-    --input: 156 30% 12%;
-    --ring: 156 54% 20%;
+    --border: 220 30% 16%;
+    --input: 220 30% 12%;
+    --ring: 215 60% 32%;
   }
 }
 
@@ -90,7 +92,7 @@
     font-family: 'Metal Mania', cursive;
   }
 
-  /* Sdarck brand fonts */
+  /* Angelux Ink brand fonts */
   .font-gothic {
     font-family: 'UnifrakturMaguntia', cursive;
   }
@@ -217,4 +219,35 @@
   border: 1px solid hsl(var(--border));
   mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   pointer-events: none;
+}
+
+/* Film grain overlay */
+.film-grain {
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Stencil / tattoo-template button */
+.btn-stencil {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn-stencil:hover {
+  background: hsl(var(--foreground));
+  box-shadow: 0 0 28px hsl(var(--angelux-steel) / 0.35);
+  transform: translateY(-1px);
+}
+
+/* Selection */
+::selection {
+  background: hsl(var(--angelux-steel) / 0.45);
+  color: hsl(var(--foreground));
 }

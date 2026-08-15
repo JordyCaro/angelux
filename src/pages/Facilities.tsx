@@ -7,9 +7,10 @@ const Facilities = () => {
     return (
         <PageLayout>
             <PageHero
-                title="INSTALACIONES"
-                subtitle="TU ESPACIO SEGURO"
-                description="Conoce nuestro estudio, equipado con tecnología de punta y diseñado para tu máxima comodidad y seguridad."
+                index="05"
+                title="ESTUDIO"
+                subtitle="EL ATELIER"
+                description="Estudio pensado para sesiones de blanco y negro: luz controlada, higiene clínica y un ambiente oscuro donde el contraste es protagonista."
             />
             <div className="py-12 md:py-20 space-y-20 md:space-y-32">
                 <FacilitiesSection />
@@ -27,7 +28,7 @@ const Facilities = () => {
                                 { title: "PRIVACIDAD", desc: "Cabinas privadas para tu confort y tranquilidad durante la sesión." }
                             ].map((item, i) => (
                                 <div key={i} className="flex flex-col items-center p-4">
-                                    <div className="w-16 h-16 rounded-full border border-primary/30 flex items-center justify-center mb-4 bg-background shadow-[0_0_15px_rgba(10,43,31,0.3)]">
+                                    <div className="w-16 h-16 rounded-full border border-primary/30 flex items-center justify-center mb-4 bg-background shadow-[0_0_18px_hsla(215,60%,32%,0.45)]">
                                         {/* Simplified visual representation of icons */}
                                         <div className="w-8 h-8 bg-primary/20 rounded-sm" />
                                     </div>

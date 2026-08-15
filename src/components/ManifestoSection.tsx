@@ -1,0 +1,75 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const pillars = [
+  {
+    n: "01",
+    title: "Contraste",
+    text: "Negro sólido contra piel. Cada pieza se construye con peso visual, no con relleno.",
+  },
+  {
+    n: "02",
+    title: "Sombra",
+    text: "Black & grey con transiciones limpias. El volumen nace de la luz, no del color.",
+  },
+  {
+    n: "03",
+    title: "Precisión",
+    text: "Línea fina o blackwork denso: el trazo se sostiene. Nada accidental.",
+  },
+];
+
+const ManifestoSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+
+  return (
+    <section ref={ref} className="relative overflow-hidden border-b border-border py-24">
+      <div className="absolute inset-0 ink-texture opacity-40" />
+      <p className="pointer-events-none absolute -right-6 top-8 font-metal text-[20vw] leading-none text-primary/[0.03] md:text-[12rem]">
+        INK
+      </p>
+
+      <div className="container relative z-10 mx-auto px-4">
+        <div className="mb-16 grid items-end gap-8 md:grid-cols-12">
+          <motion.div
+            className="md:col-span-7"
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="mb-4 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">ATELIER · BLANCO Y NEGRO</p>
+            <h2 className="font-metal text-4xl text-primary md:text-6xl">La tinta no pide permiso</h2>
+          </motion.div>
+          <motion.p
+            className="max-w-md font-montserrat text-sm leading-relaxed text-muted-foreground md:col-span-5 md:justify-self-end"
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.15 }}
+          >
+            Angelux Ink es un estudio de una sola disciplina: tatuaje en escala de grises. Menos ruido, más carácter.
+          </motion.p>
+        </div>
+
+        <div className="grid gap-px bg-border md:grid-cols-3">
+          {pillars.map((pillar, i) => (
+            <motion.article
+              key={pillar.n}
+              className="group bg-background p-8 transition-colors hover:bg-card"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.1 + i * 0.12 }}
+            >
+              <span className="font-cinzel text-xs tracking-[0.3em] text-angelux-steel">{pillar.n}</span>
+              <h3 className="mt-4 font-metal text-3xl text-primary">{pillar.title}</h3>
+              <div className="my-5 h-px w-12 bg-angelux-steel/60 transition-all duration-500 group-hover:w-24" />
+              <p className="font-montserrat text-sm leading-relaxed text-muted-foreground">{pillar.text}</p>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ManifestoSection;

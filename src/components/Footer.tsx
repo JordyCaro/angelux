@@ -1,154 +1,132 @@
 import { motion } from "framer-motion";
-import { Skull, Instagram, Facebook, MapPin, Mail, Phone } from "lucide-react";
+import { Instagram, Facebook, MapPin, Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import BrandMark from "@/components/BrandMark";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="relative py-16 bg-card/50 border-t border-border overflow-hidden">
-      {/* Ink texture overlay */}
-      <div className="absolute inset-0 ink-texture opacity-30" />
+    <footer id="contact" className="relative overflow-hidden border-t border-border bg-background py-20">
+      <div className="absolute inset-0 ink-texture opacity-25" />
+      <p className="pointer-events-none absolute -bottom-10 left-0 font-metal text-[22vw] leading-none text-primary/[0.035]">
+        ANGELUX
+      </p>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
+      <div className="container relative z-10 mx-auto px-4">
+        <div className="mb-16 grid gap-12 lg:grid-cols-12">
           <motion.div
+            className="lg:col-span-5"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
           >
-            <a href="#hero" className="flex items-center gap-3 group mb-6">
-              <Skull className="w-10 h-10 text-primary group-hover:animate-pulse" />
-              <span className="font-metal text-xl tracking-wider">
-                SDARCK<span className="text-primary/70">TATTOO</span>
+            <Link to="/" className="mb-6 flex items-center gap-3">
+              <BrandMark className="h-10 w-10 text-primary" />
+              <span className="font-cinzel text-sm tracking-[0.28em]">
+                ANGELUX<span className="ml-1 text-angelux-steel">INK</span>
               </span>
-            </a>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6 font-montserrat">
-              Diseñamos piezas personalizadas y experiencias diferenciadas, pensadas para quienes valoran el arte, el detalle y la calidad.
+            </Link>
+            <p className="mb-8 max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground">
+              Estudio de tatuaje en blanco y negro. Blackwork, black & grey y realismo — con detalle, sombra y carácter.
             </p>
-            <div className="flex gap-4">
-              <motion.a
+            <div className="flex gap-3">
+              <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
+                className="flex h-10 w-10 items-center justify-center border border-border transition-colors hover:border-angelux-steel hover:text-primary"
+                aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5" />
-              </motion.a>
-              <motion.a
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
+                className="flex h-10 w-10 items-center justify-center border border-border transition-colors hover:border-angelux-steel hover:text-primary"
+                aria-label="Facebook"
               >
-                <Facebook className="w-5 h-5" />
-              </motion.a>
+                <Facebook className="h-4 w-4" />
+              </a>
             </div>
           </motion.div>
 
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <h4 className="font-metal text-lg mb-6">Navegación</h4>
-            <ul className="space-y-3">
-              {[
-                { name: "Inicio", path: "/" },
-                { name: "Servicios", path: "/servicios" },
-                { name: "Galería", path: "/galeria" },
-                { name: "Productos", path: "/productos" },
-                { name: "Instalaciones", path: "/instalaciones" },
-                { name: "Agendar Cita", path: "/contacto" }
-              ].map((item) => (
-                <li key={item.name}>
-                  <Link
-                    to={item.path}
-                    className="font-montserrat text-sm text-muted-foreground hover:text-primary transition-colors tracking-wider"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          <div className="grid gap-10 sm:grid-cols-3 lg:col-span-7">
+            <div>
+              <h4 className="mb-5 font-cinzel text-[11px] tracking-[0.3em] text-angelux-steel">NAVEGACIÓN</h4>
+              <ul className="space-y-3">
+                {[
+                  { name: "Inicio", path: "/" },
+                  { name: "Servicios", path: "/servicios" },
+                  { name: "Galería", path: "/galeria" },
+                  { name: "Productos", path: "/productos" },
+                  { name: "Estudio", path: "/instalaciones" },
+                  { name: "Agendar", path: "/contacto" },
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      to={item.path}
+                      className="font-montserrat text-sm text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Services */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h4 className="font-metal text-lg mb-6">Servicios</h4>
-            <ul className="space-y-3">
-              {["Tatuajes Blackwork", "Tatuajes Dotwork", "Perforaciones", "Productos Profesionales", "Aftercare", "Asesoría"].map((item) => (
-                <li key={item}>
-                  <a
-                    href="#services"
-                    className="font-montserrat text-sm text-muted-foreground hover:text-primary transition-colors tracking-wider"
-                  >
-                    {item}
+            <div>
+              <h4 className="mb-5 font-cinzel text-[11px] tracking-[0.3em] text-angelux-steel">OFICIO</h4>
+              <ul className="space-y-3">
+                {["Blackwork", "Black & Grey", "Realismo", "Fineline", "Aftercare"].map((item) => (
+                  <li key={item}>
+                    <Link
+                      to="/servicios"
+                      className="font-montserrat text-sm text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="mb-5 font-cinzel text-[11px] tracking-[0.3em] text-angelux-steel">CONTACTO</h4>
+              <ul className="space-y-4 text-sm text-muted-foreground">
+                <li className="flex items-start gap-3">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-angelux-steel" />
+                  <span>
+                    Tu ubicación
+                    <br />
+                    Ciudad, País
+                  </span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Phone className="h-4 w-4 shrink-0 text-angelux-steel" />
+                  <a href="tel:+525551234567" className="hover:text-primary">
+                    +52 555 123 4567
                   </a>
                 </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Contact */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <h4 className="font-metal text-lg mb-6">Contacto</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span className="font-montserrat text-sm text-muted-foreground tracking-wider">
-                  Tu ubicación<br />
-                  Ciudad, País
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-primary shrink-0" />
-                <a href="tel:+525551234567" className="font-montserrat text-sm text-muted-foreground hover:text-primary transition-colors tracking-wider">
-                  +52 555 123 4567
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary shrink-0" />
-                <a href="mailto:info@sdarcktattoo.com" className="font-montserrat text-sm text-muted-foreground hover:text-primary transition-colors tracking-wider">
-                  info@sdarcktattoo.com
-                </a>
-              </li>
-            </ul>
-          </motion.div>
+                <li className="flex items-center gap-3">
+                  <Mail className="h-4 w-4 shrink-0 text-angelux-steel" />
+                  <a href="mailto:info@angeluxink.com" className="hover:text-primary">
+                    info@angeluxink.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        {/* Bottom bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4"
-        >
-          <p className="font-montserrat text-xs text-muted-foreground tracking-wider">
-            © 2024 SDARCK TATTOO. Todos los derechos reservados.
+        <div className="flex flex-col justify-between gap-4 border-t border-border pt-8 md:flex-row md:items-center">
+          <p className="font-cinzel text-[10px] tracking-[0.2em] text-muted-foreground">
+            © 2026 ANGELUX INK — TODOS LOS DERECHOS RESERVADOS
           </p>
           <div className="flex gap-6">
-            <a href="#" className="font-montserrat text-xs text-muted-foreground hover:text-primary transition-colors tracking-wider">
-              Política de Privacidad
+            <a href="#" className="font-cinzel text-[10px] tracking-[0.2em] text-muted-foreground hover:text-primary">
+              PRIVACIDAD
             </a>
-            <a href="#" className="font-montserrat text-xs text-muted-foreground hover:text-primary transition-colors tracking-wider">
-              Términos de Servicio
+            <a href="#" className="font-cinzel text-[10px] tracking-[0.2em] text-muted-foreground hover:text-primary">
+              TÉRMINOS
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </footer>
   );

@@ -1,131 +1,108 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Brush, CircleDot, Package, Heart } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const services = [
   {
-    icon: Brush,
+    n: "01",
     title: "Tatuajes",
-    subtitle: "Blackwork & Custom",
-    description: "Respetamos la esencia de cada persona, adaptando nuestro estilo y creatividad para crear tatuajes que conecten con su identidad.",
-    features: ["Blackwork", "Dotwork", "Geometric", "Fineline"]
+    subtitle: "Blanco y negro",
+    description:
+      "Blackwork, black & grey y realismo. Cada diseño se construye para tu cuerpo: contraste, sombra y línea que aguanta el tiempo.",
+    features: ["Blackwork", "Black & Grey", "Realismo", "Fineline"],
   },
   {
-    icon: CircleDot,
+    n: "02",
     title: "Perforaciones",
-    subtitle: "Body Piercing",
-    description: "Aplicamos protocolos rigurosos de higiene y bioseguridad, garantizando procesos responsables que priorizan tu salud.",
-    features: ["Facial", "Corporal", "Industrial", "Dermal"]
+    subtitle: "Body piercing",
+    description:
+      "Protocolos de higiene estrictos. Piezas y colocación con criterio, no por moda.",
+    features: ["Facial", "Corporal", "Industrial", "Dermal"],
   },
   {
-    icon: Package,
+    n: "03",
     title: "Productos",
-    subtitle: "Tienda Profesional",
-    description: "Perfeccionamos técnicas y procesos para mantener una propuesta versátil y actual con los más altos estándares.",
-    features: ["Tintas", "Máquinas", "Camillas", "Aftercare"]
+    subtitle: "Aftercare y estudio",
+    description:
+      "Cuidado post sesión y material seleccionado para que la pieza sane como se tatuó.",
+    features: ["Tintas", "Aftercare", "Protección", "Hidratación"],
   },
   {
-    icon: Heart,
+    n: "04",
     title: "Aftercare",
-    subtitle: "Cuidados",
-    description: "Brindamos una experiencia integral, organizada y responsable, cuidando cada etapa del proceso artístico.",
-    features: ["Cremas", "Jabones", "Protección", "Hidratación"]
-  }
+    subtitle: "Curación",
+    description:
+      "Seguimiento de la cicatrización. La sesión no termina cuando bajas de la camilla.",
+    features: ["Cremas", "Jabones", "Guía", "Revisión"],
+  },
 ];
-
-const ServiceCard = ({ service, index }: { service: typeof services[0]; index: number }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
-    >
-      <Card className="group relative h-full bg-card/50 border-border hover:border-primary/50 transition-all duration-500 overflow-hidden grunge-border">
-        {/* Hover glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-        <CardContent className="relative p-8">
-          {/* Icon */}
-          <motion.div
-            className="mb-6"
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-              <service.icon className="w-8 h-8 text-primary" />
-            </div>
-          </motion.div>
-
-          {/* Title */}
-          <h3 className="font-metal text-2xl md:text-3xl mb-1 group-hover:text-primary transition-colors duration-300">
-            {service.title}
-          </h3>
-          <p className="font-cinzel text-xs tracking-[0.2em] text-muted-foreground uppercase mb-4">
-            {service.subtitle}
-          </p>
-
-          {/* Description */}
-          <p className="text-muted-foreground mb-6 leading-relaxed font-montserrat">
-            {service.description}
-          </p>
-
-          {/* Features */}
-          <div className="flex flex-wrap gap-2">
-            {service.features.map((feature) => (
-              <span
-                key={feature}
-                className="text-xs font-cinzel tracking-wider px-3 py-1 bg-secondary/50 rounded-full text-muted-foreground"
-              >
-                {feature}
-              </span>
-            ))}
-          </div>
-
-          {/* Decorative line */}
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-        </CardContent>
-      </Card>
-    </motion.div>
-  );
-};
 
 const ServicesSection = () => {
   const titleRef = useRef(null);
   const isInView = useInView(titleRef, { once: true });
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 ink-texture opacity-50" />
+    <section id="services" className="relative overflow-hidden py-24">
+      <div className="absolute inset-0 ink-texture opacity-40" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Section Title */}
+      <div className="container relative z-10 mx-auto px-4">
         <motion.div
           ref={titleRef}
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
+          className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end"
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
         >
-          <h2 className="font-metal text-4xl md:text-6xl lg:text-7xl mb-4 text-primary">
-            Nuestros Servicios
-          </h2>
-          <p className="font-cinzel text-sm tracking-[0.3em] text-muted-foreground uppercase">
-            Profesionalismo • Confianza • Seguridad
+          <div>
+            <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">OFICIO</p>
+            <h2 className="font-metal text-4xl text-primary md:text-6xl">Servicios</h2>
+          </div>
+          <p className="max-w-sm font-cinzel text-xs tracking-[0.28em] text-muted-foreground">
+            UNA DISCIPLINA. VARIAS TÉCNICAS.
           </p>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 px-4 md:px-0">
+        <div className="divide-y divide-border border-y border-border">
           {services.map((service, index) => (
-            <ServiceCard key={service.title} service={service} index={index} />
+            <motion.article
+              key={service.n}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: index * 0.06 }}
+              className="group grid gap-6 py-10 md:grid-cols-12 md:items-center"
+            >
+              <span className="font-cinzel text-xs tracking-[0.3em] text-angelux-steel md:col-span-1">
+                {service.n}
+              </span>
+              <div className="md:col-span-4">
+                <h3 className="font-metal text-3xl text-primary transition-transform duration-500 group-hover:translate-x-2 md:text-4xl">
+                  {service.title}
+                </h3>
+                <p className="mt-1 font-cinzel text-[11px] tracking-[0.25em] text-muted-foreground">
+                  {service.subtitle}
+                </p>
+              </div>
+              <p className="font-montserrat text-sm leading-relaxed text-muted-foreground md:col-span-4">
+                {service.description}
+              </p>
+              <div className="flex flex-wrap gap-2 md:col-span-3 md:justify-end">
+                {service.features.map((feature) => (
+                  <span
+                    key={feature}
+                    className="border border-border px-3 py-1 font-cinzel text-[10px] tracking-wider text-muted-foreground"
+                  >
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </motion.article>
           ))}
+        </div>
+
+        <div className="mt-10 flex justify-end">
+          <Link to="/servicios" className="font-cinzel text-xs tracking-[0.28em] text-angelux-steel hover:text-primary">
+            VER PROCESO →
+          </Link>
         </div>
       </div>
     </section>

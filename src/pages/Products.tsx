@@ -6,9 +6,10 @@ const Products = () => {
     return (
         <PageLayout>
             <PageHero
+                index="04"
                 title="PRODUCTOS"
                 subtitle="CUIDADO Y AFTERCARE"
-                description="Productos seleccionados para el cuidado óptimo de tus tatuajes y merchandising exclusivo de SDARCK."
+                description="Productos seleccionados para el cuidado de tatuajes en blanco y negro, y merchandising exclusivo de Angelux Ink."
             />
             <div className="py-10">
                 <ProductsSection />

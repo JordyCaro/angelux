@@ -5,7 +5,7 @@ const InkBackground = () => {
         <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
             {/* Organic fluid shape 1 - Top Left */}
             <motion.svg
-                className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] opacity-30 text-white"
+                className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] opacity-40 text-angelux-steel"
                 viewBox="0 0 200 200"
                 xmlns="http://www.w3.org/2000/svg"
                 animate={{
@@ -38,7 +38,7 @@ const InkBackground = () => {
 
             {/* Organic fluid shape 2 - Bottom Right */}
             <motion.svg
-                className="absolute bottom-[-10%] right-[-10%] w-[70vw] h-[70vw] opacity-20 text-white"
+                className="absolute bottom-[-10%] right-[-10%] w-[70vw] h-[70vw] opacity-25 text-angelux-blue"
                 viewBox="0 0 200 200"
                 xmlns="http://www.w3.org/2000/svg"
                 animate={{
@@ -65,7 +65,7 @@ const InkBackground = () => {
             {[...Array(6)].map((_, i) => (
                 <motion.div
                     key={i}
-                    className="absolute top-0 w-[1px] bg-gradient-to-b from-transparent via-white/40 to-transparent"
+                    className="absolute top-0 w-[1px] bg-gradient-to-b from-transparent via-angelux-steel/50 to-transparent"
                     style={{
                         left: `${15 + i * 15}%`,
                         height: "150px"

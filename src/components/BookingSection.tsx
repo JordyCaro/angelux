@@ -66,11 +66,12 @@ const BookingSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
+          <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">RESERVA</p>
           <h2 className="font-metal text-4xl md:text-6xl lg:text-7xl mb-4 text-primary">
-            Agenda tu Cita
+            Agenda
           </h2>
           <p className="font-cinzel text-sm tracking-[0.3em] text-muted-foreground uppercase">
-            Comienza tu próximo proyecto de arte corporal
+            El siguiente trazo empieza aquí
           </p>
         </motion.div>
 
@@ -89,11 +90,11 @@ const BookingSection = () => {
                   
                   <ul className="space-y-4">
                     {[
-                      "Respetamos la esencia de cada persona",
-                      "Tintas de alta calidad",
+                      "Especialistas en blanco y negro",
+                      "Blackwork, black & grey y realismo",
+                      "Tintas negras de alta densidad",
                       "Esterilización de grado hospitalario",
                       "Diseños 100% personalizados",
-                      "Seguimiento post-procedimiento",
                     ].map((item, index) => (
                       <motion.li
                         key={index}
@@ -110,8 +111,8 @@ const BookingSection = () => {
 
                   <div className="mt-8 pt-8 border-t border-border">
                     <p className="font-cinzel text-xs tracking-wider text-muted-foreground mb-2">CONSULTAS</p>
-                    <a href="mailto:info@sdarcktattoo.com" className="font-metal text-lg hover:text-primary transition-colors">
-                      info@sdarcktattoo.com
+                    <a href="mailto:info@angeluxink.com" className="font-metal text-lg hover:text-primary transition-colors">
+                      info@angeluxink.com
                     </a>
                   </div>
                 </motion.div>
@@ -195,7 +196,7 @@ const BookingSection = () => {
                     <div className="relative">
                       <MessageSquare className="absolute left-4 top-4 w-4 h-4 text-muted-foreground" />
                       <Textarea
-                        placeholder="Describe tu idea o el tipo de perforación que deseas..."
+                        placeholder="Describe tu idea en blanco y negro: blackwork, black & grey, realismo..."
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="pl-12 min-h-[120px] bg-secondary/50 border-border focus:border-accent font-cinzel resize-none"

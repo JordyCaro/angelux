@@ -1,23 +1,17 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Skull } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import BrandMark from "@/components/BrandMark";
 
 const navItems = [
-  { name: "Inicio", path: "/" },
-  { name: "Servicios", path: "/servicios" },
-  { name: "Galería", path: "/galeria" },
-  { name: "Productos", path: "/productos" },
-  { name: "Instalaciones", path: "/instalaciones" },
-  { name: "Contacto", path: "/contacto" },
+  { name: "Inicio", path: "/", n: "01" },
+  { name: "Servicios", path: "/servicios", n: "02" },
+  { name: "Galería", path: "/galeria", n: "03" },
+  { name: "Productos", path: "/productos", n: "04" },
+  { name: "Estudio", path: "/instalaciones", n: "05" },
+  { name: "Contacto", path: "/contacto", n: "06" },
 ];
-
-// Brand values from manual
-const brandValues = {
-  name: "SDARCK TATTOO",
-  tagline: "S de Stiven + Dark",
-};
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,14 +19,15 @@ const Header = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Helper to check if link is active
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
   const isActive = (path: string) => {
     if (path === "/" && location.pathname !== "/") return false;
     return location.pathname.startsWith(path);
@@ -40,102 +35,90 @@ const Header = () => {
 
   return (
     <motion.header
-      initial={{ y: -100 }}
+      initial={{ y: -80 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || location.pathname !== "/"
-          ? "bg-background/95 backdrop-blur-md border-b border-border"
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${
+        scrolled || location.pathname !== "/" || isOpen
+          ? "border-b border-border/80 bg-background/90 backdrop-blur-md"
           : "bg-transparent"
-        }`}
+      }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/">
-            <motion.div
-              className="flex items-center gap-3 group cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Skull className="w-10 h-10 text-primary group-hover:animate-pulse" />
-              <span className="font-metal text-xl md:text-2xl tracking-wider">
-                SDARCK<span className="text-primary/70">TATTOO</span>
-              </span>
-            </motion.div>
+        <div className="flex h-[4.5rem] items-center justify-between">
+          <Link to="/" className="group flex items-center gap-3">
+            <BrandMark className="h-9 w-9 text-primary transition-transform duration-300 group-hover:rotate-45" />
+            <span className="font-cinzel text-sm tracking-[0.28em]">
+              ANGELUX<span className="ml-1 text-angelux-steel">INK</span>
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navItems.map((item, index) => (
-              <Link key={item.name} to={item.path}>
-                <motion.div
-                  className={`font-cinzel text-sm tracking-widest uppercase transition-colors relative group ${isActive(item.path) ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                    }`}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+          <nav className="hidden items-center gap-7 lg:flex">
+            {navItems.map((item) => (
+              <Link key={item.name} to={item.path} className="group relative">
+                <span
+                  className={`font-cinzel text-[11px] tracking-[0.22em] uppercase transition-colors ${
+                    isActive(item.path) ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                  }`}
                 >
                   {item.name}
-                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ${isActive(item.path) ? "w-full" : "w-0 group-hover:w-full"
-                    }`} />
-                </motion.div>
+                </span>
+                <span
+                  className={`absolute -bottom-2 left-0 h-px bg-angelux-steel transition-all duration-300 ${
+                    isActive(item.path) ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
               </Link>
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="hidden lg:block"
+          <Link
+            to="/contacto"
+            className="btn-stencil hidden px-5 py-2.5 font-cinzel text-[11px] tracking-[0.22em] lg:inline-flex"
           >
-            <Button
-              className="font-cinzel tracking-wider bg-primary text-primary-foreground hover:bg-primary/80"
-              asChild
-            >
-              <Link to="/contacto">AGENDAR CITA</Link>
-            </Button>
-          </motion.div>
+            AGENDAR
+          </Link>
 
-          {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground"
+            className="p-2 text-foreground lg:hidden"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background/98 backdrop-blur-lg border-b border-border"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 top-[4.5rem] z-40 bg-background/98 backdrop-blur-xl lg:hidden"
           >
-            <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
+            <nav className="flex h-full flex-col justify-center gap-2 px-8">
               {navItems.map((item, index) => (
                 <Link key={item.name} to={item.path} onClick={() => setIsOpen(false)}>
                   <motion.div
-                    className={`font-cinzel text-lg tracking-widest uppercase transition-colors py-2 border-b border-border/50 ${isActive(item.path) ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                      }`}
-                    initial={{ opacity: 0, x: -20 }}
+                    className={`flex items-baseline gap-4 border-b border-border/40 py-4 ${
+                      isActive(item.path) ? "text-primary" : "text-muted-foreground"
+                    }`}
+                    initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
                   >
-                    {item.name}
+                    <span className="font-cinzel text-[10px] tracking-[0.3em] text-angelux-steel">{item.n}</span>
+                    <span className="font-metal text-4xl">{item.name}</span>
                   </motion.div>
                 </Link>
               ))}
-              <Button
-                className="font-cinzel tracking-wider bg-primary text-primary-foreground hover:bg-primary/80 mt-4"
-                asChild
+              <Link
+                to="/contacto"
+                onClick={() => setIsOpen(false)}
+                className="btn-stencil mt-8 inline-flex w-fit px-6 py-3 font-cinzel text-xs tracking-[0.25em]"
               >
-                <Link to="/contacto" onClick={() => setIsOpen(false)}>AGENDAR CITA</Link>
-              </Button>
+                AGENDAR CITA
+              </Link>
             </nav>
           </motion.div>
         )}

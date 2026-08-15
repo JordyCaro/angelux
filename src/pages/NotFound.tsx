@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 
 const NotFound = () => {
@@ -9,13 +9,17 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-        <a href="/" className="text-primary underline hover:text-primary/90">
-          Return to Home
-        </a>
+    <div className="relative flex min-h-screen items-center overflow-hidden bg-background px-6">
+      <p className="pointer-events-none absolute -right-4 top-10 font-metal text-[40vw] leading-none text-primary/[0.04]">
+        404
+      </p>
+      <div className="relative z-10 mx-auto max-w-xl">
+        <p className="mb-4 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">ERROR / RUTA PERDIDA</p>
+        <h1 className="font-metal text-7xl text-primary">404</h1>
+        <p className="mt-4 font-montserrat text-muted-foreground">Esta página no existe en el archivo de Angelux Ink.</p>
+        <Link to="/" className="btn-stencil mt-8 inline-flex px-6 py-3 font-cinzel text-xs tracking-[0.22em]">
+          VOLVER AL INICIO
+        </Link>
       </div>
     </div>
   );
