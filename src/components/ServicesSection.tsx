@@ -6,10 +6,10 @@ const services = [
   {
     n: "01",
     title: "Tatuaje",
-    subtitle: "A medida",
+    subtitle: "Realismo / sombras",
     description:
-      "Blackwork, realismo, geometría y fineline. El contraste es un fuerte; el diseño se abre a lo que pida tu idea.",
-    features: ["Blackwork", "Realismo", "Geometría", "Fineline"],
+      "Realismo, sombras y volumen. Cada pieza es a medida; el detalle se trabaja para que se aguante de cerca.",
+    features: ["Realismo", "Sombras", "Mangas", "Retrato"],
   },
   {
     n: "02",

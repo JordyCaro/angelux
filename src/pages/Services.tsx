@@ -10,7 +10,7 @@ const Services = () => {
                 index="03"
                 title="SERVICIOS"
                 subtitle="OFICIO EN MOVIMIENTO"
-                description="Tatuaje a medida, sesiones a domicilio y guest spots. El blackwork es un fuerte; el resto lo decide tu proyecto."
+                description="Tatuaje a medida en Medellín. Realismo y sombras. Cada pieza se construye, no se copia."
             />
             <div className="py-12 md:py-20 space-y-20 md:space-y-32">
                 <ServicesSection />

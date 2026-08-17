@@ -12,7 +12,7 @@ const GalleryWall = () => {
   const [selected, setSelected] = useState<GalleryItem | null>(null);
 
   const visible = useMemo(
-    () => (filter === "all" ? galleryItems : galleryItems.filter((item) => item.style === filter)),
+    () => (filter === "all" ? galleryItems : galleryItems.filter((item) => item.zone === filter)),
     [filter],
   );
 
@@ -45,14 +45,14 @@ const GalleryWall = () => {
         </p>
         <div className="relative z-10 flex flex-col justify-between gap-8 px-4 pb-10 md:flex-row md:items-end md:px-8">
           <div>
-            <p className="ink-stamp mb-5 inline-block">NO STUDIO · JUST SKIN</p>
+            <p className="ink-stamp mb-5 inline-block">MEDELLÍN · REALISMO</p>
             <h1 className="font-metal text-5xl tracking-wide text-primary sm:text-6xl md:text-8xl">
               ARCHIVO
-              <span className="block text-2xl text-primary/60 sm:text-3xl md:text-5xl">backroom / {galleryItems.length}</span>
+              <span className="block text-2xl text-primary/60 sm:text-3xl md:text-5xl">mangas / {galleryItems.length}</span>
             </h1>
           </div>
           <p className="max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground">
-            Pared de flash, no catálogo limpio. Piezas de domicilio y guest spots. El blackwork pesa; el resto entra si la piel lo pide.
+            Piezas reales de Jonathan. Por ahora el muro es de mangas — las piernas entran cuando la piel las pida.
           </p>
         </div>
 
@@ -91,14 +91,14 @@ const GalleryWall = () => {
               <img
                 src={item.image}
                 alt={item.title}
-                className="h-full w-full object-cover grayscale-[0.4] contrast-125 transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                className="h-full w-full object-cover contrast-110 transition duration-700 group-hover:scale-105"
                 loading="lazy"
               />
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.45))]" />
               <span className="absolute left-3 top-3 font-metal text-2xl text-white/70">
                 {String(item.id).padStart(2, "0")}
               </span>
-              <span className="ink-stamp absolute right-3 top-3 text-[9px]">{item.mode}</span>
+              <span className="ink-stamp absolute right-3 top-3 text-[9px]">{item.zoneLabel}</span>
               <div className="absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-black via-black/70 to-transparent p-4 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                 <p className="font-cinzel text-[10px] tracking-[0.22em] text-angelux-steel">{item.styleLabel}</p>
                 <p className="font-metal text-xl text-white">{item.title}</p>
@@ -117,7 +117,7 @@ const GalleryWall = () => {
 
       <div className="flex flex-col items-center justify-between gap-6 border-t border-white/10 px-4 py-10 text-center md:flex-row md:items-center md:px-8 md:text-left">
         <p className="max-w-md font-montserrat text-sm text-muted-foreground">
-          ¿Viste una pieza que te cala? La siguiente se tatuará donde coincidamos.
+          ¿Viste una pieza que te cala? La siguiente se tatuará en Medellín.
         </p>
         <Link to="/contacto" className="btn-stencil px-7 py-3.5 font-cinzel text-xs tracking-[0.24em]">
           TRAÉ TU PIEL
@@ -161,7 +161,7 @@ const GalleryWall = () => {
               </div>
               <div className="flex flex-col justify-between p-6 md:col-span-4 md:p-8">
                 <div>
-                  <p className="ink-stamp inline-block">{selected.mode}</p>
+                  <p className="ink-stamp inline-block">{selected.zoneLabel}</p>
                   <p className="mt-6 font-cinzel text-[10px] tracking-[0.35em] text-angelux-steel">
                     {String(selected.id).padStart(3, "0")} · {selected.styleLabel}
                   </p>

@@ -3,40 +3,25 @@ import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import SocialLinks from "@/components/SocialLinks";
 
-const HERO_IMG =
-  "https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?auto=format&fit=crop&w=2400&q=80";
+const HERO_IMG = "/gallery/mangas/zeus-lobo.jpg";
 
 const meta = [
-  { k: "Oficio", v: "Itinerante" },
-  { k: "Fuerte", v: "Blackwork" },
-  { k: "Sesión", v: "Domicilio / Guest" },
+  { k: "Ciudad", v: "Medellín" },
+  { k: "Fuerte", v: "Realismo" },
+  { k: "Oficio", v: "Sombras" },
 ];
 
 const HeroSection = () => {
   return (
     <section className="relative flex min-h-[100svh] flex-col overflow-hidden">
-      <motion.img
+      <img
         src={HERO_IMG}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover object-[center_20%] grayscale-[0.45] contrast-125"
-        initial={{ scale: 1.12 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 8, ease: "easeOut" }}
+        className="absolute inset-0 h-full w-full object-cover object-[center_30%] contrast-110"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/25" />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-background/50" />
       <div className="absolute inset-0 ink-texture opacity-50" />
-      <motion.div
-        className="pointer-events-none absolute inset-0 opacity-30"
-        animate={{
-          background: [
-            "radial-gradient(circle at 70% 40%, hsl(var(--angelux-steel) / 0.45) 0%, transparent 42%)",
-            "radial-gradient(circle at 30% 70%, hsl(var(--angelux-blue) / 0.5) 0%, transparent 40%)",
-            "radial-gradient(circle at 70% 40%, hsl(var(--angelux-steel) / 0.45) 0%, transparent 42%)",
-          ],
-        }}
-        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-      />
 
       <div className="relative z-10 flex flex-1 flex-col px-4 pt-24 md:px-10 md:pt-28 lg:px-16">
         <div className="flex items-start justify-between gap-4">
@@ -45,7 +30,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            001 / ESTUDIO ITINERANTE
+            001 / MEDELLÍN
           </motion.p>
           <motion.div
             className="hidden items-center gap-3 sm:flex"
@@ -64,7 +49,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
           >
-            TATTOO ARTIST · DOMICILIO · GUEST
+            TATTOO ARTIST · MEDELLÍN · SOMBRAS
           </motion.p>
 
           <motion.h1
@@ -84,7 +69,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            Piezas a medida. El blackwork y el contraste son un fuerte; la sesión se arma donde coincidamos.
+            Soy Jonathan. Realismo y sombras. Cada pieza es única: se construye, no se copia.
           </motion.p>
 
           <motion.div
@@ -108,14 +93,14 @@ const HeroSection = () => {
 
       <div className="relative z-10 grid grid-cols-2 border-t border-white/10 bg-background/80 backdrop-blur-md md:grid-cols-4">
         {meta.map((item) => (
-          <div key={item.k} className="border-b border-white/10 px-3 py-4 text-center odd:border-r sm:px-4 sm:py-5 md:border-b-0 md:border-r md:px-8 md:text-left">
+          <div key={item.k} className="border-b border-white/10 px-3 py-2 text-center odd:border-r sm:px-4 sm:py-2.5 md:border-b-0 md:border-r md:px-8 md:text-left">
             <p className="font-cinzel text-[9px] tracking-[0.22em] text-muted-foreground sm:text-[10px] sm:tracking-[0.28em]">{item.k}</p>
-            <p className="mt-1 break-words font-metal text-base text-primary sm:text-xl md:text-2xl">{item.v}</p>
+            <p className="mt-0.5 break-words font-metal text-sm text-primary sm:text-lg md:text-xl">{item.v}</p>
           </div>
         ))}
         <a
           href="#quien-soy"
-          className="flex items-center justify-center gap-3 border-b border-white/10 px-4 py-4 text-muted-foreground transition-colors hover:text-primary md:border-b-0 md:justify-between md:px-8 md:py-5"
+          className="flex items-center justify-center gap-3 border-b border-white/10 px-4 py-2 text-muted-foreground transition-colors hover:text-primary md:border-b-0 md:justify-between md:px-8 md:py-2.5"
         >
           <span className="font-cinzel text-[10px] tracking-[0.28em]">Scroll</span>
           <motion.span animate={{ y: [0, 6, 0] }} transition={{ duration: 1.6, repeat: Infinity }}>

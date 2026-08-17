@@ -2,13 +2,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
-const portrait =
-  "https://images.unsplash.com/photo-1611501275019-9b5cda99f35c?auto=format&fit=crop&w=1200&q=80";
+const portrait = "/gallery/mangas/vikingo.jpg";
 
 const facts = [
-  { n: "01", t: "Oficio", d: "Tatuador. La pieza se piensa con vos, no se copia de un catálogo." },
-  { n: "02", t: "Ruta", d: "Domicilios, guest spots, otras ciudades. El estudio viaja." },
-  { n: "03", t: "Sello", d: "Blackwork y contraste como fuerte. El resto, si la piel lo pide." },
+  { n: "01", t: "Ciudad", d: "Medellín. Acá se arma la sesión y se firma la piel." },
+  { n: "02", t: "Fuerte", d: "Realismo y sombras. Volumen, luz, el silencio entre un negro y un gris." },
+  { n: "03", t: "Pieza", d: "Única. No se copia de un catálogo: se construye con vos." },
 ];
 
 const AboutSection = () => {
@@ -42,11 +41,11 @@ const AboutSection = () => {
               <div className="relative aspect-[4/5] overflow-hidden">
                 <img
                   src={portrait}
-                  alt="Archivo de trabajo Angelux Ink"
-                  className="h-full w-full object-cover grayscale-[0.35] contrast-125"
+                  alt="Manga de realismo Angelux Ink"
+                  className="h-full w-full object-cover contrast-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
-                <span className="ink-stamp absolute left-4 top-4">EL OFICIO</span>
+                <span className="ink-stamp absolute left-4 top-4">JONATHAN</span>
               </div>
             </div>
           </motion.div>
@@ -57,20 +56,18 @@ const AboutSection = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            <p className="mb-3 font-cinzel text-[11px] tracking-[0.32em] text-muted-foreground">TATUADOR · ITINERANTE</p>
+            <p className="mb-3 font-cinzel text-[11px] tracking-[0.32em] text-muted-foreground">TATUADOR · MEDELLÍN</p>
             <h2 className="font-metal text-3xl text-primary sm:text-4xl md:text-6xl">
-              Soy el trazo detrás de Angelux.
+              Soy Jonathan. La sombra es el oficio.
             </h2>
             <div className="mt-8 max-w-xl space-y-4 font-montserrat text-sm leading-relaxed text-muted-foreground md:text-base">
               <p>
-                No tengo local fijo. Trabajo a domicilio, en sesiones privadas y en guest spots: la tinta se arma donde coincidamos, con el mismo protocolo que en un backroom.
+                Tatuo en Medellín. Realismo, sombras, detalle que se aguanta de cerca. No vendo un dibujo bonito: trabajo el volumen y la luz hasta que la piel lo sostiene.
               </p>
               <p>
-                Me interesa la pieza que envejece bien. El blackwork y el contraste son un fuerte de mi archivo —línea, sombra, peso— pero cada proyecto decide su propio lenguaje.
+                Cada pieza es única. Se piensa con vos, se ejecuta con calma y se entrega con el mismo compromiso con el que se empieza. Si buscás arte en la piel —no relleno de catálogo— escribime.
               </p>
-              <p>
-                Si llegás con una historia, la sentamos en la piel. Sin prisa, sin catálogo de relleno.
-              </p>
+              <p>Hagamos algo que pese.</p>
             </div>
 
             <div className="mt-10 grid gap-6 sm:grid-cols-3">

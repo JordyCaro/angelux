@@ -91,11 +91,11 @@ const BookingSection = () => {
                   
                   <ul className="space-y-4">
                     {[
-                      "Blackwork y contraste como fuerte",
-                      "Sesiones a domicilio",
-                      "Guest spots e internacionales",
-                      "Higiene de grado clínico en movimiento",
-                      "Diseños 100% personalizados",
+                      "Realismo y sombras como fuerte",
+                      "Piezas 100% a medida",
+                      "Detalle que se aguanta de cerca",
+                      "Sesiones en Medellín",
+                      "Seguimiento de aftercare",
                     ].map((item, index) => (
                       <motion.li
                         key={index}
@@ -197,7 +197,7 @@ const BookingSection = () => {
                     <div className="relative">
                       <MessageSquare className="absolute left-4 top-4 w-4 h-4 text-muted-foreground" />
                       <Textarea
-                        placeholder="Cuéntame la idea, la ciudad y si prefieres domicilio o guest..."
+                        placeholder="Cuéntame la idea, la zona del cuerpo y si es manga u otra pieza..."
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="pl-12 min-h-[120px] bg-secondary/50 border-border focus:border-accent font-cinzel resize-none"

@@ -305,3 +305,19 @@
     drop-shadow(0 0 4px rgba(255, 255, 255, 0.75))
     drop-shadow(0 0 10px rgba(255, 255, 255, 0.35));
 }
+
+/* Voices tape: pause on hover / focus, static fallback if motion is reduced */
+.voices-group:hover .voices-tape,
+.voices-group:focus-within .voices-tape {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .voices-live {
+    display: none;
+  }
+
+  .voices-static {
+    display: block;
+  }
+}

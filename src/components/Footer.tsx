@@ -6,25 +6,25 @@ import SocialLinks from "@/components/SocialLinks";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="relative overflow-hidden border-t border-border bg-background py-16 md:py-20">
+    <footer id="contact" className="relative overflow-hidden border-t border-border bg-background py-10 md:py-12">
       <div className="absolute inset-0 ink-texture opacity-25" />
       <p className="pointer-events-none absolute -bottom-10 left-0 w-full text-center font-metal text-[22vw] leading-none text-primary/[0.035]">
         ANGELUX
       </p>
 
       <div className="container relative z-10 mx-auto px-4">
-        <div className="mb-12 grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:items-start">
+        <div className="mb-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:items-start">
           <motion.div
             className="flex flex-col items-center text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Link to="/" className="mb-6 inline-block">
-              <BrandMark className="h-28 w-auto sm:h-32 md:h-40" />
+            <Link to="/" className="mb-4 inline-block">
+              <BrandMark className="h-20 w-auto sm:h-24 md:h-28" />
             </Link>
             <p className="mb-8 max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground">
-              Tatuaje itinerante: a domicilio, en guest spots y en otras ciudades. El blackwork y el contraste son un fuerte del archivo.
+              Tatuaje en Medellín. Realismo y sombras. Cada pieza es única, trabajada con detalle y sin relleno de catálogo.
             </p>
             <SocialLinks />
           </motion.div>

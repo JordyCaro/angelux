@@ -5,7 +5,7 @@ const pillars = [
   {
     n: "01",
     title: "Contraste",
-    text: "El blackwork y la sombra pesan. No es el único camino, pero es donde el trazo se siente más suyo.",
+    text: "El realismo y la sombra pesan. Volumen, luz, el silencio entre un negro y un gris.",
   },
   {
     n: "02",

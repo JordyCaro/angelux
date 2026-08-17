@@ -9,7 +9,7 @@ const GalleryFilmstrip = () => {
       <div className="animate-marquee flex w-max gap-2 py-2">
         {strip.map((item, i) => (
           <div key={`${item.id}-${i}`} className="relative h-28 w-44 shrink-0 overflow-hidden md:h-36 md:w-56">
-            <img src={item.image} alt="" className="h-full w-full object-cover opacity-80 grayscale-[0.3]" />
+            <img src={item.image} alt="" className="h-full w-full object-cover opacity-90" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
           </div>
         ))}
