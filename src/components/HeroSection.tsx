@@ -23,24 +23,14 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-background/50" />
       <div className="absolute inset-0 ink-texture opacity-50" />
 
-      <div className="relative z-10 flex flex-1 flex-col px-4 pt-24 md:px-10 md:pt-28 lg:px-16">
-        <div className="flex items-start justify-between gap-4">
-          <motion.p
-            className="font-cinzel text-[10px] tracking-[0.32em] text-angelux-steel sm:text-[11px] sm:tracking-[0.42em]"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            001 / MEDELLÍN
-          </motion.p>
-          <motion.div
-            className="hidden items-center gap-3 sm:flex"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            <SocialLinks />
-          </motion.div>
-        </div>
+      <div className="relative z-10 flex flex-1 flex-col px-4 pt-28 md:px-10 md:pt-32 lg:px-16">
+        <motion.p
+          className="font-cinzel text-[10px] tracking-[0.32em] text-muted-foreground sm:text-[11px] sm:tracking-[0.42em]"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          MEDELLÍN
+        </motion.p>
 
         <div className="flex flex-1 flex-col justify-center py-8 md:py-10">
           <motion.p
@@ -87,6 +77,15 @@ const HeroSection = () => {
             >
               VER GALERÍA
             </Link>
+          </motion.div>
+
+          <motion.div
+            className="mt-6 sm:mt-8"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+          >
+            <SocialLinks variant="hero" />
           </motion.div>
         </div>
       </div>

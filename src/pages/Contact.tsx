@@ -9,7 +9,6 @@ const Contact = () => {
     return (
         <PageLayout>
             <PageHero
-                index="06"
                 title="CONTACTO"
                 subtitle="HABLEMOS DE TU PROYECTO"
                 description="Consulta online, domicilio o guest. Cuéntame la idea y la ciudad: armamos la sesión donde coincidamos."

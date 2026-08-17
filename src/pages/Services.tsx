@@ -7,7 +7,6 @@ const Services = () => {
     return (
         <PageLayout>
             <PageHero
-                index="03"
                 title="SERVICIOS"
                 subtitle="OFICIO EN MOVIMIENTO"
                 description="Tatuaje a medida en Medellín. Realismo y sombras. Cada pieza se construye, no se copia."

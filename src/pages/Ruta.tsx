@@ -7,7 +7,6 @@ const Ruta = () => {
   return (
     <PageLayout>
       <PageHero
-        index="04"
         title="RUTA"
         subtitle="ITINERANTE"
         description="No hay local fijo. Sesiones a domicilio, guest spots y viajes. El estudio es el oficio: se arma donde coincidamos."

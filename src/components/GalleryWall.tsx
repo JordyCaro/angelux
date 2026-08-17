@@ -70,7 +70,7 @@ const GalleryWall = () => {
             </button>
           ))}
           <span className="ml-auto hidden items-center font-cinzel text-[10px] tracking-[0.3em] text-muted-foreground md:flex">
-            {String(visible.length).padStart(2, "0")} PIEZAS
+            {visible.length} PIEZAS
           </span>
         </div>
       </header>
@@ -95,9 +95,6 @@ const GalleryWall = () => {
                 loading="lazy"
               />
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.45))]" />
-              <span className="absolute left-3 top-3 font-metal text-2xl text-white/70">
-                {String(item.id).padStart(2, "0")}
-              </span>
               <span className="ink-stamp absolute right-3 top-3 text-[9px]">{item.zoneLabel}</span>
               <div className="absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-black via-black/70 to-transparent p-4 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                 <p className="font-cinzel text-[10px] tracking-[0.22em] text-angelux-steel">{item.styleLabel}</p>
@@ -163,7 +160,7 @@ const GalleryWall = () => {
                 <div>
                   <p className="ink-stamp inline-block">{selected.zoneLabel}</p>
                   <p className="mt-6 font-cinzel text-[10px] tracking-[0.35em] text-angelux-steel">
-                    {String(selected.id).padStart(3, "0")} · {selected.styleLabel}
+                    {selected.styleLabel}
                   </p>
                   <h3 className="mt-3 font-metal text-3xl text-primary md:text-4xl">{selected.title}</h3>
                   <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">

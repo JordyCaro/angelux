@@ -5,14 +5,19 @@ import { Link, useLocation } from "react-router-dom";
 import BrandMark from "@/components/BrandMark";
 import SocialLinks from "@/components/SocialLinks";
 
-const navItems = [
-  { name: "Inicio", path: "/", n: "01" },
-  { name: "Sobre mí", path: "/sobre-mi", n: "02" },
-  { name: "Galería", path: "/galeria", n: "03" },
-  { name: "Servicios", path: "/servicios", n: "04" },
-  { name: "Ruta", path: "/ruta", n: "05" },
-  { name: "Contacto", path: "/contacto", n: "06" },
+const leftNav = [
+  { name: "Inicio", path: "/" },
+  { name: "Sobre mí", path: "/sobre-mi" },
+  { name: "Galería", path: "/galeria" },
 ];
+
+const rightNav = [
+  { name: "Servicios", path: "/servicios" },
+  { name: "Ruta", path: "/ruta" },
+  { name: "Contacto", path: "/contacto" },
+];
+
+const navItems = [...leftNav, ...rightNav];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,13 +25,14 @@ const Header = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 24);
+    const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     setIsOpen(false);
+    setScrolled(window.scrollY > 40);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -41,55 +47,56 @@ const Header = () => {
     return location.pathname.startsWith(path);
   };
 
+  const NavLink = ({ item }: { item: (typeof navItems)[number] }) => (
+    <Link to={item.path} className="group relative shrink-0">
+      <span
+        className={`font-cinzel text-sm tracking-[0.16em] uppercase transition-colors xl:text-base ${
+          isActive(item.path) ? "text-primary" : "text-muted-foreground hover:text-foreground"
+        }`}
+      >
+        {item.name}
+      </span>
+      <span
+        className={`absolute -bottom-2 left-0 h-px bg-angelux-steel transition-all duration-300 ${
+          isActive(item.path) ? "w-full" : "w-0 group-hover:w-full"
+        }`}
+      />
+    </Link>
+  );
+
   return (
     <>
       <header
-        className={`fixed left-0 right-0 top-0 z-[60] transition-all duration-500 ${
-          scrolled || location.pathname !== "/" || isOpen
-            ? "border-b border-border/80 bg-background"
-            : "bg-transparent"
+        className={`fixed left-0 right-0 top-0 z-[60] border-b transition-all duration-500 ${
+          isOpen || scrolled
+            ? "border-white/10 bg-background/40 backdrop-blur-2xl backdrop-saturate-150"
+            : "border-transparent bg-transparent"
         }`}
       >
-        <div className="container mx-auto px-4">
-          <div className="flex h-16 items-center justify-between md:h-20">
-            <Link to="/" className="group flex items-center" onClick={() => setIsOpen(false)}>
-              <BrandMark className="h-10 w-auto transition-transform duration-300 group-hover:scale-105 md:h-14" />
-            </Link>
+        <div className="relative mx-auto flex h-20 max-w-6xl items-center justify-center px-4 md:h-24 lg:gap-8 xl:gap-10">
+          <nav className="hidden items-center gap-8 lg:flex xl:gap-10">
+            {leftNav.map((item) => (
+              <NavLink key={item.name} item={item} />
+            ))}
+          </nav>
 
-            <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
-              {navItems.map((item) => (
-                <Link key={item.name} to={item.path} className="group relative">
-                  <span
-                    className={`font-cinzel text-[11px] tracking-[0.22em] uppercase transition-colors ${
-                      isActive(item.path) ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    {item.name}
-                  </span>
-                  <span
-                    className={`absolute -bottom-2 left-0 h-px bg-angelux-steel transition-all duration-300 ${
-                      isActive(item.path) ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
-                  />
-                </Link>
-              ))}
-            </nav>
+          <Link to="/" className="group shrink-0 lg:px-2" onClick={() => setIsOpen(false)}>
+            <BrandMark className="h-16 w-auto transition-transform duration-300 group-hover:scale-105 md:h-[4.75rem] lg:h-20" />
+          </Link>
 
-            <Link
-              to="/contacto"
-              className="btn-stencil hidden px-5 py-2.5 font-cinzel text-[11px] tracking-[0.22em] lg:inline-flex"
-            >
-              AGENDAR
-            </Link>
+          <nav className="hidden items-center gap-8 lg:flex xl:gap-10">
+            {rightNav.map((item) => (
+              <NavLink key={item.name} item={item} />
+            ))}
+          </nav>
 
-            <button
-              className="relative z-[61] p-2 text-foreground lg:hidden"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-            >
-              {isOpen ? <X size={26} /> : <Menu size={26} />}
-            </button>
-          </div>
+          <button
+            className="absolute right-4 z-[61] p-2 text-foreground lg:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+          >
+            {isOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
         </div>
       </header>
 
@@ -101,31 +108,23 @@ const Header = () => {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex flex-col bg-black lg:hidden"
           >
-            <div className="h-16 shrink-0 md:h-20" />
+            <div className="h-20 shrink-0 md:h-24" />
             <nav className="flex min-h-0 flex-1 flex-col items-center justify-center overflow-y-auto px-6 py-6 text-center">
               {navItems.map((item, index) => (
                 <Link key={item.name} to={item.path} onClick={() => setIsOpen(false)} className="w-full max-w-xs">
                   <motion.div
-                    className={`flex items-baseline justify-center gap-3 border-b border-white/10 py-3.5 ${
+                    className={`border-b border-white/10 py-3.5 font-metal text-3xl sm:text-4xl ${
                       isActive(item.path) ? "text-primary" : "text-muted-foreground"
                     }`}
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 }}
                   >
-                    <span className="font-cinzel text-[10px] tracking-[0.3em] text-angelux-steel">{item.n}</span>
-                    <span className="font-metal text-3xl sm:text-4xl">{item.name}</span>
+                    {item.name}
                   </motion.div>
                 </Link>
               ))}
-              <Link
-                to="/contacto"
-                onClick={() => setIsOpen(false)}
-                className="btn-stencil mt-8 inline-flex px-8 py-3 font-cinzel text-xs tracking-[0.25em]"
-              >
-                AGENDAR CITA
-              </Link>
-              <div className="mt-8 flex justify-center">
+              <div className="mt-10 flex justify-center">
                 <SocialLinks className="justify-center" />
               </div>
             </nav>

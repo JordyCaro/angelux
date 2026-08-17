@@ -60,8 +60,7 @@ const ManifestoSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 + i * 0.12 }}
             >
-              <span className="font-cinzel text-xs tracking-[0.3em] text-angelux-steel">{pillar.n}</span>
-              <h3 className="mt-4 font-metal text-3xl text-primary">{pillar.title}</h3>
+              <h3 className="font-metal text-3xl text-primary">{pillar.title}</h3>
               <div className="my-5 h-px w-12 bg-angelux-steel/60 transition-all duration-500 group-hover:w-24" />
               <p className="font-montserrat text-sm leading-relaxed text-muted-foreground">{pillar.text}</p>
             </motion.article>

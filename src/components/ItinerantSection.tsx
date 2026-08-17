@@ -68,7 +68,6 @@ const ItinerantSection = () => {
               transition={{ delay: 0.1 + i * 0.08 }}
             >
               <mode.icon className="mb-6 h-6 w-6 text-angelux-steel" />
-              <span className="font-cinzel text-[10px] tracking-[0.3em] text-angelux-steel">{mode.n}</span>
               <h3 className="mt-3 font-metal text-2xl text-primary">{mode.title}</h3>
               <p className="mt-4 font-montserrat text-sm leading-relaxed text-muted-foreground">{mode.text}</p>
             </motion.article>

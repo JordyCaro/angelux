@@ -21,7 +21,7 @@ const FaqSection = ({ compact = false }: FaqSectionProps) => {
             initial={{ opacity: 0, y: 16 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
           >
-            <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">007 / DUDAS</p>
+            <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">DUDAS</p>
             <h2 className="font-metal text-4xl text-primary md:text-5xl">Antes de la aguja</h2>
             <p className="mt-4 max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground">
               Cuidado, cuándo no tatuarse y las preguntas que todo el mundo hace. Corto y sin mito.
@@ -38,12 +38,7 @@ const FaqSection = ({ compact = false }: FaqSectionProps) => {
               {faqItems.map((item, i) => (
                 <AccordionItem key={item.q} value={`faq-${i}`} className="border-border">
                   <AccordionTrigger className="items-start py-5 text-left font-cinzel text-sm tracking-wide text-primary hover:no-underline hover:text-angelux-steel sm:items-center">
-                    <span className="pr-4 text-left">
-                      <span className="mr-3 font-cinzel text-[10px] text-angelux-steel">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      {item.q}
-                    </span>
+              <span className="pr-4 text-left">{item.q}</span>
                   </AccordionTrigger>
                   <AccordionContent className="pb-5 font-montserrat text-sm leading-relaxed text-muted-foreground">
                     {item.a}

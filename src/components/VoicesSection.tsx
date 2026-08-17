@@ -67,7 +67,7 @@ const VoicesSection = () => {
       </p>
 
       <div className="container relative z-10 mx-auto mb-10 px-4 md:mb-14">
-        <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">008 / VOCES</p>
+            <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">VOCES</p>
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <h2 className="font-metal text-4xl text-primary md:text-6xl">La piel habla</h2>
           <p className="max-w-sm font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground md:text-right">

@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const portrait = "/gallery/mangas/vikingo.jpg";
 
 const facts = [
-  { n: "01", t: "Ciudad", d: "Medellín. Acá se arma la sesión y se firma la piel." },
-  { n: "02", t: "Fuerte", d: "Realismo y sombras. Volumen, luz, el silencio entre un negro y un gris." },
-  { n: "03", t: "Pieza", d: "Única. No se copia de un catálogo: se construye con vos." },
+  { t: "Medellín", d: "Acá se arma la sesión y se firma la piel." },
+  { t: "Realismo", d: "Sombras, volumen, luz. El detalle que se aguanta de cerca." },
+  { t: "Única", d: "No se copia de un catálogo: se construye con vos." },
 ];
 
 const AboutSection = () => {
@@ -27,7 +27,7 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
         >
-          003 / QUIÉN SOY
+          QUIÉN SOY
         </motion.p>
 
         <div className="grid items-center gap-12 lg:grid-cols-12">
@@ -58,22 +58,21 @@ const AboutSection = () => {
           >
             <p className="mb-3 font-cinzel text-[11px] tracking-[0.32em] text-muted-foreground">TATUADOR · MEDELLÍN</p>
             <h2 className="font-metal text-3xl text-primary sm:text-4xl md:text-6xl">
-              Soy Jonathan. La sombra es el oficio.
+              Si la piel va a hablar, que hable fuerte.
             </h2>
             <div className="mt-8 max-w-xl space-y-4 font-montserrat text-sm leading-relaxed text-muted-foreground md:text-base">
               <p>
-                Tatuo en Medellín. Realismo, sombras, detalle que se aguanta de cerca. No vendo un dibujo bonito: trabajo el volumen y la luz hasta que la piel lo sostiene.
+                Soy Jonathan. Tatuo en Medellín. Realismo y sombras: el volumen, la luz, el silencio entre un negro y un gris. No trabajo para el filtro. Trabajo para el que se acerca.
               </p>
               <p>
-                Cada pieza es única. Se piensa con vos, se ejecuta con calma y se entrega con el mismo compromiso con el que se empieza. Si buscás arte en la piel —no relleno de catálogo— escribime.
+                Cada pieza es única. Se piensa con vos, se ejecuta con calma y se entrega con el mismo compromiso con el que se empieza. Profesionalismo no es un letrero: es el trazo, el detalle, y estar cuando la tinta todavía arde.
               </p>
-              <p>Hagamos algo que pese.</p>
+              <p>Si buscás arte en la piel —no relleno de catálogo— escribime. Hagamos algo que se lleve toda la vida.</p>
             </div>
 
             <div className="mt-10 grid gap-6 sm:grid-cols-3">
               {facts.map((f) => (
-                <div key={f.n} className="border-t border-border pt-4">
-                  <p className="font-cinzel text-[10px] tracking-[0.28em] text-angelux-steel">{f.n}</p>
+                <div key={f.t} className="border-t border-border pt-4">
                   <h3 className="mt-2 font-metal text-2xl text-primary">{f.t}</h3>
                   <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{f.d}</p>
                 </div>

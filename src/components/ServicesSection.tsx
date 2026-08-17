@@ -71,10 +71,7 @@ const ServicesSection = () => {
               transition={{ duration: 0.5, delay: index * 0.06 }}
               className="group grid gap-6 py-10 md:grid-cols-12 md:items-center"
             >
-              <span className="font-cinzel text-xs tracking-[0.3em] text-angelux-steel md:col-span-1">
-                {service.n}
-              </span>
-              <div className="md:col-span-4">
+              <div className="md:col-span-5">
                 <h3 className="font-metal text-3xl text-primary transition-transform duration-500 group-hover:translate-x-2 md:text-4xl">
                   {service.title}
                 </h3>

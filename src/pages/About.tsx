@@ -10,10 +10,9 @@ const About = () => {
   return (
     <PageLayout>
       <PageHero
-        index="003"
         title="SOBRE MÍ"
         subtitle="JONATHAN · ANGELUX INK"
-        description="Tatuador en Medellín. Realismo y sombras. Cada pieza es única: se construye con dedicación, no se copia."
+        description="Si la piel va a hablar, que hable fuerte. Realismo y sombras en Medellín: cada pieza se construye, no se copia."
       />
 
       <section className="relative overflow-hidden py-20 md:py-28">
@@ -26,13 +25,13 @@ const About = () => {
           </div>
           <div className="lg:col-span-7">
             <p className="font-cinzel text-[11px] tracking-[0.32em] text-angelux-steel">PRIMERA PERSONA</p>
-            <h2 className="mt-3 font-metal text-4xl text-primary md:text-5xl">Hola. Soy Jonathan.</h2>
+            <h2 className="mt-3 font-metal text-4xl text-primary md:text-5xl">No tatuo para una foto. Tatuo para que se lleve.</h2>
             <div className="mt-8 space-y-4 font-montserrat text-sm leading-relaxed text-muted-foreground md:text-base">
               <p>
-                Tatuo en Medellín. Me especializo en realismo y sombras: el volumen, la luz, el silencio entre un negro y un gris. Eso es el oficio. Lo demás es ruido.
+                Soy Jonathan. Tatuador en Medellín. Realismo y sombras: el volumen, la luz, el detalle que se aguanta de cerca. Eso es el oficio. Lo demás es ruido.
               </p>
               <p>
-                Cada tatuaje es único. Lo trabajo con calma y con el detalle que pide la piel de cerca —no el filtro de lejos. Profesionalismo no es un letrero: es llegar, ejecutar y responder cuando la pieza está viva.
+                Cada tatuaje es único. Lo trabajo con calma y con la atención que pide una pieza que no se borra. No copio catálogo. No apuro el trazo. Profesionalismo no es un letrero en la puerta: es llegar, ejecutar y responder cuando la tinta todavía está viva.
               </p>
               <p>
                 Si buscás arte en la piel con compromiso de verdad, escribime. Hagamos algo especial. Algo que se lleve, no que se esconda.

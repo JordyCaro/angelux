@@ -40,7 +40,7 @@ const HomeGallery = () => {
 
           <div className="absolute bottom-8 left-6 right-6 md:left-10 md:right-auto md:max-w-lg">
             <p className="font-cinzel text-[10px] tracking-[0.35em] text-angelux-steel">
-              {String(active.id).padStart(3, "0")} / {String(galleryItems.length).padStart(3, "0")}
+              {active.zoneLabel} · {active.styleLabel}
             </p>
             <h2 className="mt-2 font-metal text-4xl text-primary md:text-6xl">{active.title}</h2>
             <p className="mt-3 flex items-center gap-2 font-montserrat text-sm text-muted-foreground">
@@ -52,7 +52,7 @@ const HomeGallery = () => {
 
         <div className="relative flex flex-col justify-between border-t border-border bg-background/80 p-6 lg:col-span-4 lg:border-l lg:border-t-0 lg:p-8">
           <div>
-            <p className="mb-2 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">PEEK / 04</p>
+            <p className="mb-2 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">ARCHIVO</p>
             <h3 className="font-metal text-3xl text-primary md:text-4xl">Las mangas</h3>
             <p className="mt-4 max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground">
               Un recorte del archivo real. El muro completo está en galería: más piezas, más sombra, más piel.
@@ -77,7 +77,7 @@ const HomeGallery = () => {
                     className="h-full w-full object-cover transition duration-500"
                   />
                   <span className="absolute left-2 top-2 font-cinzel text-[9px] tracking-widest text-white/80">
-                    #{String(item.id).padStart(2, "0")}
+                    {item.zoneLabel}
                   </span>
                 </div>
                 <p className="mt-2 truncate px-1 font-cinzel text-[10px] tracking-[0.18em] text-muted-foreground">

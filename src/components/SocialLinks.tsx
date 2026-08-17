@@ -7,27 +7,44 @@ const TikTokIcon = ({ className = "h-4 w-4" }: { className?: string }) => (
 );
 
 export const socialLinks = [
-  { name: "Instagram", href: "#", icon: Instagram },
-  { name: "TikTok", href: "#", icon: TikTokIcon },
+  { name: "Instagram", href: "https://www.instagram.com/angelux_ink/", icon: Instagram, label: "INSTAGRAM" },
+  { name: "TikTok", href: "https://www.tiktok.com/@angelux_ink", icon: TikTokIcon, label: "TIKTOK" },
 ];
 
 type SocialLinksProps = {
   className?: string;
   iconClassName?: string;
+  variant?: "icon" | "hero";
 };
 
-const SocialLinks = ({ className = "", iconClassName = "h-4 w-4" }: SocialLinksProps) => (
-  <div className={`flex gap-3 ${className}`}>
-    {socialLinks.map((item) => (
-      <a
-        key={item.name}
-        href={item.href}
-        className="flex h-10 w-10 items-center justify-center border border-border/80 transition-colors hover:border-angelux-steel hover:text-primary"
-        aria-label={item.name}
-      >
-        <item.icon className={iconClassName} />
-      </a>
-    ))}
+const SocialLinks = ({ className = "", iconClassName = "h-4 w-4", variant = "icon" }: SocialLinksProps) => (
+  <div className={`flex flex-wrap items-center gap-3 ${className}`}>
+    {socialLinks.map((item) =>
+      variant === "hero" ? (
+        <a
+          key={item.name}
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex w-full items-center justify-center gap-2.5 border border-primary/30 px-5 py-3 font-cinzel text-[10px] tracking-[0.28em] text-primary transition-colors hover:border-angelux-steel hover:bg-primary/5 sm:w-auto"
+          aria-label={item.name}
+        >
+          <item.icon className="h-4 w-4" />
+          {item.label}
+        </a>
+      ) : (
+        <a
+          key={item.name}
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex h-10 w-10 items-center justify-center border border-border/80 transition-colors hover:border-angelux-steel hover:text-primary"
+          aria-label={item.name}
+        >
+          <item.icon className={iconClassName} />
+        </a>
+      ),
+    )}
   </div>
 );
 
