@@ -10,7 +10,7 @@ const NotFound = () => {
 
   return (
     <div className="relative flex min-h-screen items-center overflow-hidden bg-background px-6">
-      <p className="pointer-events-none absolute -right-4 top-10 font-metal text-[40vw] leading-none text-primary/[0.04]">
+      <p className="pointer-events-none absolute -right-4 top-10 font-metal text-[40vw] leading-none text-primary/[0.08]">
         404
       </p>
       <div className="relative z-10 mx-auto max-w-xl">

@@ -26,7 +26,7 @@ const ManifestoSection = () => {
   return (
     <section ref={ref} className="relative overflow-hidden border-b border-border py-24">
       <div className="absolute inset-0 ink-texture opacity-40" />
-      <p className="pointer-events-none absolute -right-6 top-8 font-metal text-[20vw] leading-none text-primary/[0.03] md:text-[12rem]">
+      <p className="pointer-events-none absolute -right-6 top-8 font-metal text-[20vw] leading-none text-primary/[0.08] md:text-[12rem]">
         INK
       </p>
 

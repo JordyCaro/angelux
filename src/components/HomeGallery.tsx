@@ -13,7 +13,7 @@ const HomeGallery = () => {
   return (
     <section className="relative overflow-hidden border-y border-border">
       <div className="pointer-events-none absolute inset-0 ink-texture opacity-40" />
-      <p className="pointer-events-none absolute -right-8 top-0 font-metal text-[28vw] leading-none text-primary/[0.035]">
+      <p className="pointer-events-none absolute -right-8 top-0 font-metal text-[28vw] leading-none text-primary/[0.08]">
         SKIN
       </p>
 

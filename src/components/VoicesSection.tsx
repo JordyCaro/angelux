@@ -62,7 +62,7 @@ const VoicesSection = () => {
   return (
     <section id="voces" className="voices-group relative overflow-hidden border-y border-border py-20 md:py-28">
       <div className="absolute inset-0 ink-texture opacity-30" />
-      <p className="pointer-events-none absolute -left-4 top-6 font-metal text-[22vw] leading-none text-primary/[0.035] md:text-[11rem]">
+      <p className="pointer-events-none absolute -left-4 top-6 font-metal text-[22vw] leading-none text-primary/[0.08] md:text-[11rem]">
         5.0
       </p>
 

@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer id="contact" className="relative overflow-hidden border-t border-border bg-background py-10 md:py-12">
       <div className="absolute inset-0 ink-texture opacity-25" />
-      <p className="pointer-events-none absolute -bottom-10 left-0 w-full text-center font-metal text-[22vw] leading-none text-primary/[0.035]">
+      <p className="pointer-events-none absolute -bottom-10 left-0 w-full text-center font-metal text-[22vw] leading-none text-primary/[0.08]">
         ANGELUX
       </p>
 

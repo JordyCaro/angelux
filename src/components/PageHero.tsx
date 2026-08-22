@@ -25,7 +25,7 @@ const PageHero = ({ title, subtitle, description, children }: PageHeroProps) => 
         transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
       />
       <GeometryCorners />
-      <p className="pointer-events-none absolute right-6 top-24 font-metal text-[28vw] leading-none text-primary/[0.04] md:text-[10rem]">
+      <p className="pointer-events-none absolute right-6 top-24 font-metal text-[28vw] leading-none text-primary/[0.08] md:text-[10rem]">
         {title.slice(0, 3)}
       </p>
 

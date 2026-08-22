@@ -17,7 +17,7 @@ const AboutSection = () => {
   return (
     <section id="quien-soy" ref={ref} className="relative overflow-hidden border-b border-border py-24 md:py-32">
       <div className="absolute inset-0 ink-texture opacity-35" />
-      <p className="pointer-events-none absolute -right-6 top-8 font-metal text-[22vw] leading-none text-primary/[0.03] md:text-[11rem]">
+      <p className="pointer-events-none absolute -right-6 top-8 font-metal text-[22vw] leading-none text-primary/[0.08] md:text-[11rem]">
         YO
       </p>
 

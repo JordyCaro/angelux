@@ -39,7 +39,7 @@ const ItinerantSection = () => {
   return (
     <section id="ruta" ref={ref} className="relative overflow-hidden py-24 md:py-32">
       <div className="absolute inset-0 ink-texture opacity-40" />
-      <p className="pointer-events-none absolute -left-4 top-10 font-metal text-[18vw] leading-none text-primary/[0.03] md:text-[10rem]">
+      <p className="pointer-events-none absolute -left-4 top-10 font-metal text-[18vw] leading-none text-primary/[0.08] md:text-[10rem]">
         RUTA
       </p>
 

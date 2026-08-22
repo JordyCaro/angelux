@@ -42,7 +42,7 @@
     --angelux-black: 0 0% 0%;
     --angelux-blue: 215 55% 14%;
     --angelux-navy: 220 50% 8%;
-    --angelux-steel: 215 45% 28%;
+    --angelux-steel: 215 18% 68%;
     --angelux-cream: 60 6% 95%;
     --ink-drip: 220 40% 5%;
   }
@@ -75,6 +75,7 @@
     --border: 220 30% 16%;
     --input: 220 30% 12%;
     --ring: 215 60% 32%;
+    --angelux-steel: 215 18% 68%;
   }
 }
 
