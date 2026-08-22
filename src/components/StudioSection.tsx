@@ -36,7 +36,7 @@ const StudioSection = () => {
 
       <div className="container relative z-10 mx-auto px-4">
         <motion.div
-          className="mb-16 grid items-end gap-8 md:grid-cols-12"
+          className="mb-16 grid items-end gap-8 text-center md:grid-cols-12 md:text-left"
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
         >
@@ -44,7 +44,7 @@ const StudioSection = () => {
             <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">ESTUDIO</p>
             <h2 className="font-metal text-3xl text-primary sm:text-4xl md:text-6xl">Un espacio, no una vitrina</h2>
           </div>
-          <p className="max-w-md font-montserrat text-sm leading-relaxed text-muted-foreground md:col-span-5">
+          <p className="mx-auto max-w-md font-montserrat text-sm leading-relaxed text-muted-foreground md:col-span-5 md:mx-0">
             Estudio en Medellín. Privado, de cita. La sesión se coordina por mensaje: idea, fecha y detalles.
           </p>
         </motion.div>
@@ -53,12 +53,12 @@ const StudioSection = () => {
           {modes.map((mode, i) => (
             <motion.article
               key={mode.title}
-              className="group bg-background p-8"
+              className="group bg-background p-8 text-center md:text-left"
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 + i * 0.08 }}
             >
-              <mode.icon className="mb-6 h-6 w-6 text-angelux-steel" />
+              <mode.icon className="mx-auto mb-6 h-6 w-6 text-angelux-steel md:mx-0" />
               <h3 className="mt-3 font-metal text-2xl text-primary">{mode.title}</h3>
               <p className="mt-4 font-montserrat text-sm leading-relaxed text-muted-foreground">{mode.text}</p>
             </motion.article>

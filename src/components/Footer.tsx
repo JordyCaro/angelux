@@ -29,7 +29,7 @@ const Footer = () => {
             <p className="mb-8 max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground">
               Tatuaje en Medellín. Realismo y sombras. Cada pieza es única, trabajada con detalle y sin relleno de catálogo.
             </p>
-            <SocialLinks />
+            <SocialLinks className="justify-center" />
           </motion.div>
 
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">

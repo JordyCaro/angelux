@@ -82,7 +82,7 @@ const BookingSection = () => {
                   initial={{ opacity: 0, x: -30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="md:col-span-2 flex flex-col justify-center bg-secondary/30 p-5 md:p-8"
+                  className="md:col-span-2 flex flex-col items-center justify-center bg-secondary/30 p-5 text-center md:items-start md:p-8 md:text-left"
                 >
                   <h3 className="font-metal text-2xl mb-6">¿Por qué elegirnos?</h3>
 
@@ -99,7 +99,7 @@ const BookingSection = () => {
                         initial={{ opacity: 0, x: -20 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                        className="flex items-start gap-3 text-sm text-muted-foreground font-montserrat"
+                        className="flex items-start justify-center gap-3 text-sm text-muted-foreground font-montserrat md:justify-start"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
                         {item}
@@ -112,11 +112,11 @@ const BookingSection = () => {
                   initial={{ opacity: 0, x: 30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="md:col-span-3 flex flex-col justify-center p-5 md:p-8"
+                  className="md:col-span-3 flex flex-col items-center justify-center p-5 text-center md:items-start md:p-8 md:text-left"
                 >
                   <p className="mb-6 font-cinzel text-[11px] tracking-[0.32em] text-angelux-steel">ESCRIBIME</p>
                   <ul className="space-y-5">
-                    <li className="flex items-start gap-4">
+                    <li className="flex flex-col items-center gap-2 sm:flex-row sm:items-start sm:gap-4 md:justify-start">
                       <Mail className="mt-1 h-5 w-5 shrink-0 text-angelux-steel" />
                       <div>
                         <p className="font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground">EMAIL</p>
@@ -128,7 +128,7 @@ const BookingSection = () => {
                         </a>
                       </div>
                     </li>
-                    <li className="flex items-start gap-4">
+                    <li className="flex flex-col items-center gap-2 sm:flex-row sm:items-start sm:gap-4 md:justify-start">
                       <Phone className="mt-1 h-5 w-5 shrink-0 text-angelux-steel" />
                       <div>
                         <p className="font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground">TELÉFONO</p>
@@ -137,7 +137,7 @@ const BookingSection = () => {
                         </a>
                       </div>
                     </li>
-                    <li className="flex items-start gap-4">
+                    <li className="flex flex-col items-center gap-2 sm:flex-row sm:items-start sm:gap-4 md:justify-start">
                       <MapPin className="mt-1 h-5 w-5 shrink-0 text-angelux-steel" />
                       <div>
                         <p className="font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground">ESTUDIO</p>
@@ -147,9 +147,9 @@ const BookingSection = () => {
                       </div>
                     </li>
                   </ul>
-                  <div className="mt-8 border-t border-border pt-6">
+                  <div className="mt-8 flex flex-col items-center border-t border-border pt-6 md:items-start">
                     <p className="mb-4 font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground">REDES</p>
-                    <SocialLinks iconClassName="h-5 w-5" />
+                    <SocialLinks className="justify-center md:justify-start" iconClassName="h-5 w-5" />
                   </div>
                 </motion.div>
 

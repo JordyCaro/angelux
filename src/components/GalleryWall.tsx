@@ -40,7 +40,7 @@ const GalleryWall = () => {
       <div className="shop-wall pointer-events-none absolute inset-0" />
 
       <header className="relative overflow-hidden border-b border-white/10 pt-28">
-        <div className="relative z-10 flex flex-col justify-between gap-8 px-4 pb-10 md:flex-row md:items-end md:px-8">
+        <div className="relative z-10 flex flex-col items-center justify-between gap-8 px-4 pb-10 text-center md:flex-row md:items-end md:px-8 md:text-left">
           <div>
             <p className="ink-stamp mb-5 inline-block">MEDELLÍN · REALISMO</p>
             <h1 className="font-metal text-5xl tracking-wide text-primary sm:text-6xl md:text-8xl">
@@ -53,7 +53,7 @@ const GalleryWall = () => {
           </p>
         </div>
 
-        <div className="relative z-10 flex gap-2 overflow-x-auto border-t border-white/10 px-4 py-3 md:px-8">
+        <div className="relative z-10 flex justify-center gap-2 overflow-x-auto border-t border-white/10 px-4 py-3 md:justify-start md:px-8">
           {galleryFilters.map((tab) => (
             <button
               key={tab.value}

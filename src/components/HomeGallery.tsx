@@ -31,11 +31,11 @@ const HomeGallery = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-background/30 via-transparent to-background/80" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/20" />
 
-          <div className="absolute left-6 top-24 md:left-10">
+          <div className="absolute left-1/2 top-24 -translate-x-1/2 md:left-10 md:translate-x-0">
             <p className="ink-stamp">ARCHIVO · REAL</p>
           </div>
 
-          <div className="absolute bottom-8 left-6 right-6 md:left-10 md:right-auto md:max-w-lg">
+          <div className="absolute bottom-8 left-6 right-6 text-center md:left-10 md:right-auto md:max-w-lg md:text-left">
             <p className="font-cinzel text-[10px] tracking-[0.35em] text-angelux-steel">
               {active.zoneLabel} · {active.styleLabel}
             </p>
@@ -47,11 +47,11 @@ const HomeGallery = () => {
           </div>
         </div>
 
-        <div className="relative flex flex-col justify-between border-t border-border bg-background/80 p-6 lg:col-span-4 lg:border-l lg:border-t-0 lg:p-8">
+        <div className="relative flex flex-col justify-between border-t border-border bg-background/80 p-6 text-center lg:col-span-4 lg:border-l lg:border-t-0 lg:p-8 lg:text-left">
           <div>
             <p className="mb-2 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">ARCHIVO</p>
             <h3 className="font-metal text-3xl text-primary md:text-4xl">El archivo</h3>
-            <p className="mt-4 max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground lg:mx-0">
               Un recorte del archivo real. El muro completo está en galería: más piezas, más sombra, más piel.
             </p>
           </div>

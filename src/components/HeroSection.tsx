@@ -22,7 +22,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-background/50" />
       <div className="absolute inset-0 ink-texture opacity-50" />
 
-      <div className="relative z-10 flex flex-1 flex-col px-4 pt-28 md:px-10 md:pt-32 lg:px-16">
+      <div className="relative z-10 flex flex-1 flex-col px-4 pt-28 text-center md:px-10 md:pt-32 md:text-left lg:px-16">
         <motion.p
           className="font-cinzel text-[10px] tracking-[0.32em] text-muted-foreground sm:text-[11px] sm:tracking-[0.42em]"
           initial={{ opacity: 0, y: 10 }}
@@ -53,7 +53,7 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.p
-            className="mt-6 max-w-xl font-montserrat text-sm leading-relaxed text-muted-foreground sm:mt-8 sm:text-base md:text-lg"
+            className="mx-auto mt-6 max-w-xl font-montserrat text-sm leading-relaxed text-muted-foreground sm:mt-8 sm:text-base md:mx-0 md:text-lg"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
@@ -62,7 +62,7 @@ const HeroSection = () => {
           </motion.p>
 
           <motion.div
-            className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:flex-wrap"
+            className="mt-8 flex w-full flex-col items-center gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:flex-wrap sm:justify-center md:justify-start"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.65 }}
@@ -79,7 +79,7 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.div
-            className="mt-6 sm:mt-8"
+            className="mt-6 flex justify-center sm:mt-8 md:justify-start"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}

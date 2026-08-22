@@ -28,7 +28,7 @@ const Services = () => {
                             { step: "03", title: "SESIÓN", desc: "En el estudio. Luz, calma y protocolo. El detalle se trabaja sin prisa." },
                             { step: "04", title: "CUIDADO", desc: "Seguimiento de la curación por mensaje. La pieza no se abandona al secar." }
                         ].map((item, i) => (
-                            <div key={i} className="relative p-6 border border-border/50 bg-secondary/20 rounded-lg hover:border-primary/30 transition-all group">
+                            <div key={i} className="relative p-6 border border-border/50 bg-secondary/20 rounded-lg hover:border-primary/30 transition-all group text-center md:text-left">
                                 <span className="text-6xl font-metal text-primary/10 absolute top-2 right-4 group-hover:text-primary/20 transition-colors">{item.step}</span>
                                 <h3 className="font-cinzel text-xl text-primary mb-3 mt-4">{item.title}</h3>
                                 <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>

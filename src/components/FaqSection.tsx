@@ -17,13 +17,13 @@ const FaqSection = ({ compact = false }: FaqSectionProps) => {
       <div className="container relative z-10 mx-auto px-4">
         <div className={`grid gap-10 ${compact ? "" : "lg:grid-cols-12"}`}>
           <motion.div
-            className={compact ? "" : "lg:col-span-4"}
+            className={`${compact ? "text-center md:text-left" : "text-center lg:col-span-4 lg:text-left"}`}
             initial={{ opacity: 0, y: 16 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
           >
             <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">DUDAS</p>
             <h2 className="font-metal text-4xl text-primary md:text-5xl">Antes de la aguja</h2>
-            <p className="mt-4 max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground lg:mx-0">
               Cuidado, cuándo no tatuarse y las preguntas que todo el mundo hace. Corto y sin mito.
             </p>
           </motion.div>

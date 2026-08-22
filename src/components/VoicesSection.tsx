@@ -63,9 +63,9 @@ const VoicesSection = () => {
     <section id="voces" className="voices-group relative overflow-hidden border-y border-border py-20 md:py-28">
       <div className="absolute inset-0 ink-texture opacity-30" />
 
-      <div className="container relative z-10 mx-auto mb-10 px-4 md:mb-14">
+      <div className="container relative z-10 mx-auto mb-10 px-4 text-center md:mb-14 md:text-left">
             <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">VOCES</p>
-        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+        <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-end">
           <h2 className="font-metal text-4xl text-primary md:text-6xl">La piel habla</h2>
           <p className="max-w-sm font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground md:text-right">
             LO QUE DICE LA GENTE · SIN FILTRO

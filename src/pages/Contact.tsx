@@ -18,11 +18,11 @@ const Contact = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
                         {/* Contact Info */}
-                        <div className="space-y-8">
+                        <div className="space-y-8 text-center lg:text-left">
                             <h2 className="font-metal text-3xl md:text-4xl text-white mb-6">Información</h2>
 
                             <div className="space-y-6">
-                                <div className="flex items-start gap-4 text-muted-foreground group">
+                                <div className="flex flex-col items-center gap-4 text-muted-foreground group sm:flex-row sm:items-start">
                                     <div className="p-3 bg-secondary rounded-lg border border-border group-hover:border-primary/50 transition-colors">
                                         <MapPin className="w-6 h-6 text-primary" />
                                     </div>
@@ -33,7 +33,7 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex items-start gap-4 text-muted-foreground group">
+                                <div className="flex flex-col items-center gap-4 text-muted-foreground group sm:flex-row sm:items-start">
                                     <div className="p-3 bg-secondary rounded-lg border border-border group-hover:border-primary/50 transition-colors">
                                         <Phone className="w-6 h-6 text-primary" />
                                     </div>
@@ -44,7 +44,7 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex items-start gap-4 text-muted-foreground group">
+                                <div className="flex flex-col items-center gap-4 text-muted-foreground group sm:flex-row sm:items-start">
                                     <div className="p-3 bg-secondary rounded-lg border border-border group-hover:border-primary/50 transition-colors">
                                         <Mail className="w-6 h-6 text-primary" />
                                     </div>
@@ -55,7 +55,7 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex items-start gap-4 text-muted-foreground group">
+                                <div className="flex flex-col items-center gap-4 text-muted-foreground group sm:flex-row sm:items-start">
                                     <div className="p-3 bg-secondary rounded-lg border border-border group-hover:border-primary/50 transition-colors">
                                         <Clock className="w-6 h-6 text-primary" />
                                     </div>
@@ -67,8 +67,8 @@ const Contact = () => {
                                 </div>
                             </div>
 
-                            <div className="pt-8 flex justify-center md:justify-start">
-                                <SocialLinks iconClassName="h-5 w-5" />
+                            <div className="pt-8 flex justify-center lg:justify-start">
+                                <SocialLinks className="justify-center lg:justify-start" iconClassName="h-5 w-5" />
                             </div>
                         </div>
 

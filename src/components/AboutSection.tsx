@@ -16,7 +16,7 @@ const AboutSection = ({ variant = "home" }: AboutSectionProps) => {
     <section id="quien-soy" ref={ref} className="relative overflow-hidden border-b border-border py-24 md:py-32">
       <div className="absolute inset-0 ink-texture opacity-35" />
 
-      <div className="container relative z-10 mx-auto px-4">
+      <div className="container relative z-10 mx-auto px-4 text-center md:text-left">
         <motion.p
           className="mb-10 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel"
           initial={{ opacity: 0, y: 12 }}
@@ -32,7 +32,7 @@ const AboutSection = ({ variant = "home" }: AboutSectionProps) => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <div className="flash-card -rotate-1">
+            <div className="flash-card mx-auto max-w-md -rotate-1 lg:mx-0 lg:max-w-none">
               <div className="relative aspect-[4/5] overflow-hidden">
                 <img
                   src={aboutPortrait}
@@ -55,7 +55,7 @@ const AboutSection = ({ variant = "home" }: AboutSectionProps) => {
             <h2 className={`font-metal text-primary ${isPage ? "text-4xl sm:text-5xl md:text-7xl" : "text-3xl sm:text-4xl md:text-6xl"}`}>
               {aboutIntro.headline}
             </h2>
-            <div className="mt-8 max-w-xl space-y-4 font-montserrat text-sm leading-relaxed text-muted-foreground md:text-base">
+            <div className="mt-8 mx-auto max-w-xl space-y-4 font-montserrat text-sm leading-relaxed text-muted-foreground md:mx-0 md:text-base">
               {aboutIntro.paragraphs.map((p) => (
                 <p key={p.slice(0, 24)}>{p}</p>
               ))}
@@ -73,7 +73,7 @@ const AboutSection = ({ variant = "home" }: AboutSectionProps) => {
             {variant === "home" && (
               <Link
                 to="/sobre-mi"
-                className="mt-10 inline-flex items-center font-cinzel text-xs tracking-[0.28em] text-angelux-steel hover:text-primary"
+                className="mt-10 inline-flex items-center justify-center font-cinzel text-xs tracking-[0.28em] text-angelux-steel hover:text-primary"
               >
                 LEER QUIÉN SOY →
               </Link>

@@ -26,7 +26,7 @@ const PageHero = ({ title, subtitle, description, children }: PageHeroProps) => 
       />
       <GeometryCorners />
 
-      <div className="relative z-10 container mx-auto px-4">
+      <div className="relative z-10 container mx-auto px-4 text-center md:text-left">
         <motion.p
           className="mb-4 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel"
           initial={{ opacity: 0, y: 12 }}
@@ -54,7 +54,7 @@ const PageHero = ({ title, subtitle, description, children }: PageHeroProps) => 
         )}
         {description && (
           <motion.p
-            className="mt-6 max-w-xl font-montserrat text-base text-muted-foreground/85"
+            className="mx-auto mt-6 max-w-xl font-montserrat text-base text-muted-foreground/85 md:mx-0"
             initial={{ y: 16, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.45 }}
