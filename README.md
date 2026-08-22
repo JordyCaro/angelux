@@ -1,8 +1,8 @@
 # Angelux Ink
 
-Sitio de **Angelux Ink**, tatuador itinerante: sesiones a domicilio, guest spots y proyectos en otras ciudades.
+Sitio de **Angelux Ink**, tatuador en Medellín: realismo, sombras y piezas a medida.
 
-El blackwork y el contraste son un fuerte del archivo, no un límite de estilo.
+El realismo y las sombras son el fuerte del archivo, no un límite de estilo.
 
 Al compartir el enlace, la vista previa usa el nombre **Angelux Ink**, el logo y una descripción corta (Open Graph / Twitter Card).
 

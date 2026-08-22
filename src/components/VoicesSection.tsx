@@ -39,8 +39,8 @@ const Tape = ({
   return (
     <div className="voices-mask overflow-hidden py-5 md:py-7">
       <div
-        className={`voices-tape flex w-max items-end ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}
-        style={{ animationDuration: duration }}
+        className={`voices-tape pointer-events-none flex w-max items-end ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}
+        style={{ animationDuration: duration, animationPlayState: "running" }}
       >
         {loop.map((voice, i) => (
           <div key={`${voice.name}-${i}`} className="flex items-end">
@@ -62,9 +62,6 @@ const VoicesSection = () => {
   return (
     <section id="voces" className="voices-group relative overflow-hidden border-y border-border py-20 md:py-28">
       <div className="absolute inset-0 ink-texture opacity-30" />
-      <p className="pointer-events-none absolute -left-4 top-6 font-metal text-[22vw] leading-none text-primary/[0.08] md:text-[11rem]">
-        5.0
-      </p>
 
       <div className="container relative z-10 mx-auto mb-10 px-4 md:mb-14">
             <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">VOCES</p>

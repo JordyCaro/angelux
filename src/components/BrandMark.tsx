@@ -4,9 +4,9 @@ interface BrandMarkProps {
 
 const BrandMark = ({ className = "h-12 w-auto" }: BrandMarkProps) => (
   <img
-    src="/logo.png"
+    src="/logo-white.png"
     alt="Angelux Ink"
-    className={`logo-glow ${className}`}
+    className={className}
   />
 );
 

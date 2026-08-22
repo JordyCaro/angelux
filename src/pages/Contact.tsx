@@ -1,7 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import BookingSection from "@/components/BookingSection";
 import FaqSection from "@/components/FaqSection";
 import SocialLinks from "@/components/SocialLinks";
 
@@ -11,7 +10,7 @@ const Contact = () => {
             <PageHero
                 title="CONTACTO"
                 subtitle="HABLEMOS DE TU PROYECTO"
-                description="Consulta online, domicilio o guest. Cuéntame la idea y la ciudad: armamos la sesión donde coincidamos."
+                description="Cuéntame la idea, la zona y las referencias. Estudio en Medellín, cita previa. Cotizo cuando veo eso."
             />
 
             <section className="py-12 md:py-24 bg-black relative overflow-hidden">
@@ -28,9 +27,9 @@ const Contact = () => {
                                         <MapPin className="w-6 h-6 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="font-cinzel text-white text-lg mb-1">Cómo trabajo</h3>
-                                        <p>Estudio itinerante</p>
-                                        <p>Domicilio · Guest spots · Consulta online</p>
+                                        <h3 className="font-cinzel text-white text-lg mb-1">Estudio</h3>
+                                        <p>Medellín</p>
+                                        <p>Cita previa · Consulta por mensaje</p>
                                     </div>
                                 </div>
 
@@ -63,7 +62,7 @@ const Contact = () => {
                                     <div>
                                         <h3 className="font-cinzel text-white text-lg mb-1">Agenda</h3>
                                         <p>Consulta previa por mensaje</p>
-                                        <p>Fechas según ruta y domicilio</p>
+                                        <p>Fechas según disponibilidad</p>
                                     </div>
                                 </div>
                             </div>
@@ -76,10 +75,10 @@ const Contact = () => {
                         <div className="relative h-[400px] w-full overflow-hidden border border-border bg-secondary/30">
                             <div className="absolute inset-0 bg-gradient-to-br from-secondary to-background opacity-70" />
                             <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                                <p className="mb-3 font-cinzel text-[11px] tracking-[0.35em] text-angelux-steel">SIN LOCAL FIJO</p>
-                                <p className="max-w-sm font-metal text-3xl text-primary">La ruta se arma por ciudad</p>
+                                <p className="mb-3 font-cinzel text-[11px] tracking-[0.35em] text-angelux-steel">ESTUDIO · MEDELLÍN</p>
+                                <p className="max-w-sm font-metal text-3xl text-primary">La sesión se arma por mensaje</p>
                                 <p className="mt-4 max-w-xs font-montserrat text-sm text-muted-foreground">
-                                    México · Colombia · España · Argentina · Perú · EE.UU. · Portugal · Chile
+                                    Realismo y sombras. Cita previa. El estudio se abre para la pieza.
                                 </p>
                             </div>
                         </div>
@@ -89,7 +88,6 @@ const Contact = () => {
             </section>
 
             <FaqSection compact />
-            <BookingSection />
         </PageLayout>
     );
 };

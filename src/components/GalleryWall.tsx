@@ -40,19 +40,16 @@ const GalleryWall = () => {
       <div className="shop-wall pointer-events-none absolute inset-0" />
 
       <header className="relative overflow-hidden border-b border-white/10 pt-28">
-        <p className="pointer-events-none absolute -left-4 top-16 font-metal text-[34vw] leading-none text-white/[0.04] md:text-[18rem]">
-          FLASH
-        </p>
         <div className="relative z-10 flex flex-col justify-between gap-8 px-4 pb-10 md:flex-row md:items-end md:px-8">
           <div>
             <p className="ink-stamp mb-5 inline-block">MEDELLÍN · REALISMO</p>
             <h1 className="font-metal text-5xl tracking-wide text-primary sm:text-6xl md:text-8xl">
               ARCHIVO
-              <span className="block text-2xl text-primary/60 sm:text-3xl md:text-5xl">mangas / {galleryItems.length}</span>
+              <span className="block text-2xl text-primary/60 sm:text-3xl md:text-5xl">piezas / {galleryItems.length}</span>
             </h1>
           </div>
           <p className="max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground">
-            Piezas reales de Jonathan. Por ahora el muro es de mangas — las piernas entran cuando la piel las pida.
+            Piezas reales de Jonathan. El muro crece con más zonas, más sombra, más piel.
           </p>
         </div>
 

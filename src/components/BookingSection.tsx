@@ -1,20 +1,20 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Calendar, User, Mail, MessageSquare, Brush, Home, Plane, Send } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import SocialLinks from "@/components/SocialLinks";
+
+/* Formulario de contacto — oculto por ahora. No borrar.
+import { useState } from "react";
+import { Calendar, User, MessageSquare, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-
-const serviceTypes = [
-  { id: "tattoo", label: "Tatuaje", icon: Brush },
-  { id: "home", label: "Domicilio", icon: Home },
-  { id: "guest", label: "Guest / ruta", icon: Plane },
-];
+*/
 
 const BookingSection = () => {
-  const [selectedService, setSelectedService] = useState("tattoo");
+  /* Formulario de contacto — oculto por ahora. No borrar.
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,11 +22,7 @@ const BookingSection = () => {
     date: "",
     message: "",
   });
-  
-  const titleRef = useRef(null);
-  const isInView = useInView(titleRef, { once: true });
   const { toast } = useToast();
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
@@ -35,12 +31,15 @@ const BookingSection = () => {
     });
     setFormData({ name: "", email: "", phone: "", date: "", message: "" });
   };
+  */
+
+  const titleRef = useRef(null);
+  const isInView = useInView(titleRef, { once: true });
 
   return (
     <section id="booking" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 ink-texture opacity-50" />
-      
-      {/* Decorative elements */}
+
       <motion.div
         className="absolute top-20 left-10 w-40 h-40 rounded-full bg-accent/5 blur-3xl"
         animate={{
@@ -59,7 +58,6 @@ const BookingSection = () => {
       />
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Section Header */}
         <motion.div
           ref={titleRef}
           className="text-center mb-16"
@@ -67,7 +65,7 @@ const BookingSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">RESERVA</p>
+          <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">CONTACTO</p>
           <h2 className="font-metal text-4xl md:text-6xl lg:text-7xl mb-4 text-primary">
             Agenda
           </h2>
@@ -80,7 +78,6 @@ const BookingSection = () => {
           <Card className="bg-card/50 border-border overflow-hidden">
             <CardContent className="p-0">
               <div className="grid md:grid-cols-5">
-                {/* Left side - Info */}
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -88,7 +85,7 @@ const BookingSection = () => {
                   className="md:col-span-2 flex flex-col justify-center bg-secondary/30 p-5 md:p-8"
                 >
                   <h3 className="font-metal text-2xl mb-6">¿Por qué elegirnos?</h3>
-                  
+
                   <ul className="space-y-4">
                     {[
                       "Realismo y sombras como fuerte",
@@ -109,43 +106,60 @@ const BookingSection = () => {
                       </motion.li>
                     ))}
                   </ul>
+                </motion.div>
 
-                  <div className="mt-8 pt-8 border-t border-border">
-                    <p className="font-cinzel text-xs tracking-wider text-muted-foreground mb-2">CONSULTAS</p>
-                    <a href="mailto:info@angeluxink.com" className="font-metal text-lg hover:text-primary transition-colors">
-                      info@angeluxink.com
-                    </a>
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="md:col-span-3 flex flex-col justify-center p-5 md:p-8"
+                >
+                  <p className="mb-6 font-cinzel text-[11px] tracking-[0.32em] text-angelux-steel">ESCRIBIME</p>
+                  <ul className="space-y-5">
+                    <li className="flex items-start gap-4">
+                      <Mail className="mt-1 h-5 w-5 shrink-0 text-angelux-steel" />
+                      <div>
+                        <p className="font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground">EMAIL</p>
+                        <a
+                          href="mailto:info@angeluxink.com"
+                          className="font-metal text-xl text-primary transition-colors hover:text-angelux-steel md:text-2xl"
+                        >
+                          info@angeluxink.com
+                        </a>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <Phone className="mt-1 h-5 w-5 shrink-0 text-angelux-steel" />
+                      <div>
+                        <p className="font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground">TELÉFONO</p>
+                        <a href="tel:+525551234567" className="font-montserrat text-base text-primary hover:text-angelux-steel">
+                          +52 555 123 4567
+                        </a>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <MapPin className="mt-1 h-5 w-5 shrink-0 text-angelux-steel" />
+                      <div>
+                        <p className="font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground">ESTUDIO</p>
+                        <p className="font-montserrat text-base text-muted-foreground">
+                          Medellín · Cita previa
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <div className="mt-8 border-t border-border pt-6">
+                    <p className="mb-4 font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground">REDES</p>
+                    <SocialLinks iconClassName="h-5 w-5" />
                   </div>
                 </motion.div>
 
-                {/* Right side - Form */}
+                {/* Formulario de contacto — oculto por ahora. No borrar.
                 <motion.div
                   initial={{ opacity: 0, x: 30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="md:col-span-3 p-5 md:p-8"
                 >
-                  {/* Service Selection */}
-                  <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
-                      {serviceTypes.map((service) => (
-                        <motion.button
-                          key={service.id}
-                          onClick={() => setSelectedService(service.id)}
-                          className={`flex w-full items-center justify-center gap-3 rounded-lg border py-4 transition-all duration-300 ${
-                            selectedService === service.id
-                              ? "border-primary bg-primary/10 text-primary"
-                              : "border-border hover:border-muted-foreground"
-                        }`}
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        <service.icon className="w-5 h-5" />
-                        <span className="font-cinzel tracking-wider text-sm">{service.label}</span>
-                      </motion.button>
-                    ))}
-                  </div>
-
-                  {/* Form */}
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid sm:grid-cols-2 gap-5">
                       <div className="relative">
@@ -197,7 +211,7 @@ const BookingSection = () => {
                     <div className="relative">
                       <MessageSquare className="absolute left-4 top-4 w-4 h-4 text-muted-foreground" />
                       <Textarea
-                        placeholder="Cuéntame la idea, la zona del cuerpo y si es manga u otra pieza..."
+                        placeholder="Cuéntame la idea, la zona del cuerpo y las referencias..."
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="pl-12 min-h-[120px] bg-secondary/50 border-border focus:border-accent font-cinzel resize-none"
@@ -205,7 +219,7 @@ const BookingSection = () => {
                       />
                     </div>
 
-                    <Button 
+                    <Button
                       type="submit"
                       size="lg"
                       className="w-full font-cinzel tracking-wider bg-primary hover:bg-primary/80 text-primary-foreground group"
@@ -215,6 +229,7 @@ const BookingSection = () => {
                     </Button>
                   </form>
                 </motion.div>
+                */}
               </div>
             </CardContent>
           </Card>

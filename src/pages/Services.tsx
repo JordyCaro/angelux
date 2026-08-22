@@ -8,7 +8,7 @@ const Services = () => {
         <PageLayout>
             <PageHero
                 title="SERVICIOS"
-                subtitle="OFICIO EN MOVIMIENTO"
+                subtitle="OFICIO EN MEDELLÍN"
                 description="Tatuaje a medida en Medellín. Realismo y sombras. Cada pieza se construye, no se copia."
             />
             <div className="py-12 md:py-20 space-y-20 md:space-y-32">
@@ -23,10 +23,10 @@ const Services = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                         {[
-                            { step: "01", title: "CONSULTA", desc: "Hablamos de la idea, la ciudad y si la sesión es a domicilio o en un guest de la ruta." },
-                            { step: "02", title: "DISEÑO", desc: "Boceto a distancia. Ajustamos hasta que el trazo encaje con tu cuerpo y tu historia." },
-                            { step: "03", title: "SESIÓN", desc: "Llego con kit y protocolo, o nos vemos donde esté la ruta. Misma higiene, sin local fijo." },
-                            { step: "04", title: "CUIDADO", desc: "Seguimiento de la curación por mensaje, aunque ya esté en otra ciudad." }
+                            { step: "01", title: "CONSULTA", desc: "Hablamos de la idea, las referencias y la zona del cuerpo. Cotizo cuando veo eso." },
+                            { step: "02", title: "DISEÑO", desc: "Boceto a medida. Ajustamos hasta que el volumen encaje con tu cuerpo y tu historia." },
+                            { step: "03", title: "SESIÓN", desc: "En el estudio. Luz, calma y protocolo. El detalle se trabaja sin prisa." },
+                            { step: "04", title: "CUIDADO", desc: "Seguimiento de la curación por mensaje. La pieza no se abandona al secar." }
                         ].map((item, i) => (
                             <div key={i} className="relative p-6 border border-border/50 bg-secondary/20 rounded-lg hover:border-primary/30 transition-all group">
                                 <span className="text-6xl font-metal text-primary/10 absolute top-2 right-4 group-hover:text-primary/20 transition-colors">{item.step}</span>

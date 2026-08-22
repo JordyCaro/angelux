@@ -8,7 +8,10 @@ const Footer = () => {
   return (
     <footer id="contact" className="relative overflow-hidden border-t border-border bg-background py-10 md:py-12">
       <div className="absolute inset-0 ink-texture opacity-25" />
-      <p className="pointer-events-none absolute -bottom-10 left-0 w-full text-center font-metal text-[22vw] leading-none text-primary/[0.08]">
+      <p
+        aria-hidden
+        className="pointer-events-none absolute -bottom-8 left-0 hidden w-full select-none text-center font-metal text-[8rem] leading-none text-primary/[0.06] lg:block xl:text-[10rem]"
+      >
         ANGELUX
       </p>
 
@@ -37,7 +40,7 @@ const Footer = () => {
                 { name: "Sobre mí", path: "/sobre-mi" },
                 { name: "Galería", path: "/galeria" },
                 { name: "Servicios", path: "/servicios" },
-                { name: "Ruta", path: "/ruta" },
+                { name: "Estudio", path: "/estudio" },
                 { name: "Agendar", path: "/contacto" },
               ].map((item) => (
                 <li key={item.name}>
@@ -58,9 +61,9 @@ const Footer = () => {
               <li className="flex items-start justify-center gap-3 lg:justify-start">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-angelux-steel" />
                 <span>
-                  Estudio itinerante
+                  Estudio en Medellín
                   <br />
-                  Domicilio y guest spots
+                  Cita previa · Realismo y sombras
                 </span>
               </li>
               <li className="flex items-center justify-center gap-3 lg:justify-start">

@@ -1,79 +1,115 @@
+import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
-import PageHero from "@/components/PageHero";
+import AboutSection from "@/components/AboutSection";
+import GalleryFilmstrip from "@/components/GalleryFilmstrip";
 import FaqSection from "@/components/FaqSection";
 import BookingSection from "@/components/BookingSection";
 import { Link } from "react-router-dom";
-
-const portrait = "/gallery/mangas/buda.jpg";
+import { aboutCraftImage, aboutExtended, aboutHeroImage, aboutProcess } from "@/data/about";
 
 const About = () => {
   return (
     <PageLayout>
-      <PageHero
-        title="SOBRE MÍ"
-        subtitle="JONATHAN · ANGELUX INK"
-        description="Si la piel va a hablar, que hable fuerte. Realismo y sombras en Medellín: cada pieza se construye, no se copia."
-      />
+      <section className="relative flex min-h-[78svh] flex-col overflow-hidden">
+        <img
+          src={aboutHeroImage}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-[center_20%] contrast-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/25 to-background/50" />
+        <div className="absolute inset-0 ink-texture opacity-50" />
 
-      <section className="relative overflow-hidden py-20 md:py-28">
-        <div className="container mx-auto grid items-start gap-12 px-4 lg:grid-cols-12">
-          <div className="flash-card lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden">
-              <img src={portrait} alt="Jonathan — Angelux Ink" className="h-full w-full object-cover contrast-110" />
-              <span className="ink-stamp absolute left-4 top-4">EL OFICIO</span>
-            </div>
-          </div>
-          <div className="lg:col-span-7">
-            <p className="font-cinzel text-[11px] tracking-[0.32em] text-angelux-steel">PRIMERA PERSONA</p>
-            <h2 className="mt-3 font-metal text-4xl text-primary md:text-5xl">No tatuo para una foto. Tatuo para que se lleve.</h2>
-            <div className="mt-8 space-y-4 font-montserrat text-sm leading-relaxed text-muted-foreground md:text-base">
-              <p>
-                Soy Jonathan. Tatuador en Medellín. Realismo y sombras: el volumen, la luz, el detalle que se aguanta de cerca. Eso es el oficio. Lo demás es ruido.
-              </p>
-              <p>
-                Cada tatuaje es único. Lo trabajo con calma y con la atención que pide una pieza que no se borra. No copio catálogo. No apuro el trazo. Profesionalismo no es un letrero en la puerta: es llegar, ejecutar y responder cuando la tinta todavía está viva.
-              </p>
-              <p>
-                Si buscás arte en la piel con compromiso de verdad, escribime. Hagamos algo especial. Algo que se lleve, no que se esconda.
-              </p>
-            </div>
-          </div>
+        <div className="relative z-10 flex flex-1 flex-col justify-end px-4 pb-16 pt-32 md:px-10 md:pb-20 lg:px-16">
+          <motion.p
+            className="font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            JONATHAN · ANGELUX INK
+          </motion.p>
+          <motion.h1
+            className="mt-4 font-metal leading-[0.86] tracking-wide text-primary"
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.12, duration: 0.8 }}
+          >
+            <span className="block text-6xl sm:text-8xl md:text-[9rem]">Sobre mí</span>
+          </motion.h1>
+          <motion.p
+            className="mt-6 max-w-xl font-montserrat text-base leading-relaxed text-muted-foreground md:text-lg"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.28 }}
+          >
+            Si la piel va a hablar, que hable fuerte. Realismo y sombras en Medellín: cada pieza se construye, no se copia.
+          </motion.p>
         </div>
       </section>
 
-      <section className="border-y border-border bg-card/20 py-24">
-        <div className="container mx-auto px-4">
-          <p className="mb-4 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">CÓMO TRABAJO</p>
-          <div className="grid gap-12 lg:grid-cols-2">
-            <div>
-              <h2 className="font-metal text-3xl text-primary md:text-5xl">La sombra no se improvisa</h2>
-              <p className="mt-6 max-w-lg font-montserrat text-sm leading-relaxed text-muted-foreground">
-                No vendo un catálogo. Vendo tiempo, trazo y una sesión que se siente tuya. Referencias, idea, zona del cuerpo: lo armamos juntos hasta que el realismo encaje.
-              </p>
-              <Link
-                to="/galeria"
-                className="mt-8 inline-flex font-cinzel text-xs tracking-[0.28em] text-angelux-steel hover:text-primary"
-              >
-                VER LAS MANGAS →
-              </Link>
-            </div>
-            <div className="grid gap-px bg-border sm:grid-cols-2">
-              {[
-                { t: "Consulta", d: "Idea, referencias y zona. Cotizo cuando veo eso, no a ciegas." },
-                { t: "Diseño", d: "Boceto a medida. Ajustamos hasta que el volumen encaje con tu cuerpo." },
-                { t: "Sesión", d: "Medellín. Luz, calma, protocolo. El detalle se trabaja sin prisa." },
-                { t: "Aftercare", d: "Seguimiento por mensaje. La pieza no se abandona al secar." },
-              ].map((item) => (
-                <article key={item.t} className="bg-background p-6">
-                  <h3 className="font-metal text-2xl text-primary">{item.t}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground">{item.d}</p>
-                </article>
+      <AboutSection variant="page" />
+
+      <section className="relative overflow-hidden border-b border-border py-24 md:py-32">
+        <div className="absolute inset-0 ink-texture opacity-30" />
+
+        <div className="container relative z-10 mx-auto grid items-center gap-12 px-4 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <p className="font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">PRIMERA PERSONA</p>
+            <h2 className="mt-4 font-metal text-4xl text-primary sm:text-5xl md:text-7xl">
+              {aboutExtended.headline}
+            </h2>
+            <div className="mt-8 max-w-xl space-y-4 font-montserrat text-sm leading-relaxed text-muted-foreground md:text-base">
+              {aboutExtended.paragraphs.map((p) => (
+                <p key={p.slice(0, 28)}>{p}</p>
               ))}
             </div>
           </div>
+          <div className="lg:col-span-5">
+            <div className="flash-card rotate-1">
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <img
+                  src={aboutCraftImage}
+                  alt="Oficio Angelux Ink"
+                  className="h-full w-full object-cover contrast-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
+                <span className="ink-stamp absolute left-4 top-4">EL OFICIO</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
+      <section className="border-b border-border bg-card/20 py-24 md:py-32">
+        <div className="container mx-auto px-4">
+          <p className="mb-4 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">CÓMO TRABAJO</p>
+          <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <h2 className="font-metal text-4xl text-primary md:text-6xl">La sombra no se improvisa</h2>
+            <p className="max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground">
+              Tiempo, trazo y una sesión que se siente tuya. Referencias, idea, zona del cuerpo: lo armamos juntos hasta que el realismo encaje.
+            </p>
+          </div>
+
+          <div className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+            {aboutProcess.map((item) => (
+              <article key={item.t} className="bg-background p-6 md:p-8">
+                <h3 className="font-metal text-3xl text-primary">{item.t}</h3>
+                <div className="my-5 h-px w-12 bg-angelux-steel/60" />
+                <p className="font-montserrat text-sm leading-relaxed text-muted-foreground">{item.d}</p>
+              </article>
+            ))}
+          </div>
+
+          <Link
+            to="/galeria"
+            className="mt-12 inline-flex font-cinzel text-xs tracking-[0.28em] text-angelux-steel hover:text-primary"
+          >
+            VER GALERÍA →
+          </Link>
+        </div>
+      </section>
+
+      <GalleryFilmstrip />
       <FaqSection compact />
       <BookingSection />
     </PageLayout>

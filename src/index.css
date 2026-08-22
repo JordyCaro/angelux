@@ -307,12 +307,14 @@
     drop-shadow(0 0 10px rgba(255, 255, 255, 0.35));
 }
 
-/* Voices tape: pause on hover / focus, static fallback if motion is reduced */
+/* Voices tape: never pause on hover */
+.voices-tape,
 .voices-group:hover .voices-tape,
 .voices-group:focus-within .voices-tape {
-  animation-play-state: paused;
+  animation-play-state: running !important;
 }
 
+/* Voices tape: static fallback if motion is reduced */
 @media (prefers-reduced-motion: reduce) {
   .voices-live {
     display: none;

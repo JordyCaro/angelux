@@ -13,9 +13,6 @@ const HomeGallery = () => {
   return (
     <section className="relative overflow-hidden border-y border-border">
       <div className="pointer-events-none absolute inset-0 ink-texture opacity-40" />
-      <p className="pointer-events-none absolute -right-8 top-0 font-metal text-[28vw] leading-none text-primary/[0.08]">
-        SKIN
-      </p>
 
       <div className="relative grid min-h-0 lg:min-h-[92vh] lg:grid-cols-12">
         <div className="group relative min-h-[56vh] overflow-hidden sm:min-h-[62vh] lg:col-span-8 lg:min-h-[92vh]">
@@ -53,7 +50,7 @@ const HomeGallery = () => {
         <div className="relative flex flex-col justify-between border-t border-border bg-background/80 p-6 lg:col-span-4 lg:border-l lg:border-t-0 lg:p-8">
           <div>
             <p className="mb-2 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">ARCHIVO</p>
-            <h3 className="font-metal text-3xl text-primary md:text-4xl">Las mangas</h3>
+            <h3 className="font-metal text-3xl text-primary md:text-4xl">El archivo</h3>
             <p className="mt-4 max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground">
               Un recorte del archivo real. El muro completo está en galería: más piezas, más sombra, más piel.
             </p>

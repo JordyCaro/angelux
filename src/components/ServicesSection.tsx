@@ -9,30 +9,22 @@ const services = [
     subtitle: "Realismo / sombras",
     description:
       "Realismo, sombras y volumen. Cada pieza es a medida; el detalle se trabaja para que se aguante de cerca.",
-    features: ["Realismo", "Sombras", "Mangas", "Retrato"],
+    features: ["Realismo", "Sombras", "Retrato", "Volumen"],
   },
   {
     n: "02",
-    title: "Domicilio",
-    subtitle: "Sesión privada",
+    title: "Estudio",
+    subtitle: "Cita previa",
     description:
-      "El kit llega a tu espacio. Higiene, calma y una sesión sin sala de espera.",
-    features: ["Privado", "Portátil", "Protocolo", "Aftercare"],
+      "Espacio privado. Calma, luz y protocolo. La sesión se coordina por mensaje.",
+    features: ["Privado", "Cita", "Protocolo", "Calma"],
   },
   {
     n: "03",
-    title: "Guest / ruta",
-    subtitle: "Otras ciudades",
-    description:
-      "Viajes y residencias. Si hay fechas cerca de ti, las publicamos y reservamos con tiempo.",
-    features: ["Guest spot", "Internacional", "Agenda", "Consulta online"],
-  },
-  {
-    n: "04",
     title: "Aftercare",
-    subtitle: "A distancia",
+    subtitle: "Seguimiento",
     description:
-      "Seguimiento de la cicatrización aunque la sesión haya sido en otra ciudad o en tu casa.",
+      "La pieza no se abandona al secar. Guía de cuidado y revisión por mensaje mientras cicatriza.",
     features: ["Guía", "Revisión", "WhatsApp", "Cuidado"],
   },
 ];
@@ -57,11 +49,11 @@ const ServicesSection = () => {
             <h2 className="font-metal text-4xl text-primary md:text-6xl">Servicios</h2>
           </div>
           <p className="max-w-sm font-cinzel text-xs tracking-[0.28em] text-muted-foreground">
-            DOMICILIO · GUEST · PIEZA A MEDIDA
+            REALISMO · SOMBRAS · PIEZA A MEDIDA
           </p>
         </motion.div>
 
-        <div className="divide-y divide-border border-y border-border">
+        <div className="grid gap-px bg-border md:grid-cols-3">
           {services.map((service, index) => (
             <motion.article
               key={service.n}
@@ -69,20 +61,19 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: index * 0.06 }}
-              className="group grid gap-6 py-10 md:grid-cols-12 md:items-center"
+              className="group bg-background p-6 sm:p-8"
             >
-              <div className="md:col-span-5">
-                <h3 className="font-metal text-3xl text-primary transition-transform duration-500 group-hover:translate-x-2 md:text-4xl">
-                  {service.title}
-                </h3>
-                <p className="mt-1 font-cinzel text-[11px] tracking-[0.25em] text-muted-foreground">
-                  {service.subtitle}
-                </p>
-              </div>
-              <p className="font-montserrat text-sm leading-relaxed text-muted-foreground md:col-span-4">
+              <p className="font-cinzel text-[11px] tracking-[0.25em] text-muted-foreground">
+                {service.subtitle}
+              </p>
+              <h3 className="mt-3 font-metal text-3xl text-primary md:text-4xl">
+                {service.title}
+              </h3>
+              <div className="my-5 h-px w-12 bg-angelux-steel/60 transition-all duration-500 group-hover:w-24" />
+              <p className="font-montserrat text-sm leading-relaxed text-muted-foreground">
                 {service.description}
               </p>
-              <div className="flex flex-wrap gap-2 md:col-span-3 md:justify-end">
+              <div className="mt-6 flex flex-wrap gap-2">
                 {service.features.map((feature) => (
                   <span
                     key={feature}

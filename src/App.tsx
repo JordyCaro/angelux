@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
-import Ruta from "./pages/Ruta";
+import Estudio from "./pages/Estudio";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
@@ -25,11 +25,12 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/galeria" element={<Gallery />} />
           <Route path="/servicios" element={<Services />} />
-          <Route path="/ruta" element={<Ruta />} />
+          <Route path="/estudio" element={<Estudio />} />
           <Route path="/sobre-mi" element={<About />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="/productos" element={<Navigate to="/" replace />} />
-          <Route path="/instalaciones" element={<Navigate to="/ruta" replace />} />
+          <Route path="/ruta" element={<Navigate to="/estudio" replace />} />
+          <Route path="/instalaciones" element={<Navigate to="/estudio" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

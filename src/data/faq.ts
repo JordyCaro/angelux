@@ -29,11 +29,11 @@ export const faqItems: FaqItem[] = [
     a: "Sin alcohol 24 horas antes ni el día de la sesión: dilata, sangra más y ensucia el trazo. Si tomás anticoagulantes, isotretinoína u otra medicación fuerte, consultá a tu médico. Si estás resfriado o bajoneado, reprogramamos. No hay prisa que valga una sesión mala.",
   },
   {
-    q: "¿El domicilio es igual de higiénico que un local?",
-    a: "Sí, si se arma bien. Llego con kit, material desechable y protocolo. Necesito un rincón limpio, luz decente y una superficie estable. La higiene viaja con el oficio, no con las paredes.",
+    q: "¿Dónde es la sesión?",
+    a: "En el estudio, en Medellín. Coordinamos fecha y detalles por mensaje. Cita previa: no hay sala de espera ni puerta abierta.",
   },
   {
     q: "¿Cómo se reserva y qué pasa si cancelo?",
-    a: "Seña para bloquear fecha y ciudad. Si hay que mover el día, avisá con tiempo: la ruta se arma alrededor de esas horas. Ideas, referencias y zona del cuerpo por mensaje; cotizo cuando veo eso, no a ciegas.",
+    a: "Seña para bloquear fecha. Si hay que mover el día, avisá con tiempo. Ideas, referencias y zona del cuerpo por mensaje; cotizo cuando veo eso, no a ciegas.",
   },
 ];

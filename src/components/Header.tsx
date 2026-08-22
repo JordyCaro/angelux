@@ -13,7 +13,7 @@ const leftNav = [
 
 const rightNav = [
   { name: "Servicios", path: "/servicios" },
-  { name: "Ruta", path: "/ruta" },
+  { name: "Estudio", path: "/estudio" },
   { name: "Contacto", path: "/contacto" },
 ];
 

@@ -9,8 +9,8 @@ const pillars = [
   },
   {
     n: "02",
-    title: "Movimiento",
-    text: "Domicilios, guest spots, otras ciudades. El estudio viaja; la exigencia no se diluye.",
+    title: "Estudio",
+    text: "Un espacio privado en Medellín. Calma, luz, protocolo. La sesión se siente tuya.",
   },
   {
     n: "03",
@@ -26,30 +26,17 @@ const ManifestoSection = () => {
   return (
     <section ref={ref} className="relative overflow-hidden border-b border-border py-24">
       <div className="absolute inset-0 ink-texture opacity-40" />
-      <p className="pointer-events-none absolute -right-6 top-8 font-metal text-[20vw] leading-none text-primary/[0.08] md:text-[12rem]">
-        INK
-      </p>
 
       <div className="container relative z-10 mx-auto px-4">
-        <div className="mb-16 grid items-end gap-8 md:grid-cols-12">
-          <motion.div
-            className="md:col-span-7"
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7 }}
-          >
-            <p className="mb-4 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">OFICIO · SIN DIRECCIÓN FIJA</p>
-            <h2 className="font-metal text-3xl text-primary sm:text-4xl md:text-6xl">La tinta no pide permiso</h2>
-          </motion.div>
-          <motion.p
-            className="max-w-md font-montserrat text-sm leading-relaxed text-muted-foreground md:col-span-5 md:justify-self-end"
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.15 }}
-          >
-            Angelux Ink trabaja donde coincidamos. Menos ruido de local, más carácter en la pieza.
-          </motion.p>
-        </div>
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+        >
+          <p className="mb-4 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">OFICIO · MEDELLÍN</p>
+          <h2 className="font-metal text-3xl text-primary sm:text-4xl md:text-6xl">La tinta no pide permiso</h2>
+        </motion.div>
 
         <div className="grid gap-px bg-border md:grid-cols-3">
           {pillars.map((pillar, i) => (

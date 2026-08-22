@@ -1,12 +1,11 @@
 const items = [
-  "DOMICILIO",
-  "GUEST SPOT",
-  "RUTA",
-  "BLACKWORK",
   "REALISMO",
-  "FINELINE",
-  "GEOMETRÍA",
+  "SOMBRAS",
+  "VOLUMEN",
   "CONTRASTE",
+  "MEDELLÍN",
+  "ESTUDIO",
+  "CITA PREVIA",
 ];
 
 const InkMarquee = () => {
