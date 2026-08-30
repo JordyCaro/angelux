@@ -42,7 +42,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.28 }}
           >
-            Si la piel va a hablar, que hable fuerte. Realismo y sombras en Medellín: cada pieza se construye, no se copia.
+            Si la piel va a hablar, que hable fuerte. Tatuador en Medellín, especializado en realismo y sombras. Cada pieza se construye desde cero.
           </motion.p>
         </div>
       </section>

@@ -1,29 +1,30 @@
 export const aboutPortrait = "/gallery/mangas/vikingo.jpg";
+export const aboutVideo = "/video/expotattoo.mp4";
 export const aboutHeroImage = "/gallery/mangas/anubis.jpg";
 export const aboutCraftImage = "/gallery/mangas/buda.jpg";
 
 export const aboutFacts = [
-  { t: "Medellín", d: "Acá se arma la sesión y se firma la piel." },
-  { t: "Realismo", d: "Sombras, volumen, luz. El detalle que se aguanta de cerca." },
-  { t: "Única", d: "No se copia de un catálogo: se construye con vos." },
+  { t: "Medellín", d: "Acá tatuo. Estudio, cita previa, sin vitrina." },
+  { t: "Sombras", d: "Realismo y sombras: volumen, luz, el detalle de cerca." },
+  { t: "Única", d: "Cada pieza se construye desde cero. No hay catálogo." },
 ];
 
 export const aboutIntro = {
-  kicker: "TATUADOR · MEDELLÍN",
+  kicker: "TATUADOR · REALISMO / SOMBRAS",
   headline: "Si la piel va a hablar, que hable fuerte.",
   paragraphs: [
-    "Soy Jonathan. Tatuo en Medellín. Realismo y sombras: el volumen, la luz, el silencio entre un negro y un gris. No trabajo para el filtro. Trabajo para el que se acerca.",
-    "Cada pieza es única. Se piensa con vos, se ejecuta con calma y se entrega con el mismo compromiso con el que se empieza. No copio catálogo. No apuro el trazo. Profesionalismo no es un letrero: es el trazo, el detalle, y estar cuando la tinta todavía arde.",
-    "Si buscás arte en la piel —no relleno de catálogo— escribime. Hagamos algo que se lleve toda la vida.",
+    "Soy Jonathan. Tatuador en Medellín, especializado en realismo y sombras. Eso es lo mío: el volumen, la luz, lo que se aguanta cuando te acercás.",
+    "Cada pieza que hago es única. No sale de un catálogo. Se construye desde cero, con vos, hasta que encaje en tu piel.",
+    "Si buscás algo que se lleve —no un relleno— escribime.",
   ],
 };
 
 export const aboutExtended = {
   headline: "No tatuo para una foto. Tatuo para que se lleve.",
   paragraphs: [
-    "Eso es el oficio. Lo demás es ruido. Una sesión no es un trámite: es tiempo, luz, calma y un trazo que no se borra. El realismo pide eso. Las sombras piden eso.",
-    "No vendo un menú. Armamos la pieza juntos: idea, referencias, zona del cuerpo. Cotizo cuando veo eso, no a ciegas. El boceto se ajusta hasta que el volumen encaja con tu piel.",
-    "En el estudio no hay sala de espera ni vitrina. Hay cita, protocolo y el silencio necesario para que el detalle quede. Si la tinta va a hablar, que hable fuerte — y que se aguante de cerca.",
+    "Especializado en realismo y sombras. El oficio es ese: tiempo, calma y un trazo que no se borra.",
+    "No vendo menú. Idea, referencias, zona del cuerpo: lo armamos juntos. Cotizo cuando veo eso, no a ciegas.",
+    "El estudio es de cita. Sin sala de espera. La pieza se construye desde cero y se entrega con el mismo compromiso con el que se empieza.",
   ],
 };
 

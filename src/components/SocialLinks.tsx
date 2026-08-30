@@ -26,7 +26,7 @@ const SocialLinks = ({ className = "", iconClassName = "h-4 w-4", variant = "ico
           href={item.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex w-full items-center justify-center gap-2.5 border border-primary/30 px-5 py-3 font-cinzel text-[10px] tracking-[0.28em] text-primary transition-colors hover:border-angelux-steel hover:bg-primary/5 sm:w-auto"
+          className="inline-flex w-[calc(50%-6px)] items-center justify-center gap-2.5 border border-primary/30 px-4 py-3 font-cinzel text-[10px] tracking-[0.28em] text-primary transition-colors hover:border-angelux-steel hover:bg-primary/5 sm:w-auto sm:px-5"
           aria-label={item.name}
         >
           <item.icon className="h-4 w-4" />

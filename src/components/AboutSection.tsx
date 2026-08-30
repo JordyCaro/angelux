@@ -1,7 +1,8 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { Volume2, VolumeX } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { aboutFacts, aboutIntro, aboutPortrait } from "@/data/about";
+import { aboutFacts, aboutIntro, aboutPortrait, aboutVideo } from "@/data/about";
 
 type AboutSectionProps = {
   variant?: "home" | "page";
@@ -9,8 +10,43 @@ type AboutSectionProps = {
 
 const AboutSection = ({ variant = "home" }: AboutSectionProps) => {
   const ref = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const isPage = variant === "page";
+  const [muted, setMuted] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.volume = 0.4;
+    video.muted = false;
+
+    const playWithSound = async () => {
+      try {
+        await video.play();
+      } catch {
+        video.muted = true;
+        setMuted(true);
+        await video.play().catch(() => undefined);
+      }
+    };
+
+    void playWithSound();
+  }, []);
+
+  const toggleMute = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const nextMuted = !video.muted;
+    video.muted = nextMuted;
+    setMuted(nextMuted);
+    if (!nextMuted) {
+      video.volume = 0.4;
+      void video.play();
+    }
+  };
 
   return (
     <section id="quien-soy" ref={ref} className="relative overflow-hidden border-b border-border py-24 md:py-32">
@@ -34,13 +70,26 @@ const AboutSection = ({ variant = "home" }: AboutSectionProps) => {
           >
             <div className="flash-card mx-auto max-w-md -rotate-1 lg:mx-0 lg:max-w-none">
               <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={aboutPortrait}
-                  alt="Realismo Angelux Ink"
+                <video
+                  ref={videoRef}
+                  src={aboutVideo}
+                  poster={aboutPortrait}
+                  autoPlay
+                  loop
+                  playsInline
+                  preload="metadata"
                   className="h-full w-full object-cover contrast-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
                 <span className="ink-stamp absolute left-4 top-4">JONATHAN</span>
+                <button
+                  type="button"
+                  onClick={toggleMute}
+                  aria-label={muted ? "Activar sonido" : "Silenciar video"}
+                  className="absolute bottom-4 right-4 z-10 flex h-11 w-11 items-center justify-center border border-primary/30 bg-background/70 text-primary backdrop-blur-sm transition-colors hover:border-angelux-steel hover:text-angelux-steel"
+                >
+                  {muted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+                </button>
               </div>
             </div>
           </motion.div>
