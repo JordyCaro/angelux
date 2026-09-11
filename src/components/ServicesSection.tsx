@@ -8,24 +8,24 @@ const services = [
     title: "Tatuaje",
     subtitle: "Realismo / sombras",
     description:
-      "Realismo, sombras y volumen. Cada pieza es a medida; el detalle se trabaja para que se aguante de cerca.",
+      "Realismo en sombras. No copiamos de Pinterest: cada tatuaje se construye desde cero, único y a tu medida.",
     features: ["Realismo", "Sombras", "Retrato", "Volumen"],
   },
   {
     n: "02",
     title: "Estudio",
-    subtitle: "Cita previa",
+    subtitle: "Parche privado",
     description:
-      "Espacio privado. Calma, luz y protocolo. La sesión se coordina por mensaje.",
+      "Te recibo en mi estudio privado en Medellín. Un parche tranquilo, exclusivo, con cita previa y sin afanes.",
     features: ["Privado", "Cita", "Protocolo", "Calma"],
   },
   {
     n: "03",
     title: "Aftercare",
-    subtitle: "Seguimiento",
+    subtitle: "Cuidado del tatuaje",
     description:
-      "La pieza no se abandona al secar. Guía de cuidado y revisión por mensaje mientras cicatriza.",
-    features: ["Guía", "Revisión", "WhatsApp", "Cuidado"],
+      "Quieres un tatuaje curado e impecable. Sigue estos pasos al pie de la letra: film, agua fría, crema desde el día 3.",
+    features: ["Film", "Agua fría", "HIU", "20 días"],
   },
 ];
 
@@ -49,7 +49,7 @@ const ServicesSection = () => {
             <h2 className="font-metal text-4xl text-primary md:text-6xl">Servicios</h2>
           </div>
           <p className="max-w-sm font-cinzel text-xs tracking-[0.28em] text-muted-foreground">
-            REALISMO · SOMBRAS · PIEZA A MEDIDA
+            REALISMO EN SOMBRAS · 100% A MEDIDA
           </p>
         </motion.div>
 
@@ -88,8 +88,8 @@ const ServicesSection = () => {
         </div>
 
         <div className="mt-10 flex justify-center md:justify-end">
-          <Link to="/servicios" className="font-cinzel text-xs tracking-[0.28em] text-angelux-steel hover:text-primary">
-            VER PROCESO →
+          <Link to="/contacto" className="font-cinzel text-xs tracking-[0.18em] text-angelux-steel hover:text-primary">
+            COTICEMOS TU IDEA →
           </Link>
         </div>
       </div>

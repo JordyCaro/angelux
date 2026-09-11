@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import SocialLinks from "@/components/SocialLinks";
+import { contactCopy } from "@/data/copy";
 
 /* Formulario de contacto — oculto por ahora. No borrar.
 import { useState } from "react";
@@ -65,12 +66,12 @@ const BookingSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">CONTACTO</p>
+          <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">{contactCopy.kicker}</p>
           <h2 className="font-metal text-4xl md:text-6xl lg:text-7xl mb-4 text-primary">
-            Agenda
+            {contactCopy.headline}
           </h2>
-          <p className="font-cinzel text-sm tracking-[0.3em] text-muted-foreground uppercase">
-            El siguiente trazo empieza aquí
+          <p className="mx-auto max-w-2xl font-montserrat text-sm leading-relaxed text-muted-foreground md:text-base">
+            {contactCopy.body}
           </p>
         </motion.div>
 
@@ -84,15 +85,19 @@ const BookingSection = () => {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="md:col-span-2 flex flex-col items-center justify-center bg-secondary/30 p-5 text-center md:items-start md:p-8 md:text-left"
                 >
-                  <h3 className="font-metal text-2xl mb-6">¿Por qué elegirnos?</h3>
+                  <h3 className="font-metal text-2xl mb-6">Estudio privado</h3>
+
+                  <p className="mb-6 font-montserrat text-sm leading-relaxed text-muted-foreground">
+                    Cita previa, sin afanes y con la mejor energía para que tu tatuaje quede de otro nivel.
+                  </p>
 
                   <ul className="space-y-4">
                     {[
-                      "Realismo y sombras como fuerte",
-                      "Piezas 100% a medida",
-                      "Detalle que se aguanta de cerca",
-                      "Sesiones en Medellín",
-                      "Seguimiento de aftercare",
+                      "Realismo en sombras",
+                      "Diseños 100% a medida",
+                      "Cada pieza desde cero",
+                      "Estudio privado en Medellín",
+                      "Aftercare al pie de la letra",
                     ].map((item, index) => (
                       <motion.li
                         key={index}

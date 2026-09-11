@@ -27,7 +27,7 @@ const Footer = () => {
               <BrandMark className="h-20 w-auto sm:h-24 md:h-28" />
             </Link>
             <p className="mb-8 max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground">
-              Tatuaje en Medellín. Realismo y sombras. Cada pieza es única, trabajada con detalle y sin relleno de catálogo.
+              Tatuaje en Medellín. Realismo y sombras. No copiamos de Pinterest: cada pieza se construye desde cero.
             </p>
             <SocialLinks className="justify-center" />
           </motion.div>
@@ -41,7 +41,7 @@ const Footer = () => {
                 { name: "Galería", path: "/galeria" },
                 { name: "Servicios", path: "/servicios" },
                 { name: "Estudio", path: "/estudio" },
-                { name: "Agendar", path: "/contacto" },
+                { name: "Contacto", path: "/contacto" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link
@@ -61,9 +61,9 @@ const Footer = () => {
               <li className="flex items-start justify-center gap-3 lg:justify-start">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-angelux-steel" />
                 <span>
-                  Estudio en Medellín
+                  Estudio privado en Medellín
                   <br />
-                  Cita previa · Realismo y sombras
+                  Cita previa · Realismo en sombras
                 </span>
               </li>
               <li className="flex items-center justify-center gap-3 lg:justify-start">

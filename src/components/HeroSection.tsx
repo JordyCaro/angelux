@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SocialLinks from "@/components/SocialLinks";
+import { heroCopy, quoteCta } from "@/data/copy";
 
 const HERO_IMG = "/hero-jonathan.jpg";
 
@@ -31,7 +32,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 ink-texture opacity-40" />
       </div>
 
-      <div className="relative z-10 flex flex-1 flex-col px-4 pt-28 text-center md:ml-auto md:w-[48%] md:items-end md:px-8 md:pt-32 md:text-right lg:px-12">
+      <div className="relative z-10 flex flex-1 flex-col px-4 pt-28 text-center md:ml-auto md:w-[46%] md:items-end md:px-8 md:pr-12 md:pt-32 md:text-right lg:px-14 lg:pr-16">
         <motion.p
           className="font-cinzel text-[10px] tracking-[0.32em] text-muted-foreground sm:text-[11px] sm:tracking-[0.42em]"
           initial={{ opacity: 0, y: 10 }}
@@ -41,33 +42,36 @@ const HeroSection = () => {
         </motion.p>
 
         <div className="flex flex-1 flex-col justify-center gap-1 py-6 md:items-end md:py-10">
-          <motion.p
-            className="mb-5 font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground sm:mb-6 sm:text-[11px] sm:tracking-[0.38em]"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-          >
-            TATTOO ARTIST · MEDELLÍN · SOMBRAS
-          </motion.p>
-
           <motion.h1
             className="font-metal leading-[0.82] tracking-wide text-primary"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.28, duration: 0.9 }}
           >
-            <span className="block text-5xl drop-shadow-[0_0_48px_hsla(215,60%,32%,0.45)] sm:text-7xl md:text-7xl lg:text-8xl xl:text-[9.5rem]">
-              Angelux.
+            <span className="block text-5xl drop-shadow-[0_0_48px_hsla(215,60%,32%,0.45)] sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl">
+              {heroCopy.title}
+            </span>
+            <span className="mt-2 block font-cinzel text-lg tracking-[0.42em] text-angelux-steel sm:text-xl md:text-2xl">
+              {heroCopy.titleAccent}
             </span>
           </motion.h1>
 
           <motion.p
-            className="mx-auto mt-7 max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground sm:mt-8 sm:max-w-xl sm:text-base md:mx-0 md:text-lg"
+            className="mx-auto mt-6 max-w-sm font-cinzel text-sm tracking-[0.12em] text-primary sm:mt-8 sm:max-w-xl sm:text-base md:mx-0"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.45 }}
           >
-            Soy Jonathan. Realismo y sombras. Cada pieza es única: se construye, no se copia.
+            {heroCopy.lead}
+          </motion.p>
+
+          <motion.p
+            className="mx-auto mt-4 max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground sm:max-w-md sm:text-base md:mx-0"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.55 }}
+          >
+            {heroCopy.body}
           </motion.p>
 
           <motion.div
@@ -76,8 +80,8 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.65 }}
           >
-            <Link to="/contacto" className="btn-stencil px-8 py-3.5 text-center font-cinzel text-xs tracking-[0.24em] sm:py-4">
-              AGENDAR CITA
+            <Link to="/contacto" className="btn-stencil px-7 py-3.5 text-center font-cinzel text-xs tracking-[0.18em] sm:px-8 sm:py-4">
+              {quoteCta.toUpperCase()}
             </Link>
             <Link
               to="/galeria"

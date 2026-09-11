@@ -101,7 +101,7 @@ const AboutSection = ({ variant = "home" }: AboutSectionProps) => {
             transition={{ duration: 0.7, delay: 0.1 }}
           >
             <p className="mb-3 font-cinzel text-[11px] tracking-[0.32em] text-muted-foreground">{aboutIntro.kicker}</p>
-            <h2 className={`font-metal text-primary ${isPage ? "text-4xl sm:text-5xl md:text-7xl" : "text-3xl sm:text-4xl md:text-6xl"}`}>
+            <h2 className={`font-metal leading-[0.92] text-primary ${isPage ? "text-4xl sm:text-5xl md:text-6xl lg:text-7xl" : "text-3xl sm:text-4xl md:text-5xl lg:text-6xl"}`}>
               {aboutIntro.headline}
             </h2>
             <div className="mt-8 mx-auto max-w-xl space-y-4 font-montserrat text-sm leading-relaxed text-muted-foreground md:mx-0 md:text-base">

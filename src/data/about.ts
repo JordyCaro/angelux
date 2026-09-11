@@ -4,33 +4,30 @@ export const aboutHeroImage = "/gallery/mangas/anubis.jpg";
 export const aboutCraftImage = "/gallery/mangas/buda.jpg";
 
 export const aboutFacts = [
-  { t: "Medellín", d: "Acá tatuo. Estudio, cita previa, sin vitrina." },
-  { t: "Sombras", d: "Realismo y sombras: volumen, luz, el detalle de cerca." },
-  { t: "Única", d: "Cada pieza se construye desde cero. No hay catálogo." },
+  { t: "6 años", d: "Metido de lleno en el mundo del tatuaje." },
+  { t: "2 años", d: "Dedicado 100% a perfeccionar el arte." },
+  { t: "Único", d: "Cada cliente es único. Cada diseño también." },
 ];
 
 export const aboutIntro = {
-  kicker: "TATUADOR · REALISMO / SOMBRAS",
-  headline: "Si la piel va a hablar, que hable fuerte.",
+  kicker: "QUÉ MÁS",
+  headline: "Jonathan Angel Isaza",
   paragraphs: [
-    "Soy Jonathan. Tatuador en Medellín, especializado en realismo y sombras. Eso es lo mío: el volumen, la luz, lo que se aguanta cuando te acercás.",
-    "Cada pieza que hago es única. No sale de un catálogo. Se construye desde cero, con vos, hasta que encaje en tu piel.",
-    "Si buscás algo que se lleve —no un relleno— escribime.",
+    "Artista detrás de Angelux_ink. Llevo 6 años metido de lleno en el mundo del tatuaje y 2 años dedicado 100% a perfeccionar mi arte.",
+    "Lo mío es el realismo en sombras: diseños únicos para cada cliente, porque cada cliente es único.",
   ],
 };
 
 export const aboutExtended = {
-  headline: "No tatuo para una foto. Tatuo para que se lleve.",
+  headline: "Una buena sombra toma tiempo",
   paragraphs: [
-    "Especializado en realismo y sombras. El oficio es ese: tiempo, calma y un trazo que no se borra.",
-    "No vendo menú. Idea, referencias, zona del cuerpo: lo armamos juntos. Cotizo cuando veo eso, no a ciegas.",
-    "El estudio es de cita. Sin sala de espera. La pieza se construye desde cero y se entrega con el mismo compromiso con el que se empieza.",
+    "Técnica y paciencia. Trabajo 100% a medida; tú traes la idea y juntos le damos volumen y vida hasta que encaje perfecto con tu anatomía.",
   ],
 };
 
 export const aboutProcess = [
-  { t: "Consulta", d: "Idea, referencias y zona. Cotizo cuando veo eso, no a ciegas." },
-  { t: "Diseño", d: "Boceto a medida. Ajustamos hasta que el volumen encaje con tu cuerpo." },
-  { t: "Sesión", d: "Estudio en Medellín. Luz, calma, protocolo. El detalle se trabaja sin prisa." },
-  { t: "Aftercare", d: "Seguimiento por mensaje. La pieza no se abandona al secar." },
+  { t: "Idea", d: "Tú traes la idea. La vemos juntos y la construimos desde cero. Nada de copiar Pinterest." },
+  { t: "Diseño", d: "100% a medida. Le damos volumen y vida hasta que encaje perfecto con tu anatomía." },
+  { t: "Sesión", d: "Estudio privado en Medellín. Nos sentamos, nos parchamos y salís con un trabajo impecable." },
+  { t: "Cuidado", d: "Los pasos al pie de la letra para que cure impecable. Te acompaño en la curación." },
 ];

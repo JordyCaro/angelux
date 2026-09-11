@@ -4,18 +4,18 @@ import { useRef } from "react";
 const pillars = [
   {
     n: "01",
-    title: "Contraste",
-    text: "El realismo y la sombra pesan. Volumen, luz, el silencio entre un negro y un gris.",
+    title: "Sombras",
+    text: "Lo mío es el realismo en sombras. Volumen, luz y un trazo que se aguanta de cerca.",
   },
   {
     n: "02",
-    title: "Estudio",
-    text: "Un espacio privado en Medellín. Calma, luz, protocolo. La sesión se siente tuya.",
+    title: "A medida",
+    text: "No copiamos de Pinterest. Tú traes la idea y la construimos desde cero.",
   },
   {
     n: "03",
-    title: "Precisión",
-    text: "Consulta, diseño y sesión con calma. Cada pieza se construye para quien la va a llevar.",
+    title: "Parche",
+    text: "Estudio privado en Medellín. Tranquilo, exclusivo, con cita previa y sin afanes.",
   },
 ];
 
@@ -35,7 +35,7 @@ const ManifestoSection = () => {
           transition={{ duration: 0.7 }}
         >
           <p className="mb-4 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">OFICIO · MEDELLÍN</p>
-          <h2 className="font-metal text-3xl text-primary sm:text-4xl md:text-6xl">La tinta no pide permiso</h2>
+          <h2 className="font-metal text-3xl text-primary sm:text-4xl md:text-6xl">Cada cliente es único</h2>
         </motion.div>
 
         <div className="grid gap-px bg-border md:grid-cols-3">

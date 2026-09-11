@@ -2,27 +2,28 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { ShieldCheck, Lamp, CalendarCheck, Sparkles } from "lucide-react";
+import { quoteCta, studioCopy } from "@/data/copy";
 
 const modes = [
   {
     icon: Lamp,
-    title: "Luz y calma",
-    text: "Un espacio chico, privado. La sesión se arma sin sala de espera ni ruido de vitrina.",
+    title: "Parche tranquilo",
+    text: "Estudio privado en Medellín. Exclusivo, sin vitrina ni sala de espera.",
   },
   {
     icon: CalendarCheck,
     title: "Cita previa",
-    text: "Consulta, diseño y fecha se coordinan por mensaje. El estudio se abre para la sesión, no para el tránsito.",
+    text: "Nos sentamos, nos parchamos y armamos la sesión sin afanes.",
   },
   {
     icon: ShieldCheck,
-    title: "Protocolo",
-    text: "Material desechable, higiene y aftercare. El oficio no se diluye porque el local sea íntimo.",
+    title: "Trabajo impecable",
+    text: "Protocolo, calma y detalle. Me aseguro de que te lleves la pieza bien hecha.",
   },
   {
     icon: Sparkles,
-    title: "La pieza manda",
-    text: "Tiempo, detalle y realismo. El estudio existe para eso: que la sombra quede bien.",
+    title: "Pieza única",
+    text: "Si buscas algo que hable por vos, estás en el lugar correcto.",
   },
 ];
 
@@ -41,11 +42,11 @@ const StudioSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
         >
           <div className="md:col-span-7">
-            <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">ESTUDIO</p>
-            <h2 className="font-metal text-3xl text-primary sm:text-4xl md:text-6xl">Un espacio, no una vitrina</h2>
+            <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">{studioCopy.kicker}</p>
+            <h2 className="font-metal text-3xl text-primary sm:text-4xl md:text-6xl">{studioCopy.headline}</h2>
           </div>
           <p className="mx-auto max-w-md font-montserrat text-sm leading-relaxed text-muted-foreground md:col-span-5 md:mx-0">
-            Estudio en Medellín. Privado, de cita. La sesión se coordina por mensaje: idea, fecha y detalles.
+            {studioCopy.body}
           </p>
         </motion.div>
 
@@ -69,11 +70,11 @@ const StudioSection = () => {
           <div>
             <p className="font-cinzel text-[10px] tracking-[0.3em] text-angelux-steel">MEDELLÍN</p>
             <p className="mt-3 max-w-xl font-montserrat text-sm text-muted-foreground">
-              Realismo y sombras. Cita previa. El estudio se abre para la pieza, no para el tránsito.
+              Estudio privado. Cita previa. Si buscas una pieza única, este es el parche.
             </p>
           </div>
-          <Link to="/contacto" className="btn-stencil w-full px-6 py-3 font-cinzel text-[11px] tracking-[0.22em] md:w-auto">
-            PEDIR CITA
+          <Link to="/contacto" className="btn-stencil w-full px-6 py-3 font-cinzel text-[11px] tracking-[0.18em] md:w-auto">
+            {quoteCta.toUpperCase()}
           </Link>
         </div>
       </div>

@@ -3,14 +3,15 @@ import PageHero from "@/components/PageHero";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import FaqSection from "@/components/FaqSection";
 import SocialLinks from "@/components/SocialLinks";
+import { contactCopy } from "@/data/copy";
 
 const Contact = () => {
     return (
         <PageLayout>
             <PageHero
                 title="CONTACTO"
-                subtitle="HABLEMOS DE TU PROYECTO"
-                description="Cuéntame la idea, la zona y las referencias. Estudio en Medellín, cita previa. Cotizo cuando veo eso."
+                subtitle="ESCRIBIME DE UNA"
+                description={contactCopy.body}
             />
 
             <section className="py-12 md:py-24 bg-black relative overflow-hidden">
@@ -29,7 +30,7 @@ const Contact = () => {
                                     <div>
                                         <h3 className="font-cinzel text-white text-lg mb-1">Estudio</h3>
                                         <p>Medellín</p>
-                                        <p>Cita previa · Consulta por mensaje</p>
+                                        <p>Cita previa · Estudio privado</p>
                                     </div>
                                 </div>
 
@@ -72,13 +73,13 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div className="relative h-[400px] w-full overflow-hidden border border-border bg-secondary/30">
+                        <div className="relative min-h-[320px] w-full overflow-hidden border border-border bg-secondary/30 md:min-h-[400px]">
                             <div className="absolute inset-0 bg-gradient-to-br from-secondary to-background opacity-70" />
                             <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                                <p className="mb-3 font-cinzel text-[11px] tracking-[0.35em] text-angelux-steel">ESTUDIO · MEDELLÍN</p>
-                                <p className="max-w-sm font-metal text-3xl text-primary">La sesión se arma por mensaje</p>
+                                <p className="mb-3 font-cinzel text-[11px] tracking-[0.35em] text-angelux-steel">ESTUDIO PRIVADO · MEDELLÍN</p>
+                                <p className="max-w-sm font-metal text-3xl text-primary">Coticemos tu idea</p>
                                 <p className="mt-4 max-w-xs font-montserrat text-sm text-muted-foreground">
-                                    Realismo y sombras. Cita previa. El estudio se abre para la pieza.
+                                    Cita previa, sin afanes y con la mejor energía. Instagram y TikTok: @angelux_ink.
                                 </p>
                             </div>
                         </div>

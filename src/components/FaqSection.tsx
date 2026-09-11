@@ -22,9 +22,9 @@ const FaqSection = ({ compact = false }: FaqSectionProps) => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
           >
             <p className="mb-3 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">DUDAS</p>
-            <h2 className="font-metal text-4xl text-primary md:text-5xl">Antes de la aguja</h2>
+            <h2 className="font-metal text-4xl text-primary md:text-5xl">Lo que preguntan</h2>
             <p className="mx-auto mt-4 max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground lg:mx-0">
-              Cuidado, cuándo no tatuarse y las preguntas que todo el mundo hace. Corto y sin mito.
+              Cuidado, sesión y lo que siempre preguntan. Corto y sin mito.
             </p>
           </motion.div>
 

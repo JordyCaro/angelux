@@ -6,7 +6,7 @@ export type FaqItem = {
 export const faqItems: FaqItem[] = [
   {
     q: "¿Cómo cuido un tatuaje nuevo?",
-    a: "Las primeras horas: dejar respirar según te indique. Luego, lavar con agua tibia y jabón neutro, secar tocando (no frotando) e hidratar con una capa fina de aftercare. Nada de sol, pileta, mar, sauna ni ropa que roce fuerte. No rascar las costras: se caen solas.",
+    a: "Film mínimo 2 horas (si fue de noche, hasta la mañana). Retíralo con las manos limpias. Lava SOLO con agua fría, sin esponjas ni paños ásperos, y seca a toques con servilleta que no suelte pelusa. Déjalo descubierto el resto del día. Crema HIU AFTERCARE o AcidMantle desde el tercer día: un punto, capa finísima, 2 veces al día. El protocolo completo está en Aftercare.",
   },
   {
     q: "¿Cuándo NO tatuarse?",
@@ -18,22 +18,22 @@ export const faqItems: FaqItem[] = [
   },
   {
     q: "¿Cuánto tarda en sanar?",
-    a: "La superficie cierra en 2 a 3 semanas. La piel de abajo sigue trabajando un mes o más. Hasta entonces: hidratación fina, nada de sol directo y cero rascar. El resultado final se ve cuando termina de asentar, no al día siguiente.",
+    a: "La superficie cierra en 2 a 3 semanas. La piel de abajo sigue trabajando un mes o más. Hasta entonces: los pasos de aftercare al pie de la letra. El resultado final se ve cuando termina de asentar, no al día siguiente.",
   },
   {
     q: "¿Puedo meterme al sol, al mar o al gym?",
-    a: "Sol directo, playa, pileta y sauna: no, hasta que la piel esté cerrada. Gym: esperá unos días y evitá roce o sudor excesivo sobre la pieza. Cuando salga el sol otra vez, protector solar. El sol es el enemigo número uno del contraste.",
+    a: "Playa, piscina o jacuzzi: cero por 20 días. Sol directo: también 20 días; cuando esté curado, siempre bloqueador. Ejercicio intenso y sudor excesivo: esperá 4 a 7 días.",
   },
   {
     q: "¿Alcohol, medicamentos o si estoy enfermo?",
-    a: "Sin alcohol 24 horas antes ni el día de la sesión: dilata, sangra más y ensucia el trazo. Si tomás anticoagulantes, isotretinoína u otra medicación fuerte, consultá a tu médico. Si estás resfriado o bajoneado, reprogramamos. No hay prisa que valga una sesión mala.",
+    a: "Sin licor ni cualquier sustancia al menos 5 días. Si tomás anticoagulantes, isotretinoína u otra medicación fuerte, consultá a tu médico. Si estás resfriado o bajoneado, reprogramamos. No hay prisa que valga una sesión mala.",
   },
   {
     q: "¿Dónde es la sesión?",
-    a: "En el estudio, en Medellín. Coordinamos fecha y detalles por mensaje. Cita previa: no hay sala de espera ni puerta abierta.",
+    a: "En mi estudio privado en Medellín. Un parche tranquilo, exclusivo. Todo es con cita previa: coordinamos por mensaje, sin afanes.",
   },
   {
     q: "¿Cómo se reserva y qué pasa si cancelo?",
-    a: "Seña para bloquear fecha. Si hay que mover el día, avisá con tiempo. Ideas, referencias y zona del cuerpo por mensaje; cotizo cuando veo eso, no a ciegas.",
+    a: "Escribime con la idea, las referencias y la zona. Cotizo cuando veo eso, no a ciegas. Seña para bloquear fecha. Si hay que mover el día, avisá con tiempo.",
   },
 ];

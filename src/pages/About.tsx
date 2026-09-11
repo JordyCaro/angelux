@@ -6,6 +6,7 @@ import FaqSection from "@/components/FaqSection";
 import BookingSection from "@/components/BookingSection";
 import { Link } from "react-router-dom";
 import { aboutCraftImage, aboutExtended, aboutHeroImage, aboutProcess } from "@/data/about";
+import { craftCopy } from "@/data/copy";
 
 const About = () => {
   return (
@@ -26,7 +27,7 @@ const About = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            JONATHAN · ANGELUX INK
+            JONATHAN ANGEL ISAZA
           </motion.p>
           <motion.h1
             className="mt-4 font-metal leading-[0.86] tracking-wide text-primary"
@@ -42,7 +43,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.28 }}
           >
-            Si la piel va a hablar, que hable fuerte. Tatuador en Medellín, especializado en realismo y sombras. Cada pieza se construye desde cero.
+            Qué más! Soy Jonathan Angel Isaza, artista detrás de Angelux_ink. Realismo en sombras: diseños únicos para cada cliente.
           </motion.p>
         </div>
       </section>
@@ -54,7 +55,7 @@ const About = () => {
 
         <div className="container relative z-10 mx-auto grid items-center gap-12 px-4 text-center lg:grid-cols-12 lg:text-left">
           <div className="lg:col-span-7">
-            <p className="font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">PRIMERA PERSONA</p>
+            <p className="font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">EL OFICIO</p>
             <h2 className="mt-4 font-metal text-4xl text-primary sm:text-5xl md:text-7xl">
               {aboutExtended.headline}
             </h2>
@@ -82,12 +83,9 @@ const About = () => {
 
       <section className="border-b border-border bg-card/20 py-24 md:py-32">
         <div className="container mx-auto px-4 text-center md:text-left">
-          <p className="mb-4 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">CÓMO TRABAJO</p>
+          <p className="mb-4 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">{craftCopy.kicker}</p>
           <div className="mb-14 flex flex-col items-center justify-between gap-6 md:flex-row md:items-end">
-            <h2 className="font-metal text-4xl text-primary md:text-6xl">La sombra no se improvisa</h2>
-            <p className="max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground">
-              Tiempo, trazo y una sesión que se siente tuya. Referencias, idea, zona del cuerpo: lo armamos juntos hasta que el realismo encaje.
-            </p>
+            <h2 className="font-metal text-4xl text-primary md:text-6xl">100% a medida</h2>
           </div>
 
           <div className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">

@@ -111,10 +111,10 @@ const GalleryWall = () => {
 
       <div className="flex flex-col items-center justify-between gap-6 border-t border-white/10 px-4 py-10 text-center md:flex-row md:items-center md:px-8 md:text-left">
         <p className="max-w-md font-montserrat text-sm text-muted-foreground">
-          ¿Viste una pieza que te cala? La siguiente se tatuará en Medellín.
+          ¿Viste una pieza que te cala? Coticemos tu idea y la construimos desde cero.
         </p>
-        <Link to="/contacto" className="btn-stencil px-7 py-3.5 font-cinzel text-xs tracking-[0.24em]">
-          TRAÉ TU PIEL
+        <Link to="/contacto" className="btn-stencil px-7 py-3.5 font-cinzel text-xs tracking-[0.18em]">
+          COTICEMOS TU IDEA
         </Link>
       </div>
 
@@ -165,8 +165,8 @@ const GalleryWall = () => {
                     {selected.location}
                   </p>
                 </div>
-                <Link to="/contacto" className="btn-stencil mt-8 inline-flex w-fit px-5 py-3 font-cinzel text-[11px] tracking-[0.22em]">
-                  PEDIR UNA PIEZA ASÍ
+                <Link to="/contacto" className="btn-stencil mt-8 inline-flex w-fit px-5 py-3 font-cinzel text-[11px] tracking-[0.18em]">
+                  COTICEMOS TU IDEA
                 </Link>
               </div>
               <button
