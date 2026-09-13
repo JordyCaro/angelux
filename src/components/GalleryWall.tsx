@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, MapPin, X } from "lucide-react";
-import { Link } from "react-router-dom";
 import { galleryFilters, galleryItems, type GalleryItem } from "@/data/gallery";
+import { QuoteCta } from "@/components/WhatsAppCta";
 
 const tilts = [-2.2, 1.6, -0.8, 2.4, -1.9, 0.7, 2.1, -1.4, 1.2, -2.6, 0.4, 1.8, -1.1, 2.8, -0.5, 1.3];
 const heights = ["h-[340px]", "h-[420px]", "h-[300px]", "h-[480px]", "h-[360px]", "h-[400px]"];
@@ -113,9 +113,7 @@ const GalleryWall = () => {
         <p className="max-w-md font-montserrat text-sm text-muted-foreground">
           ¿Viste una pieza que te cala? Coticemos tu idea y la construimos desde cero.
         </p>
-        <Link to="/contacto" className="btn-stencil px-7 py-3.5 font-cinzel text-xs tracking-[0.18em]">
-          COTICEMOS TU IDEA
-        </Link>
+        <QuoteCta />
       </div>
 
       <AnimatePresence>
@@ -165,9 +163,7 @@ const GalleryWall = () => {
                     {selected.location}
                   </p>
                 </div>
-                <Link to="/contacto" className="btn-stencil mt-8 inline-flex w-fit px-5 py-3 font-cinzel text-[11px] tracking-[0.18em]">
-                  COTICEMOS TU IDEA
-                </Link>
+                <QuoteCta className="mt-8 w-fit px-5 py-3" />
               </div>
               <button
                 type="button"

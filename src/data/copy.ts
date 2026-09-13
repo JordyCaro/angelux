@@ -1,5 +1,16 @@
 export const quoteCta = "Coticemos tu idea";
 
+export const phoneDisplay = "+57 300 3989190";
+export const phoneTel = "+573003989190";
+export const whatsappMessage =
+  "Hola Jonathan, te escribo para cotizar. Mi idea es: . El lugar del tatuaje: . Te mando fotos de referencia.";
+export const whatsappUrl = `https://wa.me/573003989190?text=${encodeURIComponent(whatsappMessage)}`;
+export const whatsappChannelUrl = "https://whatsapp.com/channel/0029Vb98O673wtb16zv9GA3a";
+export const channelCta = "Unirse al canal";
+
+export const bookingSteps =
+  "Escríbeme tu idea, dime el lugar donde quieres el tatuaje y envíame imágenes de referencia. Con eso podemos agendar.";
+
 export const heroCopy = {
   kicker: "REALISMO Y SOMBRAS",
   title: "Angelux.",
@@ -22,6 +33,6 @@ export const craftCopy = {
 
 export const contactCopy = {
   kicker: "CONTACTO",
-  headline: "Escribime de una",
-  body: "Si ya tienes una idea dándote vueltas en la cabeza o quieres que construyamos un diseño brutal desde cero, escríbeme de una. Al trabajar en estudio privado, todo es con cita previa, sin afanes y con la mejor energía para que tu tatuaje quede de otro nivel.",
+  headline: "Escríbeme de una",
+  body: "Escríbeme tu idea, dime el lugar donde quieres el tatuaje y envíame imágenes de referencia. Con eso podemos agendar. Estudio privado, cita previa, sin afanes y con la mejor energía para que tu tatuaje quede de otro nivel.",
 };

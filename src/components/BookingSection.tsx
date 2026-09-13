@@ -1,9 +1,10 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import SocialLinks from "@/components/SocialLinks";
-import { contactCopy } from "@/data/copy";
+import { ChannelCta, QuoteCta } from "@/components/WhatsAppCta";
+import { bookingSteps, contactCopy, phoneDisplay, whatsappUrl } from "@/data/copy";
 
 /* Formulario de contacto — oculto por ahora. No borrar.
 import { useState } from "react";
@@ -18,7 +19,6 @@ const BookingSection = () => {
   /* Formulario de contacto — oculto por ahora. No borrar.
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
     date: "",
     message: "",
@@ -30,7 +30,7 @@ const BookingSection = () => {
       title: "¡Solicitud enviada!",
       description: "Te contactaremos pronto para confirmar tu cita.",
     });
-    setFormData({ name: "", email: "", phone: "", date: "", message: "" });
+    setFormData({ name: "", phone: "", date: "", message: "" });
   };
   */
 
@@ -85,19 +85,18 @@ const BookingSection = () => {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="md:col-span-2 flex flex-col items-center justify-center bg-secondary/30 p-5 text-center md:items-start md:p-8 md:text-left"
                 >
-                  <h3 className="font-metal text-2xl mb-6">Estudio privado</h3>
+                  <h3 className="font-metal text-2xl mb-6">Para agendar</h3>
 
                   <p className="mb-6 font-montserrat text-sm leading-relaxed text-muted-foreground">
-                    Cita previa, sin afanes y con la mejor energía para que tu tatuaje quede de otro nivel.
+                    {bookingSteps}
                   </p>
 
                   <ul className="space-y-4">
                     {[
-                      "Realismo en sombras",
-                      "Diseños 100% a medida",
-                      "Cada pieza desde cero",
-                      "Estudio privado en Medellín",
-                      "Aftercare al pie de la letra",
+                      "Tu idea",
+                      "El lugar del tatuaje",
+                      "Imágenes de referencia",
+                      "Abonas para bloquear fecha",
                     ].map((item, index) => (
                       <motion.li
                         key={index}
@@ -119,26 +118,14 @@ const BookingSection = () => {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="md:col-span-3 flex flex-col items-center justify-center p-5 text-center md:items-start md:p-8 md:text-left"
                 >
-                  <p className="mb-6 font-cinzel text-[11px] tracking-[0.32em] text-angelux-steel">ESCRIBIME</p>
+                  <p className="mb-6 font-cinzel text-[11px] tracking-[0.32em] text-angelux-steel">ESCRÍBEME</p>
                   <ul className="space-y-5">
-                    <li className="flex flex-col items-center gap-2 sm:flex-row sm:items-start sm:gap-4 md:justify-start">
-                      <Mail className="mt-1 h-5 w-5 shrink-0 text-angelux-steel" />
-                      <div>
-                        <p className="font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground">EMAIL</p>
-                        <a
-                          href="mailto:info@angeluxink.com"
-                          className="font-metal text-xl text-primary transition-colors hover:text-angelux-steel md:text-2xl"
-                        >
-                          info@angeluxink.com
-                        </a>
-                      </div>
-                    </li>
                     <li className="flex flex-col items-center gap-2 sm:flex-row sm:items-start sm:gap-4 md:justify-start">
                       <Phone className="mt-1 h-5 w-5 shrink-0 text-angelux-steel" />
                       <div>
-                        <p className="font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground">TELÉFONO</p>
-                        <a href="tel:+525551234567" className="font-montserrat text-base text-primary hover:text-angelux-steel">
-                          +52 555 123 4567
+                        <p className="font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground">WHATSAPP</p>
+                        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="font-montserrat text-base text-primary hover:text-angelux-steel">
+                          {phoneDisplay}
                         </a>
                       </div>
                     </li>
@@ -152,8 +139,10 @@ const BookingSection = () => {
                       </div>
                     </li>
                   </ul>
-                  <div className="mt-8 flex flex-col items-center border-t border-border pt-6 md:items-start">
-                    <p className="mb-4 font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground">REDES</p>
+                  <div className="mt-8 flex w-full flex-col items-center gap-3 border-t border-border pt-6 md:items-start">
+                    <QuoteCta className="w-full sm:w-auto" />
+                    <ChannelCta className="w-full sm:w-auto" />
+                    <p className="mb-1 mt-4 font-cinzel text-[10px] tracking-[0.28em] text-muted-foreground">REDES</p>
                     <SocialLinks className="justify-center md:justify-start" iconClassName="h-5 w-5" />
                   </div>
                 </motion.div>
@@ -173,17 +162,6 @@ const BookingSection = () => {
                           placeholder="Tu nombre"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="pl-12 bg-secondary/50 border-border focus:border-accent font-cinzel"
-                          required
-                        />
-                      </div>
-                      <div className="relative">
-                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                        <Input
-                          type="email"
-                          placeholder="tu@email.com"
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           className="pl-12 bg-secondary/50 border-border focus:border-accent font-cinzel"
                           required
                         />

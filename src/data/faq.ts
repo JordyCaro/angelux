@@ -34,6 +34,6 @@ export const faqItems: FaqItem[] = [
   },
   {
     q: "¿Cómo se reserva y qué pasa si cancelo?",
-    a: "Escribime con la idea, las referencias y la zona. Cotizo cuando veo eso, no a ciegas. Seña para bloquear fecha. Si hay que mover el día, avisá con tiempo.",
+    a: "Escríbeme tu idea, dime el lugar donde quieres el tatuaje y envíame imágenes de referencia. Con eso podemos agendar. Abonas para bloquear fecha. Si hay que mover el día, avisa con tiempo.",
   },
 ];

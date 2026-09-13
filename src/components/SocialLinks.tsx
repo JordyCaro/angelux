@@ -1,4 +1,6 @@
 import { Instagram } from "lucide-react";
+import { WhatsAppIcon } from "@/components/WhatsAppCta";
+import { whatsappUrl } from "@/data/copy";
 
 const TikTokIcon = ({ className = "h-4 w-4" }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
@@ -7,6 +9,7 @@ const TikTokIcon = ({ className = "h-4 w-4" }: { className?: string }) => (
 );
 
 export const socialLinks = [
+  { name: "WhatsApp", href: whatsappUrl, icon: WhatsAppIcon, label: "WHATSAPP" },
   { name: "Instagram", href: "https://www.instagram.com/angelux_ink/", icon: Instagram, label: "INSTAGRAM" },
   { name: "TikTok", href: "https://www.tiktok.com/@angelux_ink", icon: TikTokIcon, label: "TIKTOK" },
 ];
@@ -26,7 +29,7 @@ const SocialLinks = ({ className = "", iconClassName = "h-4 w-4", variant = "ico
           href={item.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex w-[calc(50%-6px)] items-center justify-center gap-2.5 border border-primary/30 px-4 py-3 font-cinzel text-[10px] tracking-[0.28em] text-primary transition-colors hover:border-angelux-steel hover:bg-primary/5 sm:w-auto sm:px-5"
+          className="inline-flex w-[calc(50%-6px)] items-center justify-center gap-2.5 border border-primary/30 px-3 py-3 font-cinzel text-[10px] tracking-[0.22em] text-primary transition-colors hover:border-angelux-steel hover:bg-primary/5 sm:w-auto sm:px-5"
           aria-label={item.name}
         >
           <item.icon className="h-4 w-4" />

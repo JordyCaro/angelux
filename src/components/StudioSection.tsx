@@ -1,27 +1,22 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
-import { ShieldCheck, Lamp, CalendarCheck, Sparkles } from "lucide-react";
-import { quoteCta, studioCopy } from "@/data/copy";
+import { QuoteCta } from "@/components/WhatsAppCta";
+import { studioCopy } from "@/data/copy";
 
 const modes = [
   {
-    icon: Lamp,
     title: "Parche tranquilo",
     text: "Estudio privado en Medellín. Exclusivo, sin vitrina ni sala de espera.",
   },
   {
-    icon: CalendarCheck,
     title: "Cita previa",
     text: "Nos sentamos, nos parchamos y armamos la sesión sin afanes.",
   },
   {
-    icon: ShieldCheck,
     title: "Trabajo impecable",
     text: "Protocolo, calma y detalle. Me aseguro de que te lleves la pieza bien hecha.",
   },
   {
-    icon: Sparkles,
     title: "Pieza única",
     text: "Si buscas algo que hable por vos, estás en el lugar correcto.",
   },
@@ -54,14 +49,13 @@ const StudioSection = () => {
           {modes.map((mode, i) => (
             <motion.article
               key={mode.title}
-              className="group bg-background p-8 text-center md:text-left"
+              className="group flex flex-col items-center bg-background p-8 text-center"
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 + i * 0.08 }}
             >
-              <mode.icon className="mx-auto mb-6 h-6 w-6 text-angelux-steel md:mx-0" />
-              <h3 className="mt-3 font-metal text-2xl text-primary">{mode.title}</h3>
-              <p className="mt-4 font-montserrat text-sm leading-relaxed text-muted-foreground">{mode.text}</p>
+              <h3 className="font-metal text-2xl text-primary">{mode.title}</h3>
+              <p className="mt-4 max-w-[16rem] font-montserrat text-sm leading-relaxed text-muted-foreground">{mode.text}</p>
             </motion.article>
           ))}
         </div>
@@ -73,9 +67,7 @@ const StudioSection = () => {
               Estudio privado. Cita previa. Si buscas una pieza única, este es el parche.
             </p>
           </div>
-          <Link to="/contacto" className="btn-stencil w-full px-6 py-3 font-cinzel text-[11px] tracking-[0.18em] md:w-auto">
-            {quoteCta.toUpperCase()}
-          </Link>
+          <QuoteCta className="w-full px-6 py-3 md:w-auto" />
         </div>
       </div>
     </section>

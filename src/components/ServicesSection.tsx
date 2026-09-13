@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { whatsappUrl } from "@/data/copy";
 
 const services = [
   {
@@ -29,9 +30,14 @@ const services = [
   },
 ];
 
-const ServicesSection = () => {
+type ServicesSectionProps = {
+  hideAftercare?: boolean;
+};
+
+const ServicesSection = ({ hideAftercare = false }: ServicesSectionProps) => {
   const titleRef = useRef(null);
   const isInView = useInView(titleRef, { once: true });
+  const visible = hideAftercare ? services.filter((service) => service.title !== "Aftercare") : services;
 
   return (
     <section id="services" className="relative overflow-hidden py-24">
@@ -53,8 +59,8 @@ const ServicesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid gap-px bg-border md:grid-cols-3">
-          {services.map((service, index) => (
+        <div className={`grid gap-px bg-border ${visible.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3"}`}>
+          {visible.map((service, index) => (
             <motion.article
               key={service.n}
               initial={{ opacity: 0, y: 24 }}
@@ -83,14 +89,27 @@ const ServicesSection = () => {
                   </span>
                 ))}
               </div>
+              {service.title === "Aftercare" && (
+                <Link
+                  to="/servicios#aftercare"
+                  className="mt-6 inline-flex font-cinzel text-[10px] tracking-[0.22em] text-angelux-steel hover:text-primary"
+                >
+                  VER CUIDADO →
+                </Link>
+              )}
             </motion.article>
           ))}
         </div>
 
         <div className="mt-10 flex justify-center md:justify-end">
-          <Link to="/contacto" className="font-cinzel text-xs tracking-[0.18em] text-angelux-steel hover:text-primary">
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-cinzel text-xs tracking-[0.18em] text-angelux-steel hover:text-primary"
+          >
             COTICEMOS TU IDEA →
-          </Link>
+          </a>
         </div>
       </div>
     </section>

@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
-import { MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import BrandMark from "@/components/BrandMark";
 import SocialLinks from "@/components/SocialLinks";
+import { ChannelCta } from "@/components/WhatsAppCta";
+import { phoneDisplay, whatsappUrl } from "@/data/copy";
 
 const Footer = () => {
   return (
@@ -30,6 +32,7 @@ const Footer = () => {
               Tatuaje en Medellín. Realismo y sombras. No copiamos de Pinterest: cada pieza se construye desde cero.
             </p>
             <SocialLinks className="justify-center" />
+            <ChannelCta className="mt-5 w-full max-w-xs py-3" />
           </motion.div>
 
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -68,14 +71,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center justify-center gap-3 lg:justify-start">
                 <Phone className="h-4 w-4 shrink-0 text-angelux-steel" />
-                <a href="tel:+525551234567" className="hover:text-primary">
-                  +52 555 123 4567
-                </a>
-              </li>
-              <li className="flex items-center justify-center gap-3 lg:justify-start">
-                <Mail className="h-4 w-4 shrink-0 text-angelux-steel" />
-                <a href="mailto:info@angeluxink.com" className="hover:text-primary">
-                  info@angeluxink.com
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                  {phoneDisplay}
                 </a>
               </li>
             </ul>

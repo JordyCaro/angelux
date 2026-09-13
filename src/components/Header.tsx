@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import BrandMark from "@/components/BrandMark";
 import SocialLinks from "@/components/SocialLinks";
+import { ChannelCta } from "@/components/WhatsAppCta";
 
 const leftNav = [
   { name: "Inicio", path: "/" },
@@ -124,8 +125,9 @@ const Header = () => {
                   </motion.div>
                 </Link>
               ))}
-              <div className="mt-10 flex justify-center">
+              <div className="mt-10 flex flex-col items-center gap-4">
                 <SocialLinks className="justify-center" />
+                <ChannelCta className="py-3" />
               </div>
             </nav>
           </motion.div>

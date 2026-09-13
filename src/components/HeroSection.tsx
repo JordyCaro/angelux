@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SocialLinks from "@/components/SocialLinks";
-import { heroCopy, quoteCta } from "@/data/copy";
+import { QuoteCta } from "@/components/WhatsAppCta";
+import { heroCopy } from "@/data/copy";
 
 const HERO_IMG = "/hero-jonathan.jpg";
 
@@ -80,9 +81,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.65 }}
           >
-            <Link to="/contacto" className="btn-stencil px-7 py-3.5 text-center font-cinzel text-xs tracking-[0.18em] sm:px-8 sm:py-4">
-              {quoteCta.toUpperCase()}
-            </Link>
+            <QuoteCta />
             <Link
               to="/galeria"
               className="inline-flex items-center justify-center border border-primary/25 px-8 py-3.5 font-cinzel text-xs tracking-[0.24em] text-muted-foreground transition-colors hover:border-angelux-steel hover:text-primary sm:py-4"
