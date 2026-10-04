@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, MapPin, X } from "lucide-react";
-import { galleryFilters, galleryItems, type GalleryItem } from "@/data/gallery";
+import { galleryAlt, galleryFilters, galleryItems, type GalleryItem } from "@/data/gallery";
 import { QuoteCta } from "@/components/WhatsAppCta";
 
 const tilts = [-2.2, 1.6, -0.8, 2.4, -1.9, 0.7, 2.1, -1.4, 1.2, -2.6, 0.4, 1.8, -1.1, 2.8, -0.5, 1.3];
@@ -87,7 +87,7 @@ const GalleryWall = () => {
             <div className={`relative overflow-hidden ${heights[item.id % heights.length]}`}>
               <img
                 src={item.image}
-                alt={item.title}
+                alt={galleryAlt(item)}
                 className="h-full w-full object-cover contrast-110 transition duration-700 group-hover:scale-105"
                 loading="lazy"
               />
@@ -133,7 +133,7 @@ const GalleryWall = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative min-h-[42vh] md:col-span-8 md:min-h-[82vh]">
-                <img src={selected.image} alt={selected.title} className="absolute inset-0 h-full w-full object-cover" />
+                <img src={selected.image} alt={galleryAlt(selected)} className="absolute inset-0 h-full w-full object-cover" />
                 <button
                   type="button"
                   className="absolute left-3 top-1/2 -translate-y-1/2 border border-white/20 bg-black/50 p-2 hover:border-primary"

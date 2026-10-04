@@ -214,6 +214,9 @@ export const galleryItems: GalleryItem[] = [
   },
 ];
 
+export const galleryAlt = (item: GalleryItem) =>
+  `Tatuaje ${item.title} en ${item.zoneLabel.toLowerCase()}, ${item.styleLabel.toLowerCase()} — Angelux Ink, ${item.location}`;
+
 export const galleryFilters: { value: "all" | GalleryZone; label: string }[] = [
   { value: "all", label: "Todo" },
   { value: "manga", label: "Mangas" },

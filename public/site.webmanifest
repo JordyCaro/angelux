@@ -1,12 +1,12 @@
 {
   "name": "Angelux Ink",
   "short_name": "Angelux",
-  "description": "Tatuaje en Medellín. Realismo y sombras. Piezas a medida, estudio con cita previa.",
+  "description": "Tatuajes de realismo y sombras en Medellín. Piezas únicas a medida, estudio privado con cita previa.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#05070c",
   "theme_color": "#05070c",
-  "lang": "es",
+  "lang": "es-CO",
   "icons": [
     {
       "src": "/favicon.png",

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, MapPin } from "lucide-react";
-import { galleryItems } from "@/data/gallery";
+import { galleryAlt, galleryItems } from "@/data/gallery";
 
 const featuredPool = galleryItems.filter((item) => item.featured);
 
@@ -20,7 +20,7 @@ const HomeGallery = () => {
             <motion.img
               key={active.id}
               src={active.image}
-              alt={active.title}
+              alt={galleryAlt(active)}
               initial={{ opacity: 0, scale: 1.06 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
@@ -70,7 +70,7 @@ const HomeGallery = () => {
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <img
                     src={item.image}
-                    alt={item.title}
+                    alt={galleryAlt(item)}
                     className="h-full w-full object-cover transition duration-500"
                   />
                   <span className="absolute left-2 top-2 font-cinzel text-[9px] tracking-widest text-white/80">
