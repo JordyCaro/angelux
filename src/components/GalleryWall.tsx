@@ -85,7 +85,7 @@ const GalleryWall = () => {
               Lo más reciente que ha salido del estudio de Jonathan.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-3 md:gap-5 lg:grid-cols-4">
+          <div className="mx-auto grid max-w-5xl grid-cols-3 gap-2 sm:gap-3 md:gap-5">
             {latest.map((item, index) => (
               <motion.button
                 key={item.id}
@@ -101,14 +101,14 @@ const GalleryWall = () => {
                   alt={galleryAlt(item)}
                   className="h-full w-full object-cover contrast-110 transition duration-700 group-hover:scale-105"
                 />
-                <span className="absolute left-2 top-2 bg-primary px-2 py-1 font-cinzel text-[9px] tracking-[0.25em] text-primary-foreground md:left-3 md:top-3">
+                <span className="absolute left-1.5 top-1.5 bg-primary px-1.5 py-0.5 font-cinzel text-[8px] tracking-[0.2em] text-primary-foreground md:left-3 md:top-3 md:px-2 md:py-1 md:text-[9px] md:tracking-[0.25em]">
                   NUEVO
                 </span>
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-3 md:p-4">
-                  <p className="font-cinzel text-[9px] tracking-[0.22em] text-angelux-steel md:text-[10px]">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-2 md:p-4">
+                  <p className="hidden font-cinzel text-[10px] tracking-[0.22em] text-angelux-steel sm:block">
                     {item.styleLabel}
                   </p>
-                  <p className="font-metal text-lg text-white md:text-2xl">{item.title}</p>
+                  <p className="font-metal text-sm text-white sm:text-lg md:text-2xl">{item.title}</p>
                 </div>
               </motion.button>
             ))}

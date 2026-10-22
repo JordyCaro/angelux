@@ -44,16 +44,6 @@ export const galleryItems: GalleryItem[] = [
     image: "/gallery/mangas/spiderman.jpg",
   },
   {
-    id: 24,
-    title: "Spider-Man — sesión",
-    zone: "manga",
-    zoneLabel: "Manga",
-    styleLabel: "Realismo / sombras",
-    location: "Medellín",
-    featured: true,
-    image: "/gallery/mangas/spiderman-sesion.jpg",
-  },
-  {
     id: 1,
     title: "Manga Zeus",
     zone: "manga",
@@ -253,7 +243,29 @@ export const galleryItems: GalleryItem[] = [
     featured: false,
     image: "/gallery/piernas/lobo.jpg",
   },
+  {
+    id: 24,
+    title: "Spider-Man — sesión",
+    zone: "manga",
+    zoneLabel: "Manga",
+    styleLabel: "Realismo / sombras",
+    location: "Medellín",
+    featured: false,
+    image: "/gallery/mangas/spiderman-sesion.jpg",
+  },
 ];
+
+const byId = (id: number) => {
+  const item = galleryItems.find((entry) => entry.id === id);
+  if (!item) throw new Error(`Gallery item ${id} not found`);
+  return item;
+};
+
+/** Big rotating image on the home page: full sleeves read well when cropped wide. */
+export const homeShowcase = [1, 7, 3, 2, 6, 4].map(byId);
+
+/** Thumbnails next to it: latest work plus one standout piece. */
+export const homeHighlights = [23, 21, 22, 14].map(byId);
 
 export const galleryAlt = (item: GalleryItem) =>
   `Tatuaje ${item.title} en ${item.zoneLabel.toLowerCase()}, ${item.styleLabel.toLowerCase()} — Angelux Ink, ${item.location}`;
