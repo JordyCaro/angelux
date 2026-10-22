@@ -8,7 +8,7 @@ const featuredPool = galleryItems.filter((item) => item.featured);
 
 const HomeGallery = () => {
   const [active, setActive] = useState(featuredPool[0]);
-  const stack = featuredPool.slice(1, 5);
+  const stack = featuredPool.slice(0, 4);
 
   return (
     <section className="relative overflow-hidden border-y border-border">
@@ -32,7 +32,7 @@ const HomeGallery = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/20" />
 
           <div className="absolute left-1/2 top-24 -translate-x-1/2 md:left-10 md:translate-x-0">
-            <p className="ink-stamp">ARCHIVO · REAL</p>
+            <p className="ink-stamp">ÚLTIMOS TRABAJOS</p>
           </div>
 
           <div className="absolute bottom-8 left-6 right-6 text-center md:left-10 md:right-auto md:max-w-lg md:text-left">
@@ -49,10 +49,10 @@ const HomeGallery = () => {
 
         <div className="relative flex flex-col justify-between border-t border-border bg-background/80 p-6 text-center lg:col-span-4 lg:border-l lg:border-t-0 lg:p-8 lg:text-left">
           <div>
-            <p className="mb-2 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">ARCHIVO</p>
-            <h3 className="font-metal text-3xl text-primary md:text-4xl">El archivo</h3>
+            <p className="mb-2 font-cinzel text-[11px] tracking-[0.4em] text-angelux-steel">RECIÉN SALIDOS</p>
+            <h3 className="font-metal text-3xl text-primary md:text-4xl">Últimos trabajos</h3>
             <p className="mx-auto mt-4 max-w-sm font-montserrat text-sm leading-relaxed text-muted-foreground lg:mx-0">
-              Un recorte del archivo real. El muro completo está en galería: más piezas, más sombra, más piel.
+              Lo más reciente que ha salido del estudio. El archivo completo está en galería: más piezas, más sombra, más piel.
             </p>
           </div>
 
@@ -64,7 +64,9 @@ const HomeGallery = () => {
                 onMouseEnter={() => setActive(item)}
                 onFocus={() => setActive(item)}
                 onClick={() => setActive(item)}
-                className={`flash-card group text-left ${i % 2 ? "sm:translate-y-4" : "sm:-translate-y-1"}`}
+                className={`flash-card group text-left transition ${i % 2 ? "sm:translate-y-4" : "sm:-translate-y-1"} ${
+                  active.id === item.id ? "ring-1 ring-primary" : "opacity-80 hover:opacity-100"
+                }`}
                 style={{ transform: `rotate(${i % 2 ? 2.4 : -1.8}deg)` }}
               >
                 <div className="relative aspect-[3/4] overflow-hidden">
@@ -73,8 +75,8 @@ const HomeGallery = () => {
                     alt={galleryAlt(item)}
                     className="h-full w-full object-cover transition duration-500"
                   />
-                  <span className="absolute left-2 top-2 font-cinzel text-[9px] tracking-widest text-white/80">
-                    {item.zoneLabel}
+                  <span className="absolute left-2 top-2 bg-primary px-1.5 py-0.5 font-cinzel text-[8px] tracking-[0.2em] text-primary-foreground">
+                    NUEVO
                   </span>
                 </div>
                 <p className="mt-2 truncate px-1 font-cinzel text-[10px] tracking-[0.18em] text-muted-foreground">

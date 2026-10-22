@@ -7,11 +7,52 @@ export type GalleryItem = {
   zoneLabel: string;
   styleLabel: string;
   location: string;
+  /** Latest work: shown first in the gallery and in the home showcase. */
   featured: boolean;
   image: string;
 };
 
 export const galleryItems: GalleryItem[] = [
+  {
+    id: 23,
+    title: "Akaza",
+    zone: "manga",
+    zoneLabel: "Manga",
+    styleLabel: "Anime / sombras",
+    location: "Medellín",
+    featured: true,
+    image: "/gallery/mangas/akaza.jpg",
+  },
+  {
+    id: 21,
+    title: "Deadpool",
+    zone: "manga",
+    zoneLabel: "Manga",
+    styleLabel: "Color / realismo",
+    location: "Medellín",
+    featured: true,
+    image: "/gallery/mangas/deadpool.jpg",
+  },
+  {
+    id: 22,
+    title: "Spider-Man",
+    zone: "manga",
+    zoneLabel: "Manga",
+    styleLabel: "Realismo / sombras",
+    location: "Medellín",
+    featured: true,
+    image: "/gallery/mangas/spiderman.jpg",
+  },
+  {
+    id: 24,
+    title: "Spider-Man — sesión",
+    zone: "manga",
+    zoneLabel: "Manga",
+    styleLabel: "Realismo / sombras",
+    location: "Medellín",
+    featured: true,
+    image: "/gallery/mangas/spiderman-sesion.jpg",
+  },
   {
     id: 1,
     title: "Manga Zeus",
@@ -19,7 +60,7 @@ export const galleryItems: GalleryItem[] = [
     zoneLabel: "Manga",
     styleLabel: "Realismo / sombras",
     location: "Medellín",
-    featured: true,
+    featured: false,
     image: "/gallery/mangas/zeus-lobo.jpg",
   },
   {
@@ -29,7 +70,7 @@ export const galleryItems: GalleryItem[] = [
     zoneLabel: "Manga",
     styleLabel: "Realismo / sombras",
     location: "Medellín",
-    featured: true,
+    featured: false,
     image: "/gallery/mangas/anubis.jpg",
   },
   {
@@ -39,7 +80,7 @@ export const galleryItems: GalleryItem[] = [
     zoneLabel: "Manga",
     styleLabel: "Realismo / sombras",
     location: "Medellín",
-    featured: true,
+    featured: false,
     image: "/gallery/mangas/leon.jpg",
   },
   {
@@ -149,7 +190,7 @@ export const galleryItems: GalleryItem[] = [
     zoneLabel: "Manga",
     styleLabel: "Color / realismo",
     location: "Medellín",
-    featured: true,
+    featured: false,
     image: "/gallery/mangas/gato-samurai.jpg",
   },
   {
@@ -159,7 +200,7 @@ export const galleryItems: GalleryItem[] = [
     zoneLabel: "Manga",
     styleLabel: "Realismo / sombras",
     location: "Medellín",
-    featured: true,
+    featured: false,
     image: "/gallery/mangas/ganesha.jpg",
   },
   {
@@ -169,7 +210,7 @@ export const galleryItems: GalleryItem[] = [
     zoneLabel: "Manga",
     styleLabel: "Realismo / sombras",
     location: "Medellín",
-    featured: true,
+    featured: false,
     image: "/gallery/mangas/zeus-grecas.jpg",
   },
   {

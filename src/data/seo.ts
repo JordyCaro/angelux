@@ -16,7 +16,7 @@ export const routeMeta: Record<string, PageMeta> = {
   "/galeria": {
     title: "Galería de tatuajes de realismo en Medellín — Angelux Ink",
     description:
-      "Mangas y piernas en realismo y sombras hechas por Jonathan en Medellín: Zeus, Anubis, Ganesha, catrinas, retratos y más. Piezas reales, sin copias de Pinterest.",
+      "Mangas y piernas en realismo y sombras hechas por Jonathan en Medellín: Zeus, Anubis, Ganesha, Spider-Man, Deadpool, anime y retratos. Piezas reales, sin copias de Pinterest.",
   },
   "/servicios": {
     title: "Servicios y cuidados del tatuaje — Angelux Ink Medellín",

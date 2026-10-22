@@ -11,10 +11,12 @@ const GalleryWall = () => {
   const [filter, setFilter] = useState<(typeof galleryFilters)[number]["value"]>("all");
   const [selected, setSelected] = useState<GalleryItem | null>(null);
 
-  const visible = useMemo(
-    () => (filter === "all" ? galleryItems : galleryItems.filter((item) => item.zone === filter)),
-    [filter],
-  );
+  const { latest, wall, visible } = useMemo(() => {
+    const inZone = filter === "all" ? galleryItems : galleryItems.filter((item) => item.zone === filter);
+    const latest = inZone.filter((item) => item.featured);
+    const wall = inZone.filter((item) => !item.featured);
+    return { latest, wall, visible: [...latest, ...wall] };
+  }, [filter]);
 
   const selectedIndex = selected ? visible.findIndex((item) => item.id === selected.id) : -1;
 
@@ -72,8 +74,50 @@ const GalleryWall = () => {
         </div>
       </header>
 
+      {latest.length > 0 && (
+        <section className="relative border-b border-white/10 px-4 pb-10 pt-8 md:px-8">
+          <div className="mb-6 flex flex-col items-center gap-2 text-center md:flex-row md:items-end md:justify-between md:text-left">
+            <div>
+              <p className="ink-stamp inline-block">RECIÉN SALIDOS</p>
+              <h2 className="mt-3 font-metal text-3xl text-primary md:text-5xl">Últimos trabajos</h2>
+            </div>
+            <p className="max-w-sm font-montserrat text-sm text-muted-foreground">
+              Lo más reciente que ha salido del estudio de Jonathan.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-3 md:gap-5 lg:grid-cols-4">
+            {latest.map((item, index) => (
+              <motion.button
+                key={item.id}
+                type="button"
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: index * 0.06 }}
+                onClick={() => setSelected(item)}
+                className="group relative aspect-[3/4] overflow-hidden border border-primary/30 text-left"
+              >
+                <img
+                  src={item.image}
+                  alt={galleryAlt(item)}
+                  className="h-full w-full object-cover contrast-110 transition duration-700 group-hover:scale-105"
+                />
+                <span className="absolute left-2 top-2 bg-primary px-2 py-1 font-cinzel text-[9px] tracking-[0.25em] text-primary-foreground md:left-3 md:top-3">
+                  NUEVO
+                </span>
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-3 md:p-4">
+                  <p className="font-cinzel text-[9px] tracking-[0.22em] text-angelux-steel md:text-[10px]">
+                    {item.styleLabel}
+                  </p>
+                  <p className="font-metal text-lg text-white md:text-2xl">{item.title}</p>
+                </div>
+              </motion.button>
+            ))}
+          </div>
+        </section>
+      )}
+
       <div className="relative columns-1 gap-5 p-4 sm:columns-2 md:p-8 lg:columns-3 xl:columns-4">
-        {visible.map((item, index) => (
+        {wall.map((item, index) => (
           <motion.button
             key={item.id}
             type="button"
